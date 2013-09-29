@@ -1,0 +1,33 @@
+about Go
+a modern systems programming language
+
+Ernest Micklei
+Software Architect, bol.com
+
+* Google Go
+
+* Simple case
+
+	for each product id from a file {
+	
+		HTTP GET the product offer in xml
+		
+		parse the xml into a document
+		
+		extract all promotion elements 
+		
+		for each promotion {
+		
+			write in CSV format
+			
+		}
+	}
+
+* XML
+
+.image sellingoffer.png
+
+
+* Functions
+	
+	func fetchSellingOfferXml(id string) string {}
