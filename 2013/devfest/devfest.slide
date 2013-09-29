@@ -6,6 +6,55 @@ Software Architect, bol.com
 
 * Google Go
 
+I am exited about this language
+How can I make you share a piece of that excitement
+A language is just a set of notations (syntax) and defined behavior (specification)
+Much easier to talk about some next generation game engine, NoSQL database or other Bigdata topic
+
+I can go through all the language specifics but I will not excite you.
+Instead, it may confuse you and in the worse case , you decide to pass this one
+
+So what to do?  
+
+If there is one feature you must have seen than it should be its builtin concurrency support.
+
+Another thing I realized is that Go excites me because working in it makes me more productive
+More productive compared to what? and why?
+This can be personal although it has been reported elsewhere too.
+
+
+
+* Things about Go that makes me happy
+
+- Fast compilation and smart about types
+
+* Feature complete standard library 
+	
+.link http://golang.org/pkg/		
+				
+.image go-packages-snapshot.png	
+
+- C,C++ like performance
+
+- Souce code formatting
+
+	go fmt
+
+- No build scripts needed
+
+	go install
+
+
+* Easy to find open-source packages
+
+.link http://godoc.org
+.link http://gowalker.org/
+
+	crawls Bitbucket, Github, Google Code, Launchpad and Git @ OSC.
+
+
+* Documentation generation
+
 * Simple case
 
 	for each product id from a file {
@@ -115,3 +164,7 @@ It's easy to keep documentation and code in sync when they live together in the 
 .link http://godoc.org
 
 
+
+* Resource
+
+.link http://www.scoop.it/t/golang
