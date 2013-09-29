@@ -31,3 +31,87 @@ Software Architect, bol.com
 * Functions
 	
 	func fetchSellingOfferXml(id string) string {}
+	
+	
+	
+* Else
+
+
+build the right intuition about which operations are expensive and which are not - Russ Cox
+
+creating a substring is very efficient
+
+
+* Go packages
+
+
+- Standard packages
+
+	import "encoding/xml"
+	
+- External packages
+
+	import "github.com/emicklei/go-restful"
+	
+- Install external packages
+	
+	go get github.com/emicklei/go-restful
+	
+- Takes master branch on default
+
+
+* Testing
+
+	import "testing"
+	
+Run all tests
+
+	go test *.go		
+	
+	
+
+
+* Compilation
+
+- package (reusable library with a namespace)
+- command (command line programs)
+
+
+
+
+* Pointers are back
+
+- Function parameters ALWAYS passed by value ; can only return value(s)
+
+- Use pointer receiver in methods to modify state
+	
+	
+
+
+* Composition i.o Inheritance
+
+	Go is not object-oriented
+	
+	
+* No exceptions
+
+- Functions may return error object
+- Fail fast
+
+* Go Ecosystem
+
+- A language is useless without a standard library
+- A language is useless without tools
+- A language is useless without documentation
+- A language is useless without a community
+
+
+* Documentation
+
+Godoc is the Go documentation tool. 
+It reads documentation directly from Go source files. 
+It's easy to keep documentation and code in sync when they live together in the same place.
+
+.link http://godoc.org
+
+

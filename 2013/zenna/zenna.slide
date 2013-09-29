@@ -1,0 +1,34 @@
+Zenna
+
+Ernest Micklei
+.link http://ernestmicklei.com
+
+* What is Zenna?
+
+Package for programming pictures 
+
+* Trapezia
+    
+	t := Trapezium{100}
+
+	s := NewSVGPainter{os.Stdout}
+	s.Style("fill:blue")
+	s.Paint(t)
+    
+.play zenna.go
+            
+* Demo
+
+.iframe m3.svg
+
+* Grid
+
+.play grid.go
+
+* Grid in SVG
+
+.iframe g.svg
+
+* Be creative!
+
+.link http://github.com/emicklei/zenna
