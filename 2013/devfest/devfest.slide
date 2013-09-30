@@ -90,6 +90,8 @@ build the right intuition about which operations are expensive and which are not
 
 creating a substring is very efficient
 
+you never learn any programming language for real unless it’s used to build a fairly large, real-world solution.
+
 
 * Go packages
 
@@ -113,11 +115,59 @@ creating a substring is very efficient
 
 	import "testing"
 	
+	
+Write a test	
+	
+	func TestSeven(t *testing) {
+		seven := 3 + 4
+		if seven != 7 {
+			t.Fatalf("unexpected:%d", seven)
+		}
+	}
+	
 Run all tests
 
-	go test *.go		
+	go test
 	
+PASS or FAIL?	
+			
+	PASS
+	ok  	github.com/emicklei/renderbee	0.039s							
 	
+
+* More test tools
+
+- Test Coverage
+
+	go test -cover
+	
+- Benchmark testing
+
+	func BenchmarkMyFastAlgorithm(b *testing.B) {
+		// use the fast algoritm
+	}
+- and see the results
+		
+	BenchmarkMyFastAlgorithm    10000000    282 ns/op	
+
+* CPU and memory profiling	
+
+- Insert profiling instructions
+
+   f, _ := os.Create("myalgorithm.pprof")
+   pprof.StartCPUProfile(f)
+   defer pprof.StopCPUProfile()		
+							
+- After program exit, run pprof
+
+	go tool pprof myprogram myalgorithm.pprof
+
+	(pprof) top10
+	Total: 2525 samples
+	     298  11.8%  11.8%      345  13.7% runtime.mapaccess1_fast64
+	     268  10.6%  22.4%     2124  84.1% main.FindLoops
+	     251   9.9%  32.4%      451  17.9% scanblock
+	     178   7.0%  39.4%      351  13.9% hash_insert
 
 
 * Compilation
@@ -155,16 +205,37 @@ Run all tests
 - A language is useless without a community
 
 
-* Documentation
+* Go Doc
 
 Godoc is the Go documentation tool. 
 It reads documentation directly from Go source files. 
-It's easy to keep documentation and code in sync when they live together in the same place.
 
-.link http://godoc.org
+.link http://godoc.org/github.com/SlyMarbo/rss
+
+.image godoc-org-snapshot.png
+
+* Go Wiki
+
+The goal is to write small, focused reference/summary articles on individual topics of the language.
+
+.link https://code.google.com/p/go-wiki/wiki/SliceTricks
+
+.image go-wiki-snapshot.png
+
+
+* Go Playground
+
+The service receives a Go program, compiles, links, and runs the program inside a sandbox, then returns the output.
+
+.link http://play.golang.org
+
+.image go-playground-snapshot.png
+
+
 
 
 
 * Resource
 
 .link http://www.scoop.it/t/golang
+.link https://code.google.com/p/go-wiki/w/list
