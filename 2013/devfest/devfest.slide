@@ -26,9 +26,20 @@ This can be personal although it has been reported elsewhere too.
 
 * Things about Go that makes me happy
 
+- Simple rules for syntax
+
 - Fast compilation and smart about types
 
-* Feature complete standard library 
+- Fast execution and cross-platform buildable
+
+- Lots of standard packages
+
+- Dead simple integration with C libraries
+
+- Tools to supports development proces
+
+
+* Lots of standard packages
 	
 .link http://golang.org/pkg/		
 				
@@ -107,8 +118,6 @@ you never learn any programming language for real unless it’s used to build a 
 - Install external packages
 	
 	go get github.com/emicklei/go-restful
-	
-- Takes master branch on default
 
 
 * Testing
@@ -128,9 +137,7 @@ Write a test
 Run all tests
 
 	go test
-	
-PASS or FAIL?	
-			
+				
 	PASS
 	ok  	github.com/emicklei/renderbee	0.039s							
 	
@@ -192,10 +199,11 @@ PASS or FAIL?
 	Go is not object-oriented
 	
 	
-* No exceptions
+* Go errors
 
-- Functions may return error object
-- Fail fast
+- No exceptions, functions may return additional error object
+- Always check them
+
 
 * Go Ecosystem
 
@@ -232,8 +240,28 @@ The service receives a Go program, compiles, links, and runs the program inside 
 .image go-playground-snapshot.png
 
 
+* Go and C
+
+Cgo lets Go packages call C code. 
+
+.link http://blog.golang.org/c-go-cgo
+
+.play cgo-example.go
 
 
+* Go and bol.com
+
+- ElasticSearch client
+.link https://github.com/mattbaird/elastigo
+- RESTful Webservices
+.link http://github.com/emicklei/go-restful
+- Protocol Buffers
+.link http://godoc.org/code.google.com/p/goprotobuf
+- Graphite (via Statsd)
+.link http://godoc.org/github.com/stvp/gostatsd
+- Oracle
+.link https://github.com/mattn/go-oci8
+- MongoDB, Postgres, MySql, Hadoop, ...
 
 * Resource
 
