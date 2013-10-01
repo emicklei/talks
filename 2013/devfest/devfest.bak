@@ -1,0 +1,38 @@
+* Go and bol.com
+
+- ElasticSearch client
+.link https://github.com/mattbaird/elastigo
+- RESTful Webservices
+.link http://github.com/emicklei/go-restful
+- Protocol Buffers
+.link http://godoc.org/code.google.com/p/goprotobuf
+- Graphite (via Statsd)
+.link http://godoc.org/github.com/stvp/gostatsd
+- Oracle
+.link https://github.com/mattn/go-oci8
+- MongoDB, Postgres, MySql, Hadoop, ...
+
+.link http://www.scoop.it/t/golang
+.link https://code.google.com/p/go-wiki/w/list
+
+
+* Simple case
+
+	for each product id from a file {
+	
+		HTTP GET the product offer in xml
+		
+		parse the xml into a document
+		
+		extract all promotion elements 
+		
+		for each promotion {
+		
+			write in CSV format
+			
+		}
+	}
+
+* XML
+
+.image sellingoffer.png

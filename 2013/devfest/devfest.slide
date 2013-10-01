@@ -11,8 +11,8 @@ How can I make you share a piece of that excitement
 A language is just a set of notations (syntax) and defined behavior (specification)
 Much easier to talk about some next generation game engine, NoSQL database or other Bigdata topic
 
-I can go through all the language specifics but I will not excite you.
-Instead, it may confuse you and in the worse case , you decide to pass this one
+I can go through all the language specifics but it will not excite you.
+Instead, it may confuse you and in the worse case, you decide to skip this one
 
 So what to do?  
 
@@ -24,19 +24,7 @@ This can be personal although it has been reported elsewhere too.
 
 
 
-* Things about Go that makes me happy
 
-- Simple rules for syntax
-
-- Fast compilation and smart about types
-
-- Fast execution and cross-platform buildable
-
-- Lots of standard packages
-
-- Dead simple integration with C libraries
-
-- Tools to supports development proces
 
 
 * Lots of standard packages
@@ -44,6 +32,8 @@ This can be personal although it has been reported elsewhere too.
 .link http://golang.org/pkg/		
 				
 .image go-packages-snapshot.png	
+
+* ?
 
 - C,C++ like performance
 
@@ -56,45 +46,23 @@ This can be personal although it has been reported elsewhere too.
 	go install
 
 
-* Easy to find open-source packages
 
-.link http://godoc.org
-.link http://gowalker.org/
 
-	crawls Bitbucket, Github, Google Code, Launchpad and Git @ OSC.
+* Go Syntax
 
+.play simple_syntax.go
+
+* Go Concurrency
+
+.play single_thread.go
+
+* Go Concurrency
+
+.play concurrency.go /START OMIT/,/END OMIT/
 
 * Documentation generation
 
-* Simple case
 
-	for each product id from a file {
-	
-		HTTP GET the product offer in xml
-		
-		parse the xml into a document
-		
-		extract all promotion elements 
-		
-		for each promotion {
-		
-			write in CSV format
-			
-		}
-	}
-
-* XML
-
-.image sellingoffer.png
-
-
-* Functions
-	
-	func fetchSellingOfferXml(id string) string {}
-	
-	
-	
-* Else
 
 
 build the right intuition about which operations are expensive and which are not - Russ Cox
@@ -185,24 +153,33 @@ Run all tests
 
 
 
-* Pointers are back
+* Go values and pointers
 
-- Function parameters ALWAYS passed by value ; can only return value(s)
+- Function parameters ALWAYS passed by value + can only return value(s)
 
 - Use pointer receiver in methods to modify state
 	
 	
+.play pointer_receiver.go /START OMIT/,/END OMIT/
 
 
-* Composition i.o Inheritance
+* Language features
 
-	Go is not object-oriented
-	
-	
-* Go errors
+- compiler infer types
+- simple rule for package visibility: Upcase names
+- goroutines and channels
 
-- No exceptions, functions may return additional error object
-- Always check them
+
+* Language features
+
+- not object-oriented
+- no inheritance (use composition)
+- no exceptions (return error for inspection)
+- no generics (yet)
+- no tenary if operator (true ? 1 : 0)
+
+
+
 
 
 * Go Ecosystem
@@ -248,22 +225,30 @@ Cgo lets Go packages call C code.
 
 .play cgo-example.go
 
+* Go XML codec
 
-* Go and bol.com
+.play reflection.go
 
-- ElasticSearch client
-.link https://github.com/mattbaird/elastigo
-- RESTful Webservices
-.link http://github.com/emicklei/go-restful
-- Protocol Buffers
-.link http://godoc.org/code.google.com/p/goprotobuf
-- Graphite (via Statsd)
-.link http://godoc.org/github.com/stvp/gostatsd
-- Oracle
-.link https://github.com/mattn/go-oci8
-- MongoDB, Postgres, MySql, Hadoop, ...
 
-* Resource
+* Easy to find open-source packages
 
-.link http://www.scoop.it/t/golang
-.link https://code.google.com/p/go-wiki/w/list
+.link http://godoc.org
+.link http://gowalker.org/
+
+- crawls Bitbucket, Github, Google Code, Launchpad and Git @ OSC.
+
+	go get code.google.com/p/goprotobuf
+
+* Things about Go that brings me back the fun
+
+- Simple rules for syntax
+
+- Fast compilation and smart about types
+
+- Fast execution and cross-platform buildable
+
+- Lots of standard packages
+
+- Dead simple integration with C libraries
+
+- Tools to supports development proces
