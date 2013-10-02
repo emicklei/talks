@@ -4,151 +4,100 @@ a modern systems programming language
 Ernest Micklei
 Software Architect, bol.com
 
-* Google Go
 
-I am exited about this language
-How can I make you share a piece of that excitement
-A language is just a set of notations (syntax) and defined behavior (specification)
-Much easier to talk about some next generation game engine, NoSQL database or other Bigdata topic
+* Go History
 
-I can go through all the language specifics but it will not excite you.
-Instead, it may confuse you and in the worse case, you decide to skip this one
+- 2007: Design started
 
-So what to do?  
+- 2008: Implementation started
 
-If there is one feature you must have seen than it should be its builtin concurrency support.
+- 2009: Open Sourced
 
-Another thing I realized is that Go excites me because working in it makes me more productive
-More productive compared to what? and why?
-This can be personal although it has been reported elsewhere too.
+- 2012: Release 1.0 in March
+
+- Now:  Release candidate 1.2
+
+- Robert Griesemer, Ken Thompson, Rob Pike, Ian Lance Taylor, Russ Cox, many others
 
 
 
 
+* Goal
+
+- Make the language fast
+
+- Make the tools fast
 
 
-* Lots of standard packages
-	
-.link http://golang.org/pkg/		
-				
-.image go-packages-snapshot.png	
-
-* ?
-
-- C,C++ like performance
-
-- Souce code formatting
-
-	go fmt
-
-- No build scripts needed
-
-	go install
-
-
+.image golang-org.webp
 
 
 * Go Syntax
 
 .play simple_syntax.go
 
+
+
+
 * Go Concurrency
 
 .play single_thread.go
+
+
+
 
 * Go Concurrency
 
 .play concurrency.go /START OMIT/,/END OMIT/
 
-* Documentation generation
+
+
+
+* Go language features you miss?
+
+- no inheritance
+- no exceptions (return error for inspection)
+- no generics (yet)
+- no tenary if operator (true ? 1 : 0)
 
 
 
 
-build the right intuition about which operations are expensive and which are not - Russ Cox
+* Go language features
 
-creating a substring is very efficient
-
-you never learn any programming language for real unless it’s used to build a fairly large, real-world solution.
-
-
-* Go packages
-
-
-- Standard packages
-
-	import "encoding/xml"
-	
-- External packages
-
-	import "github.com/emicklei/go-restful"
-	
-- Install external packages
-	
-	go get github.com/emicklei/go-restful
+- goroutines and channels
+- slices, maps
+- interfaces
+- methods
+- reflection
+- C friendly
 
 
-* Testing
-
-	import "testing"
-	
-	
-Write a test	
-	
-	func TestSeven(t *testing) {
-		seven := 3 + 4
-		if seven != 7 {
-			t.Fatalf("unexpected:%d", seven)
-		}
-	}
-	
-Run all tests
-
-	go test
-				
-	PASS
-	ok  	github.com/emicklei/renderbee	0.039s							
-	
-
-* More test tools
-
-- Test Coverage
-
-	go test -cover
-	
-- Benchmark testing
-
-	func BenchmarkMyFastAlgorithm(b *testing.B) {
-		// use the fast algoritm
-	}
-- and see the results
-		
-	BenchmarkMyFastAlgorithm    10000000    282 ns/op	
-
-* CPU and memory profiling	
-
-- Insert profiling instructions
-
-   f, _ := os.Create("myalgorithm.pprof")
-   pprof.StartCPUProfile(f)
-   defer pprof.StopCPUProfile()		
-							
-- After program exit, run pprof
-
-	go tool pprof myprogram myalgorithm.pprof
-
-	(pprof) top10
-	Total: 2525 samples
-	     298  11.8%  11.8%      345  13.7% runtime.mapaccess1_fast64
-	     268  10.6%  22.4%     2124  84.1% main.FindLoops
-	     251   9.9%  32.4%      451  17.9% scanblock
-	     178   7.0%  39.4%      351  13.9% hash_insert
 
 
-* Compilation
+* Go methods
 
-- package (reusable library with a namespace)
-- command (command line programs)
+.play method-example.go /START OMIT/,/END OMIT/
+
+
+
+
+
+* Go and C
+
+Cgo lets Go packages call C code. 
+
+.link http://blog.golang.org/c-go-cgo
+
+.play cgo-example.go
+
+
+
+
+
+* Go XML codec
+
+.play reflection.go
 
 
 
@@ -159,39 +108,63 @@ Run all tests
 
 - Use pointer receiver in methods to modify state
 	
-	
 .play pointer_receiver.go /START OMIT/,/END OMIT/
-
-
-* Language features
-
-- compiler infers types
-- simple rule for package visibility: Upcase names
-- goroutines and channels
-- slices
-- interfaces
-- methods: functions bound to a type
-
-.code method-example.go
-
-
-* Language features
-
-- no inheritance
-- no exceptions (return error for inspection)
-- no generics (yet)
-- no tenary if operator (true ? 1 : 0)
-
 
 
 
 
 * Go Ecosystem
 
-- A language is useless without a standard library
-- A language is useless without tools
-- A language is useless without documentation
-- A language is useless without a community
+- A language is useless without a rich standard library
+- ... without tools
+- ... without documentation
+- ... without community support
+
+
+
+
+* Lots of standard packages
+	
+.link http://golang.org/pkg/		
+				
+.image go-packages-snapshot.png	
+
+
+
+
+
+* Go tools
+
+- Fetch external packages
+
+	go get github.com/emicklei/hopwatch
+
+- Souce code formatting
+
+	go fmt
+
+- No build scripts needed
+
+	go install
+
+- Run all tests
+
+	go test
+	
+- Run directly from source
+
+	go run backup.go	
+
+
+
+
+* Go tests
+
+.play test-example.go /START OMIT/,/END OMIT/
+	
+
+
+
 
 
 * Go Doc
@@ -203,6 +176,9 @@ It reads documentation directly from Go source files.
 
 .image godoc-org-snapshot.png
 
+
+
+
 * Go Wiki
 
 The goal is to write small, focused reference/summary articles on individual topics of the language.
@@ -210,6 +186,8 @@ The goal is to write small, focused reference/summary articles on individual top
 .link https://code.google.com/p/go-wiki/wiki/SliceTricks
 
 .image go-wiki-snapshot.png
+
+
 
 
 * Go Playground
@@ -221,20 +199,11 @@ The service receives a Go program, compiles, links, and runs the program inside 
 .image go-playground-snapshot.png
 
 
-* Go and C
-
-Cgo lets Go packages call C code. 
-
-.link http://blog.golang.org/c-go-cgo
-
-.play cgo-example.go
-
-* Go XML codec
-
-.play reflection.go
 
 
-* Easy to find open-source packages
+
+
+* Finding open-source Go packages
 
 .link http://godoc.org
 .link http://gowalker.org/
@@ -243,16 +212,47 @@ Cgo lets Go packages call C code.
 
 	go get code.google.com/p/goprotobuf
 
-* Things about Go that brings me back the fun
+
+
+
+
+* What I like about Go
 
 - Simple rules for syntax
 
-- Fast compilation and smart about types
+- Feels like scripting language, runs like C
 
-- Fast execution and cross-platform buildable
+- Fast execution and cross-platform
 
-- Lots of standard packages
+- Rich set of standard packages
 
 - Dead simple integration with C libraries
 
-- Tools to supports development proces
+- Tools 
+
+
+
+
+
+* What I work on
+
+- Web Services  (go-restful)
+
+- Complex "shell" scripts
+
+- Tools (debugger, REPL)
+
+- Realtime message processing
+
+
+
+
+
+
+
+* Go and explore
+
+- Where to start ?
+
+.link http://golang.org
+.link https://groups.google.com/forum/#!forum/golang-nuts go-nuts forum

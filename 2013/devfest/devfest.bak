@@ -1,3 +1,25 @@
+* Google Go
+
+I am exited about this language
+How can I make you share a piece of that excitement
+A language is just a set of notations (syntax) and defined behavior (specification)
+Much easier to talk about some next generation game engine, NoSQL database or other Bigdata topic
+
+I can go through all the language specifics but it will not excite you.
+Instead, it may confuse you and in the worse case, you decide to skip this one
+
+So what to do?  
+
+If there is one feature you must have seen than it should be its builtin concurrency support.
+
+Another thing I realized is that Go excites me because working in it makes me more productive
+More productive compared to what? and why?
+This can be personal although it has been reported elsewhere too.
+
+
+
+
+
 * Go and bol.com
 
 - ElasticSearch client
@@ -36,3 +58,77 @@
 * XML
 
 .image sellingoffer.png
+
+
+
+build the right intuition about which operations are expensive and which are not - Russ Cox
+
+creating a substring is very efficient
+
+you never learn any programming language for real unless it’s used to build a fairly large, real-world solution.
+
+
+
+
+* Go packages
+
+
+- Standard packages
+
+	import "encoding/xml"
+	
+- External packages
+
+	import "github.com/emicklei/go-restful"
+	
+- Install external packages
+	
+	go get github.com/emicklei/go-restful
+
+
+
+
+* More test tools
+
+- Test Coverage
+
+	go test -cover
+	
+- Benchmark testing
+
+	func BenchmarkMyFastAlgorithm(b *testing.B) {
+		// use the fast algoritm
+	}
+- and see the results
+		
+	BenchmarkMyFastAlgorithm    10000000    282 ns/op	
+
+
+
+- compiler infers types
+- simple rule for package visibility: Upcase names
+
+
+"you never learn any programming language for real unless it’s used to build a fairly large, real-world solution." - Russ Cox
+
+
+
+
+* Profiling	Go
+
+- Insert instructions
+
+   f, _ := os.Create("myalgorithm.pprof")
+   pprof.StartCPUProfile(f)
+   defer pprof.StopCPUProfile()		
+							
+-  pprof
+
+	go tool pprof myprogram myalgorithm.pprof
+
+	(pprof) top10
+	Total: 2525 samples
+	     298  11.8%  11.8%      345  13.7% runtime.mapaccess1_fast64
+	     268  10.6%  22.4%     2124  84.1% main.FindLoops
+	     251   9.9%  32.4%      451  17.9% scanblock
+	     178   7.0%  39.4%      351  13.9% hash_insert
