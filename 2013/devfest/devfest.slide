@@ -165,15 +165,19 @@ Run all tests
 
 * Language features
 
-- compiler infer types
+- compiler infers types
 - simple rule for package visibility: Upcase names
 - goroutines and channels
+- slices
+- interfaces
+- methods: functions bound to a type
+
+.code method-example.go
 
 
 * Language features
 
-- not object-oriented
-- no inheritance (use composition)
+- no inheritance
 - no exceptions (return error for inspection)
 - no generics (yet)
 - no tenary if operator (true ? 1 : 0)
