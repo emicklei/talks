@@ -222,29 +222,13 @@ The service receives a Go program, compiles, links, and runs the program inside 
 
 - Feels like scripting language, runs like C
 
-- Fast execution and cross-platform
+- Compile for multiple platforms (yes, Windows too)
 
 - Rich set of standard packages
 
-- Dead simple integration with C libraries
+- Easy to include external packages
 
 - Tools 
-
-
-
-
-
-* What I work on
-
-- Web Services  (go-restful)
-
-- Complex "shell" scripts
-
-- Tools (debugger, REPL)
-
-- Realtime message processing
-
-
 
 
 
