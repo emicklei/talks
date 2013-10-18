@@ -7,15 +7,15 @@ import (
 // START OMIT
 type Counter struct{ value int }
 
-func (c *Counter) Inc() { c.value++ }
+func (c *Counter) inc() { c.value++ }
 
-func increment(c Counter) { c.Inc() }
+func increment(c Counter) { c.inc() }
 
 func decrement(c *Counter) { c.value-- }
 
 func main() {
-	c := Counter{}
-	c.Inc()
+	c := Counter{0}
+	c.inc()
 	fmt.Println(c.value)
 
 	increment(c)

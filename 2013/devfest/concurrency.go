@@ -15,15 +15,14 @@ var ids = []int{123, 456, 789}
 var offers = []string{}
 
 // START OMIT
-func fetch(id int, output chan string) {
-	output <- fetchOffer(id) // HL
-}
 
 func main() {
-	offer_channel := make(chan string, 10) // HL
+	offer_channel := make(chan string) // HL
 
 	for _, each := range ids {
-		go fetch(each, offer_channel) // HL
+		go func(id int) { // HL
+			offer_channel <- fetchOffer(id) // HL
+		}(each) // HL
 	}
 
 	for i := 0; i < len(ids); i++ {

@@ -15,5 +15,6 @@ func Seed(i int) {
 }
 
 func main() {
+	Seed(2)
 	fmt.Printf("C random:%d \n", Random())
 }

@@ -50,16 +50,24 @@ Software Architect, bol.com
 
 .play concurrency.go /START OMIT/,/END OMIT/
 
+- *go*
+- *chan*
+
+
+
+* Go language features
+
+.image tumblr_lang.png
+
 
 
 
 * Go language features you miss?
 
+- no exceptions, instead return error
+- no generics ( yet )
+- no tenary if  , *true* *?* *1* *:* *0*	
 - no inheritance
-- no exceptions (return error for inspection)
-- no generics (yet)
-- no tenary if operator (true ? 1 : 0)
-
 
 
 
@@ -71,7 +79,7 @@ Software Architect, bol.com
 - methods
 - reflection
 - C friendly
-
+- Garbage collector
 
 
 
@@ -112,13 +120,17 @@ Cgo lets Go packages call C code.
 
 
 
-
 * Go Ecosystem
 
+.image hdwall_ecosystem.png
+
+
+* Go platform
+
 - A language is useless without a rich standard library
-- ... without tools
-- ... without documentation
-- ... without community support
+- ... without *tools*
+- ... without *documentation*
+- ... without an *active* community
 
 
 
@@ -230,17 +242,39 @@ The service receives a Go program, compiles, links, and runs the program inside 
 
 - Tools 
 
-- Runs op App Engine as first-class citizen
+- Google App Engine
 
 
 
-* What I do not like about Go
 
-- For some problems having Generics would be great
 
-- No interpreter (yet), different development style
+* What I don't like about Go
+
+- Generics would be great to model some problems
+
+- No break-change-resume development cycle
 
 - Lack of package version management ; will bite someday
+
+
+
+
+
+* Typical applications in Go
+
+- Network, I/O intensive work e.g. Webservices
+
+- DevOps tools
+
+- Distributed systems (WeedFS, NQS, GoCircuit)
+
+*Go@Google*
+
+- dl.google.com (Brad Fitzpatrick)
+
+- Vitess, YouTube MySQL databases at scale
+
+
 
 
 
@@ -250,3 +284,5 @@ The service receives a Go program, compiles, links, and runs the program inside 
 
 .link http://golang.org
 .link https://groups.google.com/forum/#!forum/golang-nuts go-nuts forum
+
+.image appenginegophercolor.jpg

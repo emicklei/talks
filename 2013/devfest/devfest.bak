@@ -132,3 +132,6 @@ you never learn any programming language for real unless it’s used to build a 
 	     268  10.6%  22.4%     2124  84.1% main.FindLoops
 	     251   9.9%  32.4%      451  17.9% scanblock
 	     178   7.0%  39.4%      351  13.9% hash_insert
+		
+
+.code embed.go /START OMIT/,/END OMIT/		

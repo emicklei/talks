@@ -11,7 +11,7 @@ func who() string {
 
 func main() {
 	timestamp := time.Now()
-	arraylist := []string{" hello", who()}
+	slice := []string{" hello", who()} // HL
 
-	fmt.Printf("%v on %v", arraylist, timestamp)
+	fmt.Printf("%v on %v", slice, timestamp)
 }
