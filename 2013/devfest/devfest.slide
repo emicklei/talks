@@ -7,11 +7,11 @@ Software Architect, bol.com
 
 * Go History
 
-- 2007: Design started
+- 2007: Design started by Google
 
 - 2008: Implementation started
 
-- 2009: Open Sourced
+- 2009: Open Sourced by Google
 
 - 2012: Release 1.0 in March
 
@@ -230,7 +230,17 @@ The service receives a Go program, compiles, links, and runs the program inside 
 
 - Tools 
 
+- Runs op App Engine as first-class citizen
 
+
+
+* What I do not like about Go
+
+- For some problems having Generics would be great
+
+- No interpreter (yet), different development style
+
+- Lack of package version management ; will bite someday
 
 
 
