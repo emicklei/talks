@@ -125,12 +125,7 @@ Cgo lets Go packages call C code.
 .image hdwall_ecosystem.png
 
 
-* Go platform
 
-- A language is useless without a rich standard library
-- ... without *tools*
-- ... without *documentation*
-- ... without an *active* community
 
 
 

@@ -135,3 +135,10 @@ you never learn any programming language for real unless it’s used to build a 
 		
 
 .code embed.go /START OMIT/,/END OMIT/		
+
+* Go platform
+
+- A language is useless without a rich standard library
+- ... without *tools*
+- ... without *documentation*
+- ... without an *active* community
