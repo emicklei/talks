@@ -12,7 +12,7 @@ type CountingWriter struct {
 	count int
 }
 
-func (i CountingWriter) Write(p []byte) (n int, err error) {
+func (i *CountingWriter) Write(p []byte) (n int, err error) {
 	n, err = i.Writer.Write(p)
 	i.count += n
 	return

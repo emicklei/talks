@@ -1,0 +1,139 @@
+How do I ... in Go
+
+
+Ernest Micklei
+Software Architect, bol.com
+
+
+* 1. number to string and back
+
+	import "strconv"
+	
+	strconv.Itoa(42)
+	
+or more expensive
+		
+	fmt.Sprintf("%d", 42)
+	
+and back
+
+	i, err := strconv.Atoi("42")	
+	
+
+* 2. string concatenation
+
+	"hello" + " " + "world"
+	
+or using fmt again
+	
+	fmt.Sprintf("%s %s", "hello", "world")
+			
+or more efficient
+
+	var b bytes.Buffer
+	b.WriteString("hello")
+	b.WriteRune(' ')
+	b.WriteString("world")
+	b.String()
+
+
+create and write file
+
+
+* 4. create a Set
+
+using a map of presence
+
+	set := map[string]bool{}
+	set["amsterdam"]=true
+	hasSoest := set["soest"]
+
+or using a custom type
+
+	type Set interface {
+		Insert(string)
+		Has(string) bool
+		Remove(string)
+	}
+	
+	type set map[string]struct{}
+	
+	func (s set) Insert(a string)   { s[a] = struct{}{} }
+	func (s set) Has(a string) bool { _, ok := s[a]; return ok }
+	func (s set) Remove(a string)   { delete(s, a) }
+
+* 5. slice tricks
+
+pick some from
+
+.link https://code.google.com/p/go-wiki/wiki/SliceTricks
+
+* 6. inject string at compile time
+
+	package main
+		
+	var Version string	
+
+	func main() { .... }
+
+build using 
+
+	go build ....
+	
+* 7. test http handlers
+
+	import "net/http/httptest"
+
+	httpRequest, _ := http.NewRequest("GET", "http://6hoek.com", nil)	
+	httpWriter := httptest.NewRecorder()
+	
+	myHandler(httpWriter, httpRequest)
+	
+	contentType := httpWriter.Header().Get("Content-Type")
+	body := httpWriter.Body.String()
+
+
+* 8. get a stack trace
+
+* 9. test with fixed time
+
+in your package
+
+	var timeNow = time.Now // Stubbed out for testing.
+	
+	now := timeNow()
+
+in your test method
+
+	defer func(previous func() time.Time) { 
+			timeNow = previous 
+		}(timeNow)
+		
+	timeNow = func() time.Time {
+		return time.Date(2006, 1, 2, 15, 4, 5, .678901e9, time.Local)
+	}
+
+* 10. run single unit test
+
+	go test -v -test.run TestCORSFilter_Actual ...restful
+
+* 11. 
+
+	
+* 12. Searching for third party packages
+
+	godoc.org
+	
+	gowalker.org
+	
+	http://go-search.org/						
+																		
+																
+* tips
+
+
+General rule: only the goroutine that is sending values on a channel 
+should close it.  A goroutine that is receiving values from a channel 
+should not close it. 
+
+Ian 
