@@ -1,0 +1,100 @@
+Spiro Graphics
+
+Ernest Micklei
+Golang Amsterdam, November 2013
+
+* Goal
+
+ - Create spirograph images
+
+ - Displayed using SVG
+
+ - Served by Go to a Browser
+
+ 
+* Step 0
+
+Make a program that starts a HTTP server listing on port 7777.
+
+Add a HTTP request handler for the URL path "/spiro".
+
+The handler must respond with the string "spiro".
+
+Hints:
+
+.link http://golang.org/pkg/net/http/
+
+* Solution 0
+
+.code step0.go
+
+* Step 1
+
+Change the handler function to return a minimal SVG document.
+
+Set the response content type header to "image/svg+xml".
+
+Use the following SVG document:
+
+	<?xml version="1.0" standalone="no"?>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+	</svg>
+
+.image step1.png
+
+Hint:
+
+	- Use a multi-line string package variable
+	
+* Solution 1
+
+.code step1.go  /START OMIT/,/END OMIT/
+
+
+* Step 2
+
+Replace the SVG document by functions calls using the SVGO package.
+
+	go get github.com/ajstarks/svgo
+	
+.link https://github.com/ajstarks/svgo
+
+Explore the README
+
+* Solution 2
+
+.code step2.go /START OMIT/,/END OMIT/
+
+* Step 3
+
+Learn about the Spirograph
+
+.link http://en.wikipedia.org/wiki/Spirograph
+.image resonance_cascade.png
+
+
+* Step 4
+
+.image spirograph_formula.png
+
+	t = positive angle in radians	
+	r = radius of small inner circle
+	ρ = offset within small inner circle
+	R = radius of large outer circle
+	
+where:
+	
+	k = r / R
+	l = ρ / r
+	
+Write the function that computes a point using the parameters t, r, offset and R
+
+Hint:
+
+.link http://golang.org/pkg/math/
+
+* Solution 4
+
+.code step4.go  /START OMIT/,/END OMIT/
+																																
