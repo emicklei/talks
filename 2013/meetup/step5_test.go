@@ -6,13 +6,15 @@ import (
 	"testing"
 )
 
+// go test -v step5_test.go
+
 // START OMIT
 const DegToRad = math.Pi / 180
 
 func TestComputeSpiro(t *testing.T) {
-	for g := 0; g < 360; g += 10 {
+	for g := 0; g <= 360; g += 10 {
 		x, y := computeSpiro(float64(g)*DegToRad, 10, 100, 2)
-		fmt.Printf("(%v,%v)\n", x, y)
+		fmt.Printf("(%f,%f)\n", x, y)
 	}
 }
 

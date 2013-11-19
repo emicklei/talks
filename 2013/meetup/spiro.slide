@@ -11,6 +11,9 @@ Golang Amsterdam, November 2013
 
  - Served by Go to a Browser
 
+
+.image spirograph.jpg
+
  
 * Step 0
 
@@ -45,7 +48,7 @@ Use the following SVG document:
 
 Hint:
 
-	- Use a multi-line string package variable
+- Use a multi-line string package variable
 	
 * Solution 1
 
@@ -60,7 +63,9 @@ Replace the SVG document by functions calls using the SVGO package.
 	
 .link https://github.com/ajstarks/svgo
 
-Explore the README
+Hint:
+
+- Explore the README
 
 * Solution 2
 
@@ -102,7 +107,7 @@ Hint:
 
 Write a simple test that computes and prints the coordinates (x,y) for the angles 
 
-	t=[0..360> degrees
+	t=[0..360] degrees
 	r=10
 	R=100
 	offset = 2
@@ -115,3 +120,84 @@ Hint:
 
 .code step5_test.go  /START OMIT/,/END OMIT/
 	
+* Step 6
+
+Back to the SVG server program, change itstep6 such that it displays a blue Polyline with a few coordinates to test it.
+
+.image step6.png
+
+Hint:
+
+.link https://github.com/ajstarks/svgo
+
+* Solution 6
+
+.code step6.go  /START OMIT/,/END OMIT/
+		
+* Step 7
+
+Define a type "Spiro" to hold information to compute coordinates.
+
+	type Spiro struct {
+		revolutions int 		// how many times to rotate the inner circle
+		angleDelta  int 		// degrees between each point on a spiro graph line
+		innerRadius float64
+		outerRadius float64
+		innerOffset float64
+	}
+	
+* Step 8
+
+Write the function to compute x and y coordinates using the parameters:
+
+	xc = x-coordinate of the center to display the spirograph
+	yc = x-coordinate of the center to display the spirograph
+
+The function must return two slices
+
+	func (s Spiro) computeCoordinates(xc int, yc int) (xcoords []int, ycoords []int) { ... }		
+	
+	
+Hint:
+
+- Write your own round function
+
+* Solution 8 
+
+.code step8.go   /START OMIT/,/END OMIT/
+
+* Step 9
+
+Change the spiroHandler function such that it calls the computeCoordinates to get the coordinates for the Polyline.
+
+Use the following spiro:
+
+	spiro := Spiro{
+		revolutions: 3,
+		angleDelta:  2,
+		innerRadius: 30,
+		outerRadius: 200,
+		innerOffset: 45,
+	}
+	
+* Solution 9
+
+.code step9.go   /START OMIT/,/END OMIT/
+	
+	
+* Step 10
+
+Change the spiroHandler function such that the Spiro initialization parameters are taken from URL query parameters.
+
+Example:
+
+	/spiro?rev=3&delta=2&inner=30&outer=200&offset=45
+	
+Hints
+
+.link http://golang.org/pkg/net/url
+.link http://golang.org/pkg/strconv
+
+* Solution 10
+
+.code step10.go   /START OMIT/,/END OMIT/
