@@ -97,4 +97,21 @@ Hint:
 * Solution 4
 
 .code step4.go  /START OMIT/,/END OMIT/
-																																
+
+* Step 5
+
+Write a simple test that computes and prints the coordinates (x,y) for the angles 
+
+	t=[0..360> degrees
+	r=10
+	R=100
+	offset = 2
+
+Hint:
+
+	go test -v step5_test.go	
+
+* Solution 5
+
+.code step5_test.go  /START OMIT/,/END OMIT/
+	
