@@ -122,7 +122,7 @@ Hint:
 	
 * Step 6
 
-Back to the SVG server program, change itstep6 such that it displays a blue Polyline with a few coordinates to test it.
+Back to the SVG server program, change step6 such that it displays a blue Polyline with a few coordinates to test it.
 
 .image step6.png
 
@@ -173,11 +173,11 @@ Change the spiroHandler function such that it calls the computeCoordinates to ge
 Use the following spiro:
 
 	spiro := Spiro{
-		revolutions: 3,
-		angleDelta:  2,
+		revolutions: 4,
+		angleDelta:  5,
 		innerRadius: 30,
 		outerRadius: 200,
-		innerOffset: 45,
+		innerOffset: 20,
 	}
 	
 * Solution 9
@@ -201,3 +201,11 @@ Hints
 * Solution 10
 
 .code step10.go   /START OMIT/,/END OMIT/
+
+
+* Have fun 
+
+.image spiro_sample1.png
+
+.image spiro_sample2.png
+
