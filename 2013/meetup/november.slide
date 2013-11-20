@@ -136,6 +136,10 @@ in your test method
 																
 * tips
 
+.link https://github.com/iand/gocookbook 
+
+.link http://gobyexample.com
+
 
 General rule: only the goroutine that is sending values on a channel 
 should close it.  A goroutine that is receiving values from a channel 
