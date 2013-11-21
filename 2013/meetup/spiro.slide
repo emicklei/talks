@@ -3,6 +3,7 @@ Spiro Graphics
 Ernest Micklei
 Golang Amsterdam, November 2013
 
+
 * Goal
 
  - Create spirograph images
@@ -15,6 +16,15 @@ Golang Amsterdam, November 2013
 .image spirograph.jpg
 
  
+* How ?
+
+ - Step 0 .. Step 9
+
+ - Solution after each! Step
+ 
+ - Alone or by pair-programming 
+
+
 * Step 0
 
 Make a program that starts a HTTP server listing on port 7777.
@@ -105,7 +115,7 @@ Hint:
 
 * Step 5
 
-Write a simple test that computes and prints the coordinates (x,y) for the angles 
+Write a basic test that computes and prints the coordinates (x,y) for the angles 
 
 	t=[0..360] degrees
 	r=10
@@ -122,7 +132,7 @@ Hint:
 	
 * Step 6
 
-Back to the SVG server program, change step6 such that it displays a blue Polyline with a few coordinates to test it.
+Back to the SVG server program, change it such that it displays a blue Polyline with a few coordinates to test it.
 
 .image step6.png
 
@@ -206,6 +216,9 @@ Hints
 * Have fun 
 
 .image spiro_sample1.png
-
 .image spiro_sample2.png
 
+
+* Slides
+
+.link https://github.com/emicklei/talks/tree/master/2013/meetup
