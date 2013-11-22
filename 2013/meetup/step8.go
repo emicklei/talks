@@ -39,7 +39,7 @@ func spiroHandler(w http.ResponseWriter, r *http.Request) {
 
 type Spiro struct {
 	revolutions int
-	angleDelta  int
+	angleDelta  float64
 	innerRadius float64
 	outerRadius float64
 	innerOffset float64
@@ -49,20 +49,12 @@ type Spiro struct {
 func (s Spiro) computeCoordinates(xc int, yc int) (xcoords []int, ycoords []int) {
 	xcoords = []int{}
 	ycoords = []int{}
-	for g := 0; g <= s.revolutions*360; g += s.angleDelta {
+	for g := 0.0; g <= float64(s.revolutions)*360; g += s.angleDelta {
 		x, y := computeSpiro(float64(g)*DegToRad, s.innerRadius, s.outerRadius, s.innerOffset)
-		xcoords = append(xcoords, round(x)+xc)
-		ycoords = append(ycoords, round(y)+yc)
+		xcoords = append(xcoords, int(x)+xc)
+		ycoords = append(ycoords, int(y)+yc)
 	}
 	return
-}
-
-func round(v float64) int {
-	if v < 0 {
-		return int(v - 0.5)
-	} else {
-		return int(v + 0.5)
-	}
 }
 
 // END OMIT

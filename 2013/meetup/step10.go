@@ -20,18 +20,31 @@ func spiroHandler(w http.ResponseWriter, r *http.Request) {
 	// START OMIT
 	spiro := Spiro{
 		revolutions: intParameter(r, "rev", 3),
-		angleDelta:  intParameter(r, "delta", 2),
-		innerRadius: float64(intParameter(r, "inner", 30)),
-		outerRadius: float64(intParameter(r, "outer", 200)),
-		innerOffset: float64(intParameter(r, "offset", 45)),
+		angleDelta:  float64Parameter(r, "delta", 2),
+		innerRadius: float64Parameter(r, "inner", 30),
+		outerRadius: float64Parameter(r, "outer", 200),
+		innerOffset: float64Parameter(r, "offset", 45),
 	}
 	width := intParameter(r, "width", 1000)
 	height := intParameter(r, "height", 1000)
 	canvas := svg.New(w)
 	canvas.Start(width, height)
-	xcoords, ycoords := computeSpiroPoints(width/2, height/2, spiro)
+	xcoords, ycoords := spiro.computeCoordinates(width/2, height/2)
 	canvas.Polyline(xcoords, ycoords, `stroke="blue" stroke-width="1" fill="none"`)
 	canvas.End()
+}
+
+func float64Parameter(r *http.Request, name string, missing float64) (value float64) {
+	// END OMIT
+	value = missing
+	param := r.URL.Query().Get(name)
+	if param != "" {
+		conv, err := strconv.ParseFloat(param, 64)
+		if err == nil { // invalid means missing
+			value = conv
+		}
+	}
+	return
 }
 
 func intParameter(r *http.Request, name string, missing int) (value int) {
@@ -46,23 +59,21 @@ func intParameter(r *http.Request, name string, missing int) (value int) {
 	return
 }
 
-// END OMIT
-
 type Spiro struct {
 	revolutions int
-	angleDelta  int
+	angleDelta  float64
 	innerRadius float64
 	outerRadius float64
 	innerOffset float64
 }
 
-func computeSpiroPoints(xc int, yc int, spiro Spiro) (xcoords []int, ycoords []int) {
+func (s Spiro) computeCoordinates(xc int, yc int) (xcoords []int, ycoords []int) {
 	xcoords = []int{}
 	ycoords = []int{}
-	for g := 0; g <= spiro.revolutions*360; g += spiro.angleDelta {
-		x, y := computeSpiro(float64(g)*DegToRad, spiro.innerRadius, spiro.outerRadius, spiro.innerOffset)
-		xcoords = append(xcoords, round(x)+xc)
-		ycoords = append(ycoords, round(y)+yc)
+	for g := 0.0; g <= float64(s.revolutions)*360; g += s.angleDelta {
+		x, y := computeSpiro(float64(g)*DegToRad, s.innerRadius, s.outerRadius, s.innerOffset)
+		xcoords = append(xcoords, int(x)+xc)
+		ycoords = append(ycoords, int(y)+yc)
 	}
 	return
 }
@@ -77,12 +88,4 @@ func computeSpiro(t float64, r float64, R float64, offset float64) (x, y float64
 	y2 := l * k * math.Sin(((1-k)/k)*t)
 	y = R * (y1 - y2)
 	return
-}
-
-func round(v float64) int {
-	if v < 0 {
-		return int(v - 0.5)
-	} else {
-		return int(v + 0.5)
-	}
 }

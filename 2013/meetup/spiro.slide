@@ -103,7 +103,7 @@ where:
 	k = r / R
 	l = ρ / r
 	
-Write the function that computes a point using the parameters t, r, offset and R
+Write the function that computes a point using the float64 parameters t, r, offset and R
 
 Hint:
 
@@ -117,14 +117,10 @@ Hint:
 
 Write a basic test that computes and prints the coordinates (x,y) for the angles 
 
-	t=[0..360] degrees
-	r=10
-	R=100
+	t = [0..360] degrees
+	r = 10
+	R = 100
 	offset = 2
-
-Hint:
-
-	go test -v step5_test.go	
 
 * Solution 5
 
@@ -146,11 +142,11 @@ Hint:
 		
 * Step 7
 
-Define a type "Spiro" to hold information to compute coordinates.
+Define the type *Spiro* to hold information for computing coordinates.
 
 	type Spiro struct {
 		revolutions int 		// how many times to rotate the inner circle
-		angleDelta  int 		// degrees between each point on a spiro graph line
+		angleDelta  float64     // degrees between each point on a spiro graph line
 		innerRadius float64
 		outerRadius float64
 		innerOffset float64
@@ -170,7 +166,7 @@ The function must return two slices
 	
 Hint:
 
-- Write your own round function
+- revolutions * 360
 
 * Solution 8 
 
@@ -217,8 +213,3 @@ Hints
 
 .image spiro_sample1.png
 .image spiro_sample2.png
-
-
-* Slides
-
-.link https://github.com/emicklei/talks/tree/master/2013/meetup

@@ -33,7 +33,7 @@ func spiroHandler(w http.ResponseWriter, r *http.Request) {
 		innerOffset: 20,
 	}
 
-	xcoords, ycoords := computeSpiroPoints(width/2, height/2, spiro)
+	xcoords, ycoords := spiro.computeCoordinates(width/2, height/2)
 
 	canvas.Polyline(xcoords, ycoords, `stroke="blue" stroke-width="1" fill="none"`)
 	canvas.End()
@@ -43,19 +43,19 @@ func spiroHandler(w http.ResponseWriter, r *http.Request) {
 
 type Spiro struct {
 	revolutions int
-	angleDelta  int
+	angleDelta  float64
 	innerRadius float64
 	outerRadius float64
 	innerOffset float64
 }
 
-func computeSpiroPoints(xc int, yc int, spiro Spiro) (xcoords []int, ycoords []int) {
+func (s Spiro) computeCoordinates(xc int, yc int) (xcoords []int, ycoords []int) {
 	xcoords = []int{}
 	ycoords = []int{}
-	for g := 0; g <= spiro.revolutions*360; g += spiro.angleDelta {
-		x, y := computeSpiro(float64(g)*DegToRad, spiro.innerRadius, spiro.outerRadius, spiro.innerOffset)
-		xcoords = append(xcoords, round(x)+xc)
-		ycoords = append(ycoords, round(y)+yc)
+	for g := 0.0; g <= float64(s.revolutions)*360; g += s.angleDelta {
+		x, y := computeSpiro(float64(g)*DegToRad, s.innerRadius, s.outerRadius, s.innerOffset)
+		xcoords = append(xcoords, int(x)+xc)
+		ycoords = append(ycoords, int(y)+yc)
 	}
 	return
 }
@@ -70,12 +70,4 @@ func computeSpiro(t float64, r float64, R float64, offset float64) (x, y float64
 	y2 := l * k * math.Sin(((1-k)/k)*t)
 	y = R * (y1 - y2)
 	return
-}
-
-func round(v float64) int {
-	if v < 0 {
-		return int(v - 0.5)
-	} else {
-		return int(v + 0.5)
-	}
 }
