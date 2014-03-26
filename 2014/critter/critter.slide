@@ -1,0 +1,168 @@
+Critter
+http proxy for testing
+
+Ernest Micklei
+Software Architect, bol.com
+
+
+* Motivation
+
+In a landscape of services, how do you *test* the application's behavior when
+
+- a connection is lost
+- a response takes longer than some specified timeout
+- a error happens on the server side
+- only a partial response is received
+- ..
+
+
+* Simulate the unexpected
+
+- create a driver decorator that "misbehaves on demand"
+- extend your service to give it a testing mode
+- shut down the service during a functional test
+- pull the cable
+
+or...
+
+
+* Put a "man in the middle"	
+
+.image critter_inthemiddle.png
+
+
+and tell *Critter* to simulate problems in response to a HTTP request.
+
+
+
+* How to simulate ?
+
+- IF *Condition* +
+- THEN *Action* +
+
+Rules are applied on each HTTP request
+
+
+* Example
+
+	IF   host name matches bol.com
+	AND  url path matches /nl/index.html
+	THEN delay the processing with 5000 milliseconds
+	THEN forward the request to the remote host
+	THEN send back the response (new or from remote host)	
+
+
+* XML
+
+	<rule id="delay-1" enabled="false">
+	  <conditions>
+	    <host matches="bol.com"/>
+	    <path matches="/nl/index.html"/>
+	  </conditions>
+	  <actions>
+	    <delay ms="5000"/>
+	    <forward/>
+	    <respond/>
+	  </actions>
+	</rule>
+
+* Critter GUI
+
+.image critter_gui_delay.png
+
+* DEMO
+
+* Critter GUI
+
+.image critter_xml_rule.png
+
+* Conditions
+
+- Host
+- Method
+- Path
+- Port
+- RequestBody
+- RequestHeader
+- XPath
+- BasicAuthentication
+- DigestAuthentication
+- Not
+
+* Actions
+
+- Delay
+- Close
+- Respond
+- ResponseBody
+- ResponseHeader
+- Scheme
+- StatusCode
+- Forward
+- Record
+- Trace
+- Script  ( Javascript )
+
+
+* Critter Javascript API
+
+    // Return the URI of the incoming request
+    URI getUri();
+    
+    // Return the HTTP method of the incoming request.
+    String getMethod();
+    
+    // Return the value of the HTTP header by its name.
+    String getHeader(String name);
+    
+    // Return the value of a generic parameter ; can be regular expression group used in a Condition. 
+    String getParameter(String name);    
+       
+    // Replace (or create) a response with this content and status (e.g. 200) 
+    void setResponseBody(int status, String content);
+    
+    // For development/debugging
+    void log(String what);
+
+In your script:
+
+	critter.getUri()
+
+
+* Making the application use a proxy
+
+- Every Http client can be told to use a proxy server
+
+	pos.useProxy=true
+	pos.proxyHost=10.12.13.14
+	pos.proxyPort=8888
+
+
+* Critter features
+
+- REST API
+- Recorder (act as Stub)
+- Proxy server kill
+- Scriptable response building
+- Tracing
+
+
+* Critter Internals
+
+- 2 Netty IO containers (proxy + rule management)
+- Embedded H2 or MongoDB
+- Mozilla Rhino Javascript engine
+- JQuery Mobile
+- Rendersnake.org (no HTML)
+
+
+* How to get it?
+
+Apache 2 licensed open source
+
+	github.com/emicklei/critter
+
+Available on DEV
+
+	critter.dev.bol.com
+
