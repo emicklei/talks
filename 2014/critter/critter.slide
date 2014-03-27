@@ -150,6 +150,7 @@ In your script:
 * Critter Internals
 
 - 2 Netty IO containers (proxy + rule management)
+- Google Guice
 - Embedded H2 or MongoDB
 - Mozilla Rhino Javascript engine
 - JQuery Mobile
