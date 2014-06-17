@@ -1,0 +1,291 @@
+about Go
+a modern systems programming language
+
+Ernest Micklei
+Software Architect, bol.com
+
+
+* Go History
+
+- 2007: Design started by Google
+
+- 2008: Implementation started
+
+- 2009: Open Sourced by Google
+
+- 2012: Release 1.0 in March
+
+- Now:  Release 1.2.2
+
+- Robert Griesemer, Ken Thompson, Rob Pike, Ian Lance Taylor, Russ Cox, many others
+
+
+
+
+* Goal
+
+- Make the language fast
+
+- Make the tools fast
+
+
+.image golang-org.webp
+
+
+* Go Syntax
+
+.play simple_syntax.go
+
+
+
+
+* Go Concurrency
+
+.play single_thread.go
+
+
+
+
+* Go Concurrency
+
+.play concurrency.go /START OMIT/,/END OMIT/
+
+- *go*
+- *chan*
+
+
+
+* Go language features
+
+.image tumblr_lang.png
+
+
+
+
+* Go language features you miss?
+
+- no exceptions, instead return error
+- no generics  (except for slice,map,channel)
+- no tenary if  , *true* *?* *1* *:* *0*	
+- no inheritance
+
+
+
+* Go language features
+
+- goroutines and channels
+- slices, maps
+- interfaces
+- methods
+- reflection
+- C friendly
+- Garbage collector
+
+
+
+* Go methods
+
+.play method-example.go /START OMIT/,/END OMIT/
+
+
+* Go methods (ii)
+
+.play prim_method.go /START OMIT/,/END OMIT/
+
+
+* Go and C
+
+Cgo lets Go packages call C code. 
+
+.link http://blog.golang.org/c-go-cgo
+
+.play cgo-example.go
+
+
+
+
+
+* Go XML codec
+
+.play reflection.go
+
+
+
+
+* Go values and pointers
+
+- Function parameters ALWAYS passed by value + can only return value(s)
+
+- Use pointer receiver in methods to modify state
+	
+.play pointer_receiver.go /START OMIT/,/END OMIT/
+
+
+
+* Go Ecosystem
+
+.image hdwall_ecosystem.png
+
+
+
+
+
+
+
+* Lots of standard packages
+	
+.link http://golang.org/pkg/		
+				
+.image go-packages-snapshot.png	
+
+
+
+
+
+* Go tools
+
+- Fetch external packages
+
+	go get github.com/emicklei/hopwatch
+
+- Souce code formatting
+
+	go fmt
+
+- No build scripts needed
+
+	go install
+
+- Run all tests
+
+	go test
+	
+- Run directly from source
+
+	go run backup.go	
+
+
+
+
+* Go tests
+
+.play test-example.go /START OMIT/,/END OMIT/
+	
+
+
+
+
+
+* Go Doc
+
+Godoc is the Go documentation tool. 
+It reads documentation directly from Go source files. 
+
+.link http://godoc.org/github.com/SlyMarbo/rss
+
+.image godoc-org-snapshot.png
+
+
+
+
+* Go Wiki
+
+The goal is to write small, focused reference/summary articles on individual topics of the language.
+
+.link https://code.google.com/p/go-wiki/wiki/SliceTricks
+
+.image go-wiki-snapshot.png
+
+
+
+
+* Go Playground
+
+The service receives a Go program, compiles, links, and runs the program inside a sandbox, then returns the output.
+
+.link http://play.golang.org
+
+.image go-playground-snapshot.png
+
+
+
+
+
+
+* Finding open-source Go packages
+
+.link http://godoc.org
+.link http://gowalker.org/
+
+- crawls Bitbucket, Github, Google Code, Launchpad and Git @ OSC.
+
+	go get github.com/cactus/go-statsd-client/statsd
+
+
+
+* Statsd example
+
+
+.play statsd.go
+
+
+* What I like about Go
+
+- Simple rules for syntax
+
+- Feels like scripting language, runs like C
+
+- Interfaces i.o generics
+
+- Super fast compilation, for multiple platforms (yes, Windows too)
+
+- Rich set of standard packages
+
+- Easy to include external packages
+
+- Tools 
+
+- Google App Engine
+
+
+
+
+
+* What I don't like about Go
+
+- No break-change-resume development cycle (we have lightning speed builds!)
+
+- Lack of package version management
+
+- Type conversion (int, int32, int64, uint16, *int32, complex128)
+
+
+
+
+
+* Typical applications in Go
+
+- Network, I/O intensive work e.g. Webservices
+
+- Distributed systems (WeedFS, NSQ, GoCircuit)
+
+- Tools (docker, doozerd)
+
+*Go@Google*
+
+- dl.google.com (Brad Fitzpatrick)
+
+- Vitess, YouTube MySQL databases at scale
+
+
+
+
+
+* Go and explore
+
+- Where to start ?
+
+.link http://golang.org
+.link https://groups.google.com/forum/#!forum/golang-nuts go-nuts forum
+
+.image appenginegophercolor.jpg
