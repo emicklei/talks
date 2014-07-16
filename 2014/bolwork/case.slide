@@ -34,7 +34,9 @@ Implement a Stack (push,pop) of string elements.
 .play slice_dice.go /START OMIT/,/END OMIT/
 
 
+* Solution 1: another roll of the dice
 
+.play slice_dice_noembed.go /START OMIT/,/END OMIT/
 
 * Problem 2: gopher says hi
 

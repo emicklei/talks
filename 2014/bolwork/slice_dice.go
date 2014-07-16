@@ -19,7 +19,7 @@ func (s *stack) push(entry string) {
 
 func (s *stack) pop() string {
 	if len(s.elements) == 0 {
-		panic("out of bounds")
+		panic("empty")
 	}
 	top := s.elements[len(s.elements)-1]
 	s.elements = s.elements[:len(s.elements)-1]

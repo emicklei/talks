@@ -2,8 +2,6 @@ package main
 
 import "fmt"
 
-type stack struct{}
-
 func main() {
 	s := newStack()
 	s.push("hi")
