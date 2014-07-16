@@ -1,4 +1,4 @@
-Go Workshop @bol.com
+Go Workshop @ bol.com
 
 
 Ernest Micklei
@@ -10,12 +10,12 @@ Software Engineer, bol.com
 * Agenda
 
 - tool check
-- Case 1: slice and dice
-- Case 2: gopher says hi
-- Case 3: curly curly
-- Case 4: offer me an error
-- Case 5: divide and conquer
-
+- 1: slice and dice
+- 2: gopher says hi
+- 3: curly curly
+- 4: offer me an error
+- 5: divide and conquer
+- 6: chit chat
 
 .image gopher.jpg
 
@@ -27,7 +27,7 @@ Implement a Stack (push,pop) of string elements.
 
 .play slice_dice_hint.go
 
-- Use a slice
+.image slicendice.gif
 
 * Solution 1: slice and dice
 
@@ -42,11 +42,11 @@ Create a HTTP server on port 8080 and respond with "gopher says hi" for the requ
 
 - Use package http://golang.org/pkg/net/http/
 
+.image sayhi.jpg
+
 * Solution 2: gopher says hi
 
 .play empty_service.go
-
-
 
 
 * Problem 3: curly curly
@@ -54,6 +54,8 @@ Create a HTTP server on port 8080 and respond with "gopher says hi" for the requ
 Creat and marshall an Address object to JSON and print it
 
 .play address.go
+
+.image curlycurly.jpeg
 
 * Solution 3: curly curly
 
@@ -70,11 +72,13 @@ Fetch a SellingOffer from the Product Offer Service (POS).
 
 - http://productoffer.services.test2.bol.com/internal
 
-- Use package http
+.image offer.gif
 
 * Solution 4: offer me an error
 
 .play get_offer.go /START OMIT/,/END OMIT/
+
+
 
 
 * Problem 5: divide and conquer
@@ -85,4 +89,13 @@ Fetch concurrently 10 offers from POS.
 
 .play concurrent_get_offer.go  /START OMIT/,/END OMIT/
 
+
+
+* Problem 6: chit chat
+
+
+
+.image chitchat.jpeg
+
+* Solution 6: chit chat
 
