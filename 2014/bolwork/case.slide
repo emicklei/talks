@@ -1,4 +1,4 @@
-Go Workshop
+Go Workshop @bol.com
 
 
 Ernest Micklei
@@ -9,28 +9,68 @@ Software Engineer, bol.com
 
 * Agenda
 
-- setup the tools
-- Case: 
-- recap
+- tool check
+- Case 1: slice and dice
+- Case 2: gopher says hi
+- Case 3: curly curly
+- Case 4: offer me
+- Case 5: divide and conquer
+
 
 .image gopher.jpg
 
-* Step 0
+
+
+* Problem 1: slice and dice
+
+Implement a Stack (push,pop) of string elements.
+
+.play slice_dice_hint.go
+
+- Use a slice
+
+* Solution 1: slice and dice
+
+.play slice_dice.go /START OMIT/,/END OMIT/
+
+
+
+
+* Problem 2: gopher says hi
+
+Create a HTTP server on port 8080 and respond with "gopher says hi" for the request GET /
+
+- Use package http://golang.org/pkg/net/http/
+
+* Solution 2: gopher says hi
 
 .play empty_service.go
 
-* Step 1
+
+
+
+* Problem 3: curly curly
+
+Creat and marshall an Address object to JSON and print it
 
 .play address.go
 
-* Step 2
+* Solution 3: curly curly
 
-.play serve_address.go /START OMIT/,/END OMIT/
+.play marshal_address.go /START OMIT/,/END OMIT/
 
-* Step 3
+- import "os"
+- import "encoding/json"
 
-.play get_address.go
 
-* Step 4
+
+* Problem 4: offer me
+
+Fetch a SellingOffer from the product offer service (POS).
+
+- POS http://productoffer.services.test2.bol.com/internal
+
+
+* Solution 5: offer me
 
 .play get_offer.go

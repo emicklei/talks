@@ -1,5 +1,3 @@
-package main
-
 type Address struct {
 	Postalcode  string
 	HouseNumber string
