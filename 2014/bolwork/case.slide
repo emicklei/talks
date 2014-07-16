@@ -13,7 +13,7 @@ Software Engineer, bol.com
 - Case 1: slice and dice
 - Case 2: gopher says hi
 - Case 3: curly curly
-- Case 4: offer me
+- Case 4: offer me an error
 - Case 5: divide and conquer
 
 
@@ -64,13 +64,25 @@ Creat and marshall an Address object to JSON and print it
 
 
 
-* Problem 4: offer me
+* Problem 4: offer me an error
 
-Fetch a SellingOffer from the product offer service (POS).
+Fetch a SellingOffer from the Product Offer Service (POS).
 
-- POS http://productoffer.services.test2.bol.com/internal
+- http://productoffer.services.test2.bol.com/internal
+
+- Use package http
+
+* Solution 4: offer me an error
+
+.play get_offer.go /START OMIT/,/END OMIT/
 
 
-* Solution 5: offer me
+* Problem 5: divide and conquer
 
-.play get_offer.go
+Fetch concurrently 10 offers from POS.
+
+* Solution 5: divide and conquer
+
+.play concurrent_get_offer.go  /START OMIT/,/END OMIT/
+
+
