@@ -1,0 +1,36 @@
+Go Workshop
+
+
+Ernest Micklei
+Software Architect, bol.com
+
+David Kosztka
+Software Engineer, bol.com
+
+* Agenda
+
+- setup the tools
+- Case: 
+- recap
+
+.image gopher.jpg
+
+* Step 0
+
+.play empty_service.go
+
+* Step 1
+
+.play address.go
+
+* Step 2
+
+.play serve_address.go /START OMIT/,/END OMIT/
+
+* Step 3
+
+.play get_address.go
+
+* Step 4
+
+.play get_offer.go
