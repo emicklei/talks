@@ -10,9 +10,9 @@ Software Engineer, bol.com
 * Agenda
 
 - tool check
-- 1: slice and dice
-- 2: gopher says hi
-- 3: curly curly
+- 1: gopher says hi
+- 2: curly curly
+- 3: slice and dice
 - 4: offer me an error
 - 5: divide and conquer
 - 6: chit chat
@@ -21,7 +21,69 @@ Software Engineer, bol.com
 
 
 
-* Problem 1: slice and dice
+
+
+
+
+* Problem 1: gopher says hi
+
+Create a HTTP server on port 8080 that responds with "gopher says hi" for the request GET /hi
+
+- Use package http://golang.org/pkg/net/http/
+
+.image sayhi.jpg
+
+
+* Theory 1: gopher says hi
+
+
+.play empty.go
+
+
+- Use package "http"
+- Use package "io" or package "fmt" to write the response
+
+* Solution 1: gopher says hi
+
+.play empty_service.go
+
+
+
+
+
+
+
+* Problem 2: curly curly
+
+Marshall an Address object to JSON and print it
+
+- Postalcode
+- HouseNumber
+- Street
+- City
+- Country
+
+.image curlycurly.jpeg
+
+* Theory 2: curly curly
+
+.play struct_literal.go
+
+
+* Solution 2: curly curly
+
+.play marshal_address.go /START OMIT/,/END OMIT/
+
+- import "os"
+- import "encoding/json"
+
+
+
+
+
+
+
+* Problem 3: slice and dice
 
 Implement a Stack (push,pop) of string elements.
 
@@ -29,42 +91,31 @@ Implement a Stack (push,pop) of string elements.
 
 .image slicendice.gif
 
-* Solution 1: slice and dice
+
+* Theory 3: slice and dice
+
+.play slice_theory.go
+
+
+* Solution 3: slice and dice
 
 .play slice_dice.go /START OMIT/,/END OMIT/
 
 
-* Solution 1: another roll of the dice
+* Solution 3: another roll of the dice
 
 .play slice_dice_noembed.go /START OMIT/,/END OMIT/
 
-* Problem 2: gopher says hi
-
-Create a HTTP server on port 8080 and respond with "gopher says hi" for the request GET /
-
-- Use package http://golang.org/pkg/net/http/
-
-.image sayhi.jpg
-
-* Solution 2: gopher says hi
-
-.play empty_service.go
 
 
-* Problem 3: curly curly
 
-Creat and marshall an Address object to JSON and print it
 
-.play address.go
 
-.image curlycurly.jpeg
 
-* Solution 3: curly curly
 
-.play marshal_address.go /START OMIT/,/END OMIT/
 
-- import "os"
-- import "encoding/json"
+
+
 
 
 
@@ -83,21 +134,33 @@ Fetch a SellingOffer from the Product Offer Service (POS).
 
 
 
-* Problem 5: divide and conquer
-
-Fetch concurrently 10 offers from POS.
-
-* Solution 5: divide and conquer
-
-.play concurrent_get_offer.go  /START OMIT/,/END OMIT/
 
 
 
-* Problem 6: chit chat
 
+* Problem 5: chit chat
 
+Write a program that creates a goroutine to compute n!
+Use a channel to write the result of n!  
+
+n = [1..20]
 
 .image chitchat.jpeg
 
-* Solution 6: chit chat
 
+* Solution 5: chit chat
+
+.play chitchat.go /START OMIT/,/END OMIT/
+
+
+
+
+
+
+* Problem 6: divide and conquer
+
+Fetch concurrently 10 offers from POS.
+
+* Solution 6: divide and conquer
+
+.play concurrent_get_offer.go  /START OMIT/,/END OMIT/
