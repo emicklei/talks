@@ -5,19 +5,14 @@ import "fmt"
 type Person struct {
 	Name string
 }
-
 type (p Person) LastName() {
 	return p.Name
 }
-
 type (p *Person) SetLastName(n string) {
 	p.Name = n
 }
-
-
 func main() {
 	persons := []Person{}
-
 	// .. which is the short version of
 	// persons := make([]Person, 0)
 
