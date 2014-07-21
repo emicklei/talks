@@ -7,10 +7,8 @@ type stack struct {
 	elements []string
 }
 
-func newStack() *stack {
-	s := new(stack)
-	s.elements = []string{}
-	return s
+func newStack() stack {
+	return stack{}
 }
 
 func (s *stack) push(entry string) {
