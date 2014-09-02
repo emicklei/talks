@@ -1,0 +1,75 @@
+Daxy
+A Http Proxy for downloading untrusted images
+
+Ernest Micklei
+Software Architect, bol.com
+
+* Context
+
+Suppliers of products we sell
+
+- Tell us their inventory
+- Tell us their offers
+- Provide us with product descriptions
+- Provide us with product images
+
+
+* Example
+
+.link http://www.bol.com/nl/p/sony-playstation-4-console-500gb-1-wireless-dualshock-4-controller-zwart-ps4/1004004013539792/
+
+
+* Feeds
+
+
+* Requirements
+
+- Download only from DMZ
+- Download only valid images ; not a byte more
+- Allow downloads using http and https
+- No authentication needed
+- Please fast
+
+
+"a *DMZ* or demilitarized zone is a physical or logical subnetwork that contains and exposes an organization's external-facing services to a larger and untrusted network, usually the Internet."
+
+
+* Design
+
+picture
+
+
+* Https
+
+Sometimes content is downloaded using https.
+Do not make Daxy be the "man in the middle".
+Simple solution is to pass a hint to the GET request.
+
+
+* Https detection in Go
+
+
+
+* Valid images
+
+How can one be sure that 
+
+.link http://some.host.org/obsure/path/ps4.png?with=lots&of=unreadable&x=666 
+
+does *not* return malicious binaries, trojan horses or just a huge amount of meaningless bytes to store?
+
+- only send minimal Http headers
+- do not trust on the extension (.png)
+- limit the content length
+- only return re-encoded images
+
+* Validate images in Go
+
+* Logging and Monitoring
+
+(dev)Operations like to keep an eye on things
+
+- provide access logging (no Apache/Nginx frontend needed)
+- provide basic metrics (sizes, encoding/decoding times)
+
+* Logging and Monitoring in Go
