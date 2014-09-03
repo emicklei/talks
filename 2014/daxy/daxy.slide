@@ -1,5 +1,5 @@
 Daxy
-A Http Proxy for downloading untrusted images
+A Http proxy for downloading untrusted images
 
 Ernest Micklei
 Software Architect, bol.com
@@ -21,14 +21,18 @@ Suppliers of products we sell
 
 * Feeds
 
+	<file path="export/freexml.int/NL/1494.xml" Product_ID="1494" Updated="20121003050453" Supplier_id="1"
+	Prod_ID="C5708A" Catid="293" On_Market="1" Model_Name="C5708A" Product_View="32767" 
+	HighPic="http://xxxx.yyyyyy.zzz/img/norm/high/1494-6114.jpg" HighPicSize="41211" HighPicWidth="400"
+	HighPicHeight="400" Date_Added="20051005000000">
 
 * Requirements
 
-- Download only from DMZ
-- Download only valid images ; not a byte more
+- Download only from within DMZ
+- Download only valid images
 - Allow downloads using http and https
 - No authentication needed
-- Please fast
+- GET only
 
 
 "a *DMZ* or demilitarized zone is a physical or logical subnetwork that contains and exposes an organization's external-facing services to a larger and untrusted network, usually the Internet."
@@ -36,18 +40,16 @@ Suppliers of products we sell
 
 * Design
 
-picture
+.image das-daxy.png
 
 
 * Https
 
 Sometimes content is downloaded using https.
 Do not make Daxy be the "man in the middle".
-Simple solution is to pass a hint to the GET request.
 
-
-* Https detection in Go
-
+Http client can use CONNECT to setup TLS tunnel
+Alternatively, pass a hint (X-Daxy-Secure) to the GET request.
 
 
 * Valid images
@@ -59,11 +61,69 @@ How can one be sure that
 does *not* return malicious binaries, trojan horses or just a huge amount of meaningless bytes to store?
 
 - only send minimal Http headers
-- do not trust on the extension (.png)
+- look at Content-Type for detecting encoding
 - limit the content length
 - only return re-encoded images
 
+* Setting up Http server in Go
+
+	http.HandleFunc("/", handleProxyRequest)
+	glog.Infof("daxy listening for traffic on port %d", *port)
+	glog.Fatal(newServer().ListenAndServe())
+
+
+* Handling a Http request
+
+	func handleProxyRequest(underlyingWriter http.ResponseWriter, r *http.Request) {
+		w := NewAccessLogger(underlyingWriter, r, redisWriter)
+		...
+		forwardReq, err := http.NewRequest("GET", forwardURI, nil)
+		...
+		for _, each := range allowedRequestHeaders {
+			value := r.Header.Get(each)
+			if len(value) > 0 {
+				forwardReq.Header.Set(each, value)
+			}
+		}
+		...
+		client := newClient()
+		resp, err := client.Do(forwardReq)
+		...
+		handleImageResponse(resp, path.Base(r.URL.Path), contentType, w)
+	}
+
+* Handling a Http response with image data
+
+	func handleImageResponse(resp *http.Response, resource, contentType string, w http.ResponseWriter) {
+		contentBytes, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+		}
+		reencodedBytes, err := validateImageResponse(resource, contentType, contentBytes)
+		if err != nil {
+		}
+		// override because of new encoded image data
+		w.Header().Set("Content-Length", strconv.Itoa(len(reencodedBytes)))
+		w.Write(reencodedBytes)
+
 * Validate images in Go
+
+	func validateImageResponse(resource, contentType string, contentBytes []byte) ([]byte, error) {
+		buffer := new(bytes.Buffer)
+		img, _, err := image.Decode(bytes.NewReader(contentBytes))
+		if err != nil {
+		}
+		// write the image to a buffer
+		if "image/jpeg" == contentType {
+			err := jpeg.Encode(buffer, img, &jpeg.Options{Quality: 100})
+			if err != nil {
+			}
+		}
+		if "image/gif" == contentType {
+		}
+		if "image/png" == contentType {
+		}
+		return buffer.Bytes(), nil
+	}
 
 * Logging and Monitoring
 
@@ -72,4 +132,54 @@ does *not* return malicious binaries, trojan horses or just a huge amount of mea
 - provide access logging (no Apache/Nginx frontend needed)
 - provide basic metrics (sizes, encoding/decoding times)
 
-* Logging and Monitoring in Go
+* Logging in Go
+
+Extension on glog
+
+	var err error
+	redisWriter, err = NewRedisWriter()
+	if err == nil {
+		glog.ExtraFields["instance"] = *extraInstance
+		glog.ExtraFields["role"] = *extraRole
+		glog.SetLogstashWriter(redisWriter)
+		defer redisWriter.Close()
+	} else {
+		glog.Error("Unable to connect to redis:" + err.Error())
+	}
+	defer glog.Flush() // on exit, spit out any pending log messages
+
+And use it like this
+
+	glog.Infof("daxy listening for traffic on port %d", *port)
+
+* Log event
+
+	{"@source_host":"joss-mbp-2.xxx.yyy.net",
+	"@timestamp":"2014-0903T13:47:56.954401506+02:00",
+	"@fields":{"client":"10.96.62.81","content_type":"image/png",
+	"forwarded_for":"10.96.62.8","http_type":"GET","instance":"app21",
+	"role":"app","size":342,"status":200},
+	"@message":"http://xxx.yyy.zzz.ppp/weirdimage.png"}
+
+* Monitoring in Go
+
+Using statsd client
+
+	// setup the statsd client for monitoring
+	statsdClient, err = statsd.Dial(fmt.Sprintf("%s:%d", *statsdHost, *statsdPort), *statsdPrefix)
+	if err != nil {
+		glog.Fatal(err)
+	}
+	defer statsdClient.Close()
+
+And use it like this
+
+	statsdClient.Inc("Status."+strconv.Itoa(code), 1, 1.0)
+
+
+* Summary
+
+	- Only standard libaries used  (except logging and metrics)
+	- 2 source files (~250 lines)
+	- Image decoding/encoding fast enough (no imagemagick needed)
+	- Fun
