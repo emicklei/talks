@@ -1,0 +1,32 @@
+Go by Java example
+
+Ernest Micklei
+Software Architect, bol.com
+
+* Learning Go 
+
+- read a book :-(
+
+* Learning Go 
+
+- take the tour :-)
+
+.link http://play.golang.org
+
+* Learning Go 
+
+- how do I ... in *Go*
+
+- when you know how to doit in *Java*
+
+* Strings
+
+.play string_split.go /START OMIT/,/END OMIT/
+
+* Regex
+
+.play string_regex.go /START OMIT/,/END OMIT/
+
+* Ordered Collection
+
+.play slice.go /START OMIT/,/END OMIT/
