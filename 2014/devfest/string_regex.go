@@ -9,10 +9,13 @@ func main() {
 
 	// START OMIT
 	/**
-	 * String top = "10.10.2.63:8080".split("[\\.:]")[0];
-	**/
+	 *
+	 * String port = "10.10.2.63:8080".split("[\\.:]")[4];
+	 *
+	 **/
+
 	re := regexp.MustCompile("[\\.:]")
-	top := re.Split("10.10.2.63:8080", -1)[0]
+	port := re.Split("10.10.2.63:8080", -1)[4]
 	// END OMIT
-	fmt.Println(top)
+	fmt.Println(port)
 }

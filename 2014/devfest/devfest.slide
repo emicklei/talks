@@ -17,7 +17,7 @@ Software Architect, bol.com
 
 - how do I ... in *Go*
 
-- when you know how to doit in *Java*
+- when you know how to do it in *Java*
 
 * Strings
 
@@ -27,6 +27,35 @@ Software Architect, bol.com
 
 .play string_regex.go /START OMIT/,/END OMIT/
 
-* Ordered Collection
+* Ordered collection
 
 .play slice.go /START OMIT/,/END OMIT/
+
+* Integer conversion
+
+.play convert_atoi.go /START OMIT/,/END OMIT/
+
+.play convert_itoa.go /START OMIT/,/END OMIT/
+
+* No inheritance, struct embedding
+
+.play inheritance_embed.go /START OMIT/,/END OMIT/
+
+* Sorting
+
+.play string_sort.go /START OMIT/,/END OMIT/
+
+* Sorting your structs (1)
+
+.code cities.go /START OMIT/,/END OMIT/
+
+* Sorting your structs (2)
+
+.play custom_sort.go /START OMIT/,/END OMIT/
+
+
+* Go on
+
+- JVM , https://code.google.com/p/jgo/
+
+- Javascript, Tardis
