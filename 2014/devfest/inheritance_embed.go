@@ -20,7 +20,7 @@ type Box struct {
 }
 
 func main() {
-	b := Box{Positioned{X: 1, Y: 2}, 3, 4}
+	b := Box{Positioned{1, 2}, 3, 4}
 	b.Move(1, 1)
 
 	// END OMIT

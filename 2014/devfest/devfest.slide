@@ -53,6 +53,50 @@ Software Architect, bol.com
 
 .play custom_sort.go /START OMIT/,/END OMIT/
 
+* Interfaces
+
+An interface is a set of methods.
+In Java:
+
+	interface Switch {
+	    void open();
+	    void close();
+	}
+
+In Go:
+
+	type OpenCloser interface {
+	    Open()
+	    Close()
+	}
+
+* Concurrency
+It is part of the language, not a library.
+
+Based on two concepts:
+
+- goroutines: lightweight, green threads
+- channels: typed pipes used to communicate and synchronize between goroutines
+
+Go runtime decides what OS threads will run which goroutines.
+
+* Multi-threading
+
+.code runnable.java
+
+* Goroutine
+
+.play runnable.go /START OMIT/,/END OMIT/
+
+* Practice Go
+
+- learn the Go idiomatic way
+
+- learn by reading well structured code 
+
+- learn by doing
+
+- Old habits...
 
 * Go on
 

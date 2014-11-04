@@ -12,7 +12,7 @@ func fetchOffer(id int) string {
 }
 
 func main() {
-	ids := []int{9000000011602483, 9000000011602483, 9000000011602483, 9000000011602483}
+	ids := []int{9000000065433456, 800000005435343, 7000000011602483, 600000005432543}
 
 	wg := new(sync.WaitGroup) // of fetching goroutines
 
