@@ -29,8 +29,11 @@ func (s CitySorter) Swap(i, j int) { // HL
 func (s CitySorter) Less(i, j int) bool { // HL
 	return s[i].Count < s[j].Count
 }
+
 func main() {
 	sort.Sort(sort.Reverse(CitySorter(cities)))
-	// END OMIT
+
 	fmt.Println(cities)
 }
+
+// END OMIT

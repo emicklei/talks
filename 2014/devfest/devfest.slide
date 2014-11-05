@@ -49,9 +49,7 @@ Software Architect, bol.com
 
 .code cities.go /START OMIT/,/END OMIT/
 
-* Sorting your structs (2)
 
-.play custom_sort.go /START OMIT/,/END OMIT/
 
 * Interfaces
 
@@ -70,6 +68,49 @@ In Go:
 	    Close()
 	}
 
+- Java interfaces are satisfied *explicitly*.
+- Go interfaces are satisfied *implicitly*.
+
+
+* Sort interface
+
+	type Interface interface {
+	        
+	        Len() int
+			
+	        Less(i, j int) bool
+			
+	        Swap(i, j int)
+	}
+
+* Sorting your structs (2)
+
+.play custom_sort.go /START OMIT/,/END OMIT/
+
+* Errors
+
+Java has Exception classes
+
+Go has error
+
+	type error interface {
+	    Error() string
+	}
+
+Idiomatic use
+
+	func (d PersonDao) GetPersons() ([]Person,error) {
+		//...
+		return []Person{}, errors.New("connection failed")
+	}
+	
+	persons, err := dao.GetPersons()
+	if err != nil {
+		log.Error("fetching persons failed:%v", err)
+		return err
+	}
+
+
 * Concurrency
 It is part of the language, not a library.
 
@@ -79,6 +120,8 @@ Based on two concepts:
 - channels: typed pipes used to communicate and synchronize between goroutines
 
 Go runtime decides what OS threads will run which goroutines.
+
+	fmt.Println(runtime.NumGoroutine())
 
 * Multi-threading
 
