@@ -149,6 +149,14 @@ Idiomatic use
 
 .play file_read.go /START OMIT/,/END OMIT/
 
+* Http POST in standard Java
+
+.code http_post.java
+
+* Http POST in go
+
+.play http_post.go  /START OMIT/,/END OMIT/
+
 * Concurrency
 It is part of the language, not a library.
 
