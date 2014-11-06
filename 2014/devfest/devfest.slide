@@ -71,15 +71,45 @@ In Go:
 - Java interfaces are satisfied *explicitly*.
 - Go interfaces are satisfied *implicitly*.
 
+* If it looks like a duck...
+
+If a type defines all the methods of an interface, then the type satisfies that interface.
+
+Benefits:
+
+- fewer dependencies
+
+- easy to mock
+	
+* Mocking non-interface types of third-party package
+
+- define your own interface with the methods you use
+
+	type StoreAccess interface {
+		Query(sql) (*pg.Rows, error)
+		Exec(sql) error
+	}
+
+- use that interface in stead of the real thing
+
+	func (d AccountDao) Accounts() ([]Account,error) {
+		rows, err := d.access.Query("....")		
+		...		
+	}
+
+- create a mock type with only that implementation		
+
+	type MockedStoreAccess struct {}
+	
+	func (m MockedStoreAccess) Query(sql) (*pg.Rows, error) { ... }
+	func (m MockedStoreAccess) Exec(sql) (error) { ... }
+
 
 * Sort interface
 
-	type Interface interface {
-	        
-	        Len() int
-			
-	        Less(i, j int) bool
-			
+	type Interface interface {	        
+	        Len() int			
+	        Less(i, j int) bool			
 	        Swap(i, j int)
 	}
 
@@ -110,6 +140,14 @@ Idiomatic use
 		return err
 	}
 
+
+* Reading line by line in standard Java 
+
+.code file_read.java
+
+* Reading line by line in Go
+
+.play file_read.go /START OMIT/,/END OMIT/
 
 * Concurrency
 It is part of the language, not a library.
