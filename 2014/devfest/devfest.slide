@@ -7,13 +7,23 @@ Software Architect, bol.com
 
 * Learning Go 
 
-- read a book :-(
+- reading a book ...
+
+.image img/gopher_books.png
 
 * Learning Go 
 
-- take the tour :-)
+- take the tour ...
 
 .link http://play.golang.org
+
+- reading talks ...
+
+.link http://talks.golang.org/
+
+- watching videos ...
+
+.link https://www.youtube.com/results?search_query=golang
 
 * Learning Go 
 
@@ -41,10 +51,40 @@ Software Architect, bol.com
 
 .play convert_itoa.go /START OMIT/,/END OMIT/
 
+int, int16, int32, int64, uint8, uint16, uint32, uint64, uintptr
+
+	var i int = 12
+	j := (int32)i
+	f := (float64)i
+
+
 * No inheritance, struct embedding
+
+Expressed in Go as unnamed fields in a struct.
+
+It is still composition.
+
+The fields and methods of the *embedded* type are defined on the *embedding* type.
+
+.image img/gopher_plane.jpg
+
+* Struct embedding
 
 .play inheritance_embed.go /START OMIT/,/END OMIT/
 
+* Decorating http.Request
+
+.code decorate_request.go
+	
+Path parameter access
+
+.code path_param.go
+	
+Request attributes
+
+.code set_attr.go
+
+	
 * Sorting
 
 .play string_sort.go /START OMIT/,/END OMIT/
@@ -75,47 +115,44 @@ In Go:
 
 * If it looks like a duck...
 
-If a type defines all the methods of an interface, then the type satisfies that interface.
+If a type defines all the methods of an interface, then the type *satisfies* that interface.
 
-Benefits:
+fmt.Stringer
 
-- fewer dependencies
-
-- easy to mock
-	
-.image img/gopher_calebdoxsey.png	
-	
-* Mocking non-interface types of third-party package
-
-- define your own interface with the methods you use
-
-	type StoreAccess interface {
-		Query(sql) (*pg.Rows, error)
-		Exec(sql) error
+	type Stringer interface {
+		String() string 
 	}
 
-- use that interface in stead of the real thing
+io.Writer
 
-	func (d AccountDao) Accounts() ([]Account,error) {
-		rows, err := d.access.Query("....")		
-		...		
+	type Writer interface {
+		Write(p []byte) (int, error)
 	}
 
-- create a mock type with only that implementation		
 
-	type MockedStoreAccess struct {}
+.image img/gopher_swim.png	
 	
-	func (m MockedStoreAccess) Query(sql) (*pg.Rows, error) { ... }
-	func (m MockedStoreAccess) Exec(sql) (error) { ... }
 
-
-* Sort interface
+* No Comparator, use Sort interface
 
 	type Interface interface {	        
 	        Len() int			
 	        Less(i, j int) bool			
 	        Swap(i, j int)
 	}
+
+in package sort 
+
+
+	func Sort(data Interface)
+	
+and reverse	
+	
+	func Reverse(data Interface) Interface
+
+
+
+.image img/gopher_sort.png
 
 * Sorting your structs (2)
 
@@ -169,6 +206,20 @@ Idiomatic use
 
 Go supports pointers, allowing you to pass references to values and records within your program.
 
+.image img/gopher_partyhat.webp
+
+Variables
+
+- & = take the address of a value
+
+- * = dereference a pointer, an address to a value
+
+Functions
+
+- * = method requires pointer type
+
+* Counter
+
 .play pointer_receiver.go /START OMIT/,/END OMIT/
 
 
@@ -193,6 +244,13 @@ Go runtime decides what OS threads will run which goroutines.
 
 .play runnable.go /START OMIT/,/END OMIT/
 
+* Third party packages
+
+.link http://godoc.org/
+
+.play third_party.go
+
+
 * Go resources
 
 Tour
@@ -211,6 +269,10 @@ Examples
 Dave's list
 
 .link http://dave.cheney.net/resources-for-new-go-programmers
+
+More talks
+
+.link http://talks.golang.org/
 
 * Practice Go
 
@@ -241,10 +303,26 @@ Keep
 
 * Go on
 
-- JVM , https://code.google.com/p/jgo/
+Compilers standard available
 
-- Javascript, Tardis
+- Linux, FreeBSD, OSX, Windows
+- Ports: ARM, PowerPC, NaCl
+
+JVM
+
+.link https://code.google.com/p/jgo/ JGo
+
+Android
+
+.link https://github.com/remogatto/mandala Mandala ? 1.4 !
+
+Javascript
+
+.link http://tardisgo.github.io Tardis
+ 
 
 * Credits
 
 The Go gopher was designed by Renee French. (http://reneefrench.blogspot.com/)
+
+Francesc Campoy, Gopher and Developer Advocate

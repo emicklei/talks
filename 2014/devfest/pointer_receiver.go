@@ -15,12 +15,18 @@ func (c *Counter) Inc() {
 func (c Counter) IncNoEffect() {
 	c.value++
 }
+func inc(c *Counter) {
+	c.value++
+}
 func main() {
 	c := Counter{0}
 	c.Inc()
 	fmt.Println(c.value)
 
 	c.IncNoEffect()
+	fmt.Println(c.value)
+
+	inc(&c)
 	fmt.Println(c.value)
 }
 

@@ -1,0 +1,22 @@
+* Mocking non-interface types of third-party package
+
+- define your own interface with the methods you use
+
+	type StoreAccess interface {
+		Query(sql) (*pg.Rows, error)
+		Exec(sql) error
+	}
+
+- use that interface in stead of the real thing
+
+	func (d AccountDao) Accounts() ([]Account,error) {
+		rows, err := d.access.Query("....")		
+		...		
+	}
+
+- create a mock type with only that implementation		
+
+	type MockedStoreAccess struct {}
+	
+	func (m MockedStoreAccess) Query(sql) (*pg.Rows, error) { ... }
+	func (m MockedStoreAccess) Exec(sql) (error) { ... }
