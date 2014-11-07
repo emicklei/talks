@@ -3,6 +3,8 @@ Go by Java example
 Ernest Micklei
 Software Architect, bol.com
 
+
+
 * Learning Go 
 
 - read a book :-(
@@ -18,6 +20,8 @@ Software Architect, bol.com
 - how do I ... in *Go*
 
 - when you know how to do it in *Java*
+
+.image img/DukeLetsGetGoing-148_180px.gif
 
 * Strings
 
@@ -49,8 +53,6 @@ Software Architect, bol.com
 
 .code cities.go /START OMIT/,/END OMIT/
 
-
-
 * Interfaces
 
 An interface is a set of methods.
@@ -80,6 +82,8 @@ Benefits:
 - fewer dependencies
 
 - easy to mock
+	
+.image img/gopher_calebdoxsey.png	
 	
 * Mocking non-interface types of third-party package
 
@@ -127,6 +131,10 @@ Go has error
 	    Error() string
 	}
 
+.image img/gopher_roman.png
+
+* Error handling
+
 Idiomatic use
 
 	func (d PersonDao) GetPersons() ([]Person,error) {
@@ -157,6 +165,13 @@ Idiomatic use
 
 .play http_post.go  /START OMIT/,/END OMIT/
 
+* Pointers
+
+Go supports pointers, allowing you to pass references to values and records within your program.
+
+.play pointer_receiver.go /START OMIT/,/END OMIT/
+
+
 * Concurrency
 It is part of the language, not a library.
 
@@ -167,7 +182,8 @@ Based on two concepts:
 
 Go runtime decides what OS threads will run which goroutines.
 
-	fmt.Println(runtime.NumGoroutine())
+.image img/gopher_parallel.jpg
+
 
 * Multi-threading
 
@@ -176,6 +192,25 @@ Go runtime decides what OS threads will run which goroutines.
 * Goroutine
 
 .play runnable.go /START OMIT/,/END OMIT/
+
+* Go resources
+
+Tour
+
+.link http://tour.golang.org
+
+Online books
+
+.link http://www.miek.nl/downloads/Go/Learning-Go-latest.pdf
+.link http://www.golang-book.com/
+
+Examples
+
+.link https://gobyexample.com/
+
+Dave's list
+
+.link http://dave.cheney.net/resources-for-new-go-programmers
 
 * Practice Go
 
@@ -187,8 +222,29 @@ Go runtime decides what OS threads will run which goroutines.
 
 - Old habits...
 
+* Reuse Java Best Practices?
+
+Rethink
+
+- no exception handling
+- more flexibility in interfaces ; keep them small
+- public,protected,private -> Exported
+- concurrency is very cheap
+- functions (methods) are first class
+
+Keep
+
+- separation of concerns
+- organization in packages
+- naming (types,functions,variables,parameters)
+
+
 * Go on
 
 - JVM , https://code.google.com/p/jgo/
 
 - Javascript, Tardis
+
+* Credits
+
+The Go gopher was designed by Renee French. (http://reneefrench.blogspot.com/)
