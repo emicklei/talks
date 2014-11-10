@@ -3,7 +3,9 @@ Go by Java example
 Ernest Micklei
 Software Architect, bol.com
 
+* About go
 
+Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
 
 * Learning Go 
 
@@ -274,15 +276,6 @@ More talks
 
 .link http://talks.golang.org/
 
-* Practice Go
-
-- learn the Go idiomatic way
-
-- learn by reading well structured code 
-
-- learn by doing
-
-- Old habits...
 
 * Reuse Java Best Practices?
 

@@ -20,3 +20,14 @@
 	
 	func (m MockedStoreAccess) Query(sql) (*pg.Rows, error) { ... }
 	func (m MockedStoreAccess) Exec(sql) (error) { ... }
+	
+	
+* Practice Go
+
+- learn the Go idiomatic way
+
+- learn by reading well structured code 
+
+- learn by doing
+
+- Old habits...	
