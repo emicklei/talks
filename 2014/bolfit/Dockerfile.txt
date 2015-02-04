@@ -1,0 +1,8 @@
+FROM golang:1.4-wheezy
+
+RUN go get github.com/tools/godep
+
+WORKDIR /workspace
+ADD . /workspace
+
+CMD bash Docker.sh

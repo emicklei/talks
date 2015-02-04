@@ -1,0 +1,153 @@
+Landing our Go apps
+
+Ernest Micklei
+Software Architect, bol.com
+
+* Getting it on production
+
+Development process
+
+- build pipeline
+- ( regression testing )
+- ( load testing )
+
+Operations
+
+- ( deployment )
+- logging
+- metrics
+- health
+
+
+* Continuous build
+
+- using Godep for controlled package dependencies
+
+.link https://github.com/tools/godep
+
+
+- using Docker for controlled build environment
+
+.link https://docker.io/
+
+
+* Using an external package
+
+.code torch.go
+
+	godep save
+
+* Godep
+
+.image godeps-example.png
+
+* Dockerfile
+
+.code Dockerfile.txt
+
+Docker.sh
+
+.code Docker.sh.txt
+
+Jenkins
+
+.code jenkins-buildstep.txt
+
+
+
+
+
+* Test output
+
+- reporting of test results
+
+	#!/bin/bash
+
+	outfile=gotest.out
+
+	go test -v | tee $outfile
+	go2xunit -fail -input $outfile -output tests.xml
+
+.link http://bitbucket.org/tebeka/go2xunit
+
+
+
+
+
+* Logging 
+
+- logging data is sent to Logstash via Redis
+
+.image redis-logstash-compact.png
+
+* Forked github.com/golang/glog
+
+- using log4j standard log levels, TRACE,DEBUG,WARN.INFO
+- produces Logstash JSON formatted log events
+
+.code logevent.json
+
+	glog.SetLogstashWriter(redisWriter)
+
+* github.com/garyburd/redigo/redis
+
+.code glog-logstash.go  /START OMIT/,/END OMIT/
+
+* glog usage
+
+.code glog-usage.go
+
+
+
+
+
+* Metrics
+
+- metrics data is sent to Graphite via Statsd collectors
+
+.image graphite-metrics.png
+
+* Statsd calls
+
+- not keeping counter/gauges in memory
+
+.link https://github.com/rcrowley/go-metrics
+
+- thinking about using expvars
+
+* Setup statsd client
+
+.code statsd-setup.go   /START OMIT/,/END OMIT/
+
+* Note about external packages usage
+
+- define an interface for what you use
+- easy to mock 
+- future replacement
+
+.code statsd-access.go
+
+* Measuring REST call duration
+
+.code boqs-getQsize.go /START OMIT/,/END OMIT/
+
+* Measuring REST call duration
+
+.code statsd-filter.go
+
+
+
+
+
+
+* Health status
+
+- provide details about build, version, simple environment checks
+
+.image daxy-selfdiagnose.png
+
+
+* TODO
+
+- exposing runtime statistics (memory usage, # goroutines?)
+- dynamic configuration change (watching property values)

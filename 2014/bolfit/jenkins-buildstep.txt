@@ -1,0 +1,5 @@
+rm -rf target \
+&& mkdir target \
+&& docker build -t torch-builder . \
+&& docker run --rm -v `pwd`/target:/target -t torch-builder \
+&& ls -l target
