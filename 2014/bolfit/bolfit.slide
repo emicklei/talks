@@ -113,11 +113,12 @@ Jenkins
 
 * Statsd calls
 
-- not keeping counter/gauges in memory
+- thinking about using expvars (pull vs push)
+
+- keep counter/gauges in memory
 
 .link https://github.com/rcrowley/go-metrics
 
-- thinking about using expvars
 
 * Setup statsd client
 
@@ -138,6 +139,8 @@ Jenkins
 * Measuring REST call duration
 
 .code statsd-filter.go
+
+
 
 
 
