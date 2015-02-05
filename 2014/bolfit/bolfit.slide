@@ -18,6 +18,10 @@ Operations
 - metrics
 - health
 
+Consumers
+
+- API documentation
+
 
 * Continuous build
 
@@ -138,13 +142,29 @@ Jenkins
 
 
 
-
-
 * Health status
 
 - provide details about build, version, simple environment checks
 
-.image daxy-selfdiagnose.png
+.image boqs-health.png
+
+
+* API Documentation
+
+.image swagger-boqs.png
+
+
+* API Documentation
+
+.image boqs-leasemessages.png
+
+
+
+* Documenting the Routes
+
+http://boqs.services.bol.com/v1/queues/Products/messages
+
+.code boqs-resource.go
 
 
 * TODO
