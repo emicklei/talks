@@ -85,7 +85,7 @@ In general, functions in a Route must be of:
 
 * Hello world
 
-.play ../examples/restful-hello-world.go
+.play restful-hello-world.go
 
 * Request in go-restful
 

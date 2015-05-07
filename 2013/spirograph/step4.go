@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/ajstarks/svgo"
 	"log"
 	"math"
 	"net/http"
+
+	"github.com/ajstarks/svgo"
 )
 
 func main() {
@@ -23,7 +24,7 @@ func spiroHandler(w http.ResponseWriter, r *http.Request) {
 
 // START OMIT
 
-func computeSpiro(t float64, r float64, R float64, offset float64) (x, y float64) {
+func computeSpiro(t, r, R, offset float64) (x, y float64) {
 	k := r / R
 	l := offset / r
 	x1 := (1 - k) * math.Cos(t)
