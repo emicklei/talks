@@ -11,8 +11,6 @@ Software Artist, bol.com
 - bol.com: *Daxy* , *BoQs* , *Kevlar*
 - @home: *Ubanita* - multiplayer single-screen game platform
 
-
-
 .image img/gopher_teacher.png
 
 
@@ -20,7 +18,7 @@ Software Artist, bol.com
 
 - learn about the Go language
 - share experience
-- fun
+- have fun
 
 .image img/gopher.jpg
 
@@ -32,8 +30,48 @@ Software Artist, bol.com
 
 .image img/gopher_plane.jpg
 
-- follow
+- this talk
 
 .link http://bit.ly/1GQPRYK
 
-* Let's start
+* curl
+
+Write a minimal "curl" that prints the content from a given URL.
+
+	curl http://www.bol.com/nl/index.html
+
+use packages *net/http* and *io*
+
+* curl (solution)
+
+.code curl.go
+
+* rss
+
+Print only the titles of the latest NU.nl articles in Algemeen.
+
+	http://www.nu.nl/rss/Algemeen
+	
+use packages *net/http* and *xml/encoding*
+
+* rss (solution)
+
+.play nu.go  /START OMIT/,/END OMIT/
+
+* card
+
+Produce a simple HTML version of a business card.
+
+	type Card struct {
+		Name   string
+		Title  string
+		Phones []string
+	}
+	
+use package *text/template*
+
+.image img/card.html.png
+
+* card (solution)
+
+.play card.go  /START OMIT/,/END OMIT/
