@@ -204,6 +204,10 @@ Idiomatic use
 
 .play http_post.go  /START OMIT/,/END OMIT/
 
+* Http POST in go (detailed)
+
+.play http_post2.go  /START OMIT/,/END OMIT/
+
 * Pointers
 
 Go supports pointers, allowing you to pass references to values and records within your program.
