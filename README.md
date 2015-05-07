@@ -29,9 +29,11 @@ Thanks to Gary Burd and Francesc Campoy for []hosting](http://go-talks.appspot.c
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/devfest/devfest.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/aboutgo/devfest.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/bolfit/bolfit.slide
-- http://go-talks.appspot.com/github.com/emicklei/talks/2014/bolfit/bolfit.slide
+- http://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/devfest/devfest.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/daxy/daxy.slide
+- http://bit.ly/1GQPRYK
+
 
 ## not Go related
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/critter/critter.slide

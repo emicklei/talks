@@ -9,7 +9,7 @@ import (
 
 func main() {
 	if len(os.Args) == 0 {
-		log.Prinln("Usage: curl [url]")
+		log.Println("Usage: curl [url]")
 		return
 	}
 	url := os.Args[1]
