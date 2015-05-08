@@ -16,6 +16,10 @@ type RSS struct {
 	} `xml:"channel"`
 }
 
+type ArticleTitles struct {
+	Title []string `xml:"channel>item>title"`
+}
+
 func main() {
 	resp, err := http.Get("http://www.nu.nl/rss/Algemeen")
 	if err != nil {

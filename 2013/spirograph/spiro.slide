@@ -117,7 +117,7 @@ Hint:
 
 Write a basic test that computes and prints the coordinates (x,y) for the angles 
 
-	t = [0..360] degrees
+	g = [0..360] degrees
 	r = 10
 	R = 100
 	offset = 2

@@ -35,7 +35,7 @@ Write a minimal "curl" that prints the content from a given URL.
 
 	curl http://www.bol.com/nl/index.html
 
-use packages *net/http* and *io*
+use packages *net/http* and *io/ioutil* and *os*
 
 * curl (solution)
 
@@ -57,7 +57,7 @@ Print only the titles of the latest NU.nl articles in Algemeen.
 
 	http://www.nu.nl/rss/Algemeen
 	
-use packages *net/http* and *xml/encoding*
+use packages *net/http* and *encoding/xml*
 
 * rss (solution)
 
@@ -73,7 +73,7 @@ Produce a simple HTML version of a business card.
 		Phones []string
 	}
 	
-use package *text/template*
+use package *html/template*
 
 .image img/card.html.png
 
