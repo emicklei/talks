@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/ajstarks/svgo"
 	"log"
 	"math"
 	"net/http"
+
+	"github.com/ajstarks/svgo"
 )
 
 const DegToRad = math.Pi / 180
@@ -47,8 +48,6 @@ type Spiro struct {
 
 // START OMIT
 func (s Spiro) computeCoordinates(xc int, yc int) (xcoords []int, ycoords []int) {
-	xcoords = []int{}
-	ycoords = []int{}
 	for g := 0.0; g <= float64(s.revolutions)*360; g += s.angleDelta {
 		x, y := computeSpiro(float64(g)*DegToRad, s.innerRadius, s.outerRadius, s.innerOffset)
 		xcoords = append(xcoords, int(x)+xc)
