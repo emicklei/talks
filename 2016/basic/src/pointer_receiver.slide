@@ -1,0 +1,22 @@
+T
+
+* Pointers
+
+Go supports pointers, allowing you to pass references to values and records within your program.
+
+.image /img/gopher_partyhat.webp
+
+Variables
+
+- & = take the address of a value
+
+- * = dereference a pointer, an address to a value
+
+Functions
+
+- * = method requires pointer type
+
+* Counter
+
+.play pointer_receiver.go /START OMIT/,/END OMIT/
+

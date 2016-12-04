@@ -1,0 +1,39 @@
+T
+
+* Interface external API
+
+Problem
+- one of your external packages does not provide any interfaces
+- and you want to use mocking for testing it
+
+Idea
+- create your own interface with only those methods you are using
+- make your application use that interface only
+
+* Example: External API
+
+	type Metrics interface {
+		Timing(stat string, delta int64, rate float32) error
+	}
+
+Package _github.com/cactus/go-statsd-client/statsd_
+	
+has multiple types that implement this
+
+	statsd.BufferingClient 	
+
+but now we can define our own type
+
+	MetricsMock
+
+and use that as second argument in:
+
+	func Calculate(o Offer, m Metrics) {
+		now := time.Now()
+		// do computations
+		m.Timing("calculate", time.Now() - now, 1.0)
+	}
+
+* Exercise: External API
+
+* Solution: External API

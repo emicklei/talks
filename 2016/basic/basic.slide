@@ -1,0 +1,34 @@
+Go - Basic Training
+
+Ernest Micklei
+Software Artist, bol.com
+
+* Who am i
+
+- using Go since 2011
+- co-organizer Golang Meetup Amsterdam
+- author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*
+- bol.com: *Daxy* , *Kevlar*, *BoQs* , *Guardian*
+
+.image img/gopher_teacher.png
+
+
+* Goal
+
+- learn using the Go language
+- share experience
+- have fun
+
+* Preflight checks
+
+- Installed Go SDK 1.7
+- GOPATH
+- Finished the Tour of Go
+- Configured your favorite IDE
+
+* Format
+	
+- Introduction to a Topic
+- Announce Exercise
+- Discuss one Solution
+

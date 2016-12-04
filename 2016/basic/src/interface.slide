@@ -1,0 +1,20 @@
+T
+
+* Interface
+
+Interfaces are named collections of method signatures.
+
+If a variable has an interface type, then we can call methods that are in the named interface.
+
+
+* Excercise: Surface
+
+Define the interface *Surface* with a method signature to compute the *Area* (float64) of a Graphic.
+
+Create implementations for each graphic type (Circle, Rectangle)
+
+Print the results.
+
+* Solution: Surface
+
+.code interface.go /START OMIT/,/END OMIT/

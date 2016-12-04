@@ -1,0 +1,12 @@
+T
+
+* Type Assertion
+
+[[https://tour.golang.org/methods/15]]
+
+A type assertion provides access to an interface value's underlying concrete value.
+
+* Exercise:
+
+
+* Solution:

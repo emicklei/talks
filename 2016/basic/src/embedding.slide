@@ -1,0 +1,21 @@
+T
+
+* Theory: Struct
+
+Using the struct type you can define composite types.
+
+A struct can have zero or more fields ; each field must be typed.
+
+A struct can embed other structs "borrowing" the state and behavior of the embedded type.
+
+*Not* inheritance
+
+TODO example_embedding
+
+* Exercise: Graphic
+
+Define types to model Rectangle,Circle and Point and use struct embedding.
+
+* Solution: Graphic
+
+.play embedding.go  /START OMIT/,/END OMIT/

@@ -1,0 +1,13 @@
+T
+
+* Empty Interface
+
+	interface{}
+	
+Any type implements the empty interface.
+
+	fmt.Println(1, "one", time.Time{}, []float64{3.14159} )
+	
+Method signature
+
+	Println(a ...interface{}) (n int, err error)
