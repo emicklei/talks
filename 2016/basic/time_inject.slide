@@ -1,0 +1,18 @@
+T
+
+* Function Dependency Injection
+
+Technique to allow injection of (mock) versions of a (external) function
+
+* Dependency on time.Now
+
+.code time_noinject.go   /START OMIT/,/END OMIT/
+
+* Injectable time
+
+.code time_inject.go   /START OMIT/,/END OMIT/
+
+
+* Make a Function injectable
+
+	

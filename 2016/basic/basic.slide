@@ -26,9 +26,92 @@ Software Artist, bol.com
 - Finished the Tour of Go
 - Configured your favorite IDE
 
-* Format
-	
-- Introduction to a Topic
-- Announce Exercise
-- Discuss one Solution
+* Format per Topic
 
+- Theory
+- Example
+- Excercise
+- Solution
+
+* Theory: Struct
+
+Using the struct type you can define composite types.
+
+A struct can have zero or more fields ; each field must be typed.
+
+A struct can embed other structs "borrowing" the state and behavior of the embedded type.
+
+*Not* inheritance
+
+TODO example_embedding
+
+* Exercise: Graphic
+
+Define types to model Rectangle,Circle and Point and use struct embedding.
+
+* Solution: Graphic
+
+.play embedding.go  /START OMIT/,/END OMIT/
+
+* Empty Interface
+
+	interface{}
+	
+Any type implements the empty interface.
+
+	fmt.Println(1, "one", time.Time{}, []float64{3.14159} )
+	
+Method signature
+
+	Println(a ...interface{}) (n int, err error)
+
+* Interface
+
+Interfaces are named collections of method signatures.
+
+If a variable has an interface type, then we can call methods that are in the named interface.
+
+
+* Excercise: Surface
+
+Define the interface *Surface* with a method signature to compute the *Area* (float64) of a Graphic.
+
+Create implementations for each graphic type (Circle, Rectangle)
+
+Print the results.
+
+* Solution: Surface
+
+.code interface.go /START OMIT/,/END OMIT/
+
+* Pointers
+
+Go supports pointers, allowing you to pass references to values and records within your program.
+
+.image /img/gopher_partyhat.webp
+
+Variables
+
+- & = take the address of a value
+
+- * = dereference a pointer, an address to a value
+
+Functions
+
+- * = method requires pointer type
+
+* Counter
+
+.play pointer_receiver.go /START OMIT/,/END OMIT/
+
+
+* Type Assertion
+
+[[https://tour.golang.org/methods/15]]
+
+A type assertion provides access to an interface value's underlying concrete value.
+
+* Exercise:
+
+
+* Solution:

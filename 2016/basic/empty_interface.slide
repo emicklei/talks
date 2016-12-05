@@ -11,3 +11,5 @@ Any type implements the empty interface.
 Method signature
 
 	Println(a ...interface{}) (n int, err error)
+	
+If really needed, use type assertion to find the actual type	
