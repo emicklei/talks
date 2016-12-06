@@ -10,11 +10,27 @@ import (
 
 var slides = `
 intro.slide
+locking.slide
+http_server.slide 
+
+func_value.slide
+time_inject.slide
+
+file_io.slide
+
+varargs.slide 
+
+got_want.slide
+table_driven.slide
+
+error.slide
+link_slice_dice.slide
 embedding.slide
 empty_interface.slide
 interface.slide
 pointer_receiver.slide
 type_assertion.slide
+closing_notes.slide
 `
 
 func main() {

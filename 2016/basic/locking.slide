@@ -1,0 +1,36 @@
+T
+
+* Theory: locking
+
+Protect against concurrent access
+
+.link https://golang.org/pkg/sync/
+	
+	Mutex
+	Pool
+	WaitGroup
+
+* Example: Sequence
+
+.image img/locking.png _ 500
+
+	seq := new(Sequence)
+	fmt.Println(seq.Next())
+	
+* Exercise: ConcurrentHashMap
+
+Define an interface for the operations Put and Get
+
+- the key will be a string
+- the value is a time.
+
+Create a thread-safe implementation of a map
+
+* Solution: ConcurrentHashMap
+
+.code locking.go /START OMIT/,/END OMIT/
+
+* Solution: ConcurrentHashMap (part 2)
+
+.code locking2.go /START OMIT/,/END OMIT/
+

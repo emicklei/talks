@@ -1,0 +1,18 @@
+T
+
+* Did i got want i want ?
+
+	func TestComputeIt(t *testing.T) {
+		amount := computeIt()
+		if amount != 42 {
+			t.Errorf("expected 42 but got %v",amount)
+		}
+	}
+
+More compact and popular pattern
+
+	func TestComputeIt(t *testing.T) {
+		if got,want := computeIt(), 42; got != want {
+			t.Errorf("got %v want %v",got,want)
+		}
+	}

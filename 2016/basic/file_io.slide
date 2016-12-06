@@ -1,0 +1,20 @@
+T
+
+* Reading and writing files
+
+.play file_io.go  /START OMIT/,/END OMIT/
+
+
+* Exercise: Backwards
+
+Read all lines from a text file and write those lines in reverse order (first line is written last).
+
+Extra: reverse the runes per line too
+
+* Solution: Backwards
+
+.code file_io_backwards.go  /START OMIT/,/END OMIT/
+
+* Solution: Backwards (part 2)
+
+.code file_io_backwards2.go  /START OMIT/,/END OMIT/

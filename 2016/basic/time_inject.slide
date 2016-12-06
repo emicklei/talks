@@ -10,7 +10,7 @@ Technique to allow injection of (mock) versions of a (external) function
 
 * Injectable time
 
-.code time_inject.go   /START OMIT/,/END OMIT/
+.play time_inject.go   /START OMIT/,/END OMIT/
 
 
 * Make a Function injectable

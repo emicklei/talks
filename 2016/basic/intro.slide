@@ -22,9 +22,13 @@ Software Artist, bol.com
 * Preflight checks
 
 - Installed Go SDK 1.7
-- GOPATH
+
+	export GOPATH=/Users/emicklei/src
+	export PATH=$GOPATH/bin:$PATH
+
 - Finished the Tour of Go
-- Configured your favorite IDE
+- Configure your favorite IDE (use goimports on save)
+	
 
 * Format per Topic
 

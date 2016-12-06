@@ -1,0 +1,16 @@
+T
+
+* Function as value
+	
+Initialize a variable with a function	
+	
+	var toString = func convert(i int) string {
+		return strconv.Itoa(i)
+	}
+	
+Call it
+
+	toString(42)
+	
+	
+	

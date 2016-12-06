@@ -12,4 +12,24 @@ Method signature
 
 	Println(a ...interface{}) (n int, err error)
 	
-If really needed, use type assertion to find the actual type	
+If really needed then to find the actual type	
+
+- use type assertion
+- use type switch
+
+* Exercise:  What are you?
+
+Write functions that return the type name of two values
+
+- "hello"
+- 3.14159
+
+The first function must use type assertion
+
+The second function must use type switch
+
+Extra: use fmt package
+
+* Solution: What are you ?
+
+.play empty_interface.go  /START OMIT/,/END OMIT/
