@@ -37,120 +37,7 @@ Software Artist, bol.com
 - Excercise
 - Solution
 
-* Theory: locking
-
-Protect against concurrent access
-
-.link https://golang.org/pkg/sync/
-	
-	Mutex
-	Pool
-	WaitGroup
-
-* Example: Sequence
-
-.image img/locking.png _ 500
-
-	seq := new(Sequence)
-	fmt.Println(seq.Next())
-	
-* Exercise: ConcurrentHashMap
-
-Define an interface for the operations Put and Get
-
-- the key will be a string
-- the value is a time.
-
-Create a thread-safe implementation of a map
-
-* Solution: ConcurrentHashMap
-
-.code locking.go /START OMIT/,/END OMIT/
-
-* Solution: ConcurrentHashMap (part 2)
-
-.code locking2.go /START OMIT/,/END OMIT/
-
-
-* Function as value
-	
-Initialize a variable with a function	
-	
-	var toString = func convert(i int) string {
-		return strconv.Itoa(i)
-	}
-	
-Call it
-
-	toString(42)
-	
-	
-	
-
-* Function Dependency Injection
-
-Technique to allow injection of (mock) versions of a (external) function
-
-* Dependency on time.Now
-
-.code time_noinject.go   /START OMIT/,/END OMIT/
-
-* Injectable time
-
-.play time_inject.go   /START OMIT/,/END OMIT/
-
-
-* Make a Function injectable
-
-	
-
-* Reading and writing files
-
-.play file_io.go  /START OMIT/,/END OMIT/
-
-
-* Exercise: Backwards
-
-Read all lines from a text file and write those lines in reverse order (first line is written last).
-
-Extra: reverse the runes per line too
-
-* Solution: Backwards
-
-.code file_io_backwards.go  /START OMIT/,/END OMIT/
-
-* Solution: Backwards (part 2)
-
-.code file_io_backwards2.go  /START OMIT/,/END OMIT/
-
-* Did i got want i want ?
-
-	func TestComputeIt(t *testing.T) {
-		amount := computeIt()
-		if amount != 42 {
-			t.Errorf("expected 42 but got %v",amount)
-		}
-	}
-
-More compact and popular pattern
-
-	func TestComputeIt(t *testing.T) {
-		if got,want := computeIt(), 42; got != want {
-			t.Errorf("got %v want %v",got,want)
-		}
-	}
-
-* Table driven tests
-
-.code table_driven.go
-
-* Error is an interface
-
-* Slice and dice
-
-.link http://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide#9" click me
-
-* Theory: Struct
+* Struct
 
 Using the struct type you can define composite types.
 
@@ -160,7 +47,7 @@ A struct can embed other structs "borrowing" the state and behavior of the embed
 
 *Not* inheritance
 
-TODO example_embedding
+* Example: ?
 
 * Exercise: Graphic
 
@@ -168,7 +55,39 @@ Define types to model Rectangle,Circle and Point and use struct embedding.
 
 * Solution: Graphic
 
-.play embedding.go  /START OMIT/,/END OMIT/
+.play -edit embedding.go  /START OMIT/,/END OMIT/
+
+* Pointers
+
+Go supports pointers, allowing you to pass references to values and records within your program.
+
+.image /img/gopher_partyhat.webp
+
+Variables
+
+- & = take the address of a value
+
+- * = dereference a pointer, an address to a value
+
+Functions
+
+- * = method requires pointer type
+
+* Counter
+
+.play pointer_receiver.go /START OMIT/,/END OMIT/
+
+
+* Type Assertion
+
+[[https://tour.golang.org/methods/15]]
+
+A type assertion provides access to an interface value's underlying concrete value.
+
+* Exercise:
+
+
+* Solution:
 
 * Empty Interface
 
@@ -223,37 +142,146 @@ Print the results.
 
 .code interface.go /START OMIT/,/END OMIT/
 
-* Pointers
+* Error is an interface
 
-Go supports pointers, allowing you to pass references to values and records within your program.
+* Slice and dice
 
-.image /img/gopher_partyhat.webp
+.link http://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide#9" click me
 
-Variables
+* Synchronization
 
-- & = take the address of a value
+- Locking to protect against concurrent access
+- "Fork & Join" pattern
 
-- * = dereference a pointer, an address to a value
+.link https://golang.org/pkg/sync/
+	
+	Mutex
+	Pool
+	WaitGroup
 
-Functions
+* Example: Sequence
 
-- * = method requires pointer type
+.play -edit sequence.go 	 /START OMIT/,/END OMIT/
 
-* Counter
+* Example: Sequence (struct embedding)
 
-.play pointer_receiver.go /START OMIT/,/END OMIT/
+.play -edit sequence2.go 	 /START OMIT/,/END OMIT/
+	
+* Example: WaitGroup
+
+.play -edit waitgroup.go 	 /START OMIT/,/END OMIT/
+	
+* Exercise: ConcurrentHashMap
+
+Define an interface for the operations Put and Get
+
+- the key will be a string
+- the value is a time.
+
+Create a thread-safe implementation of a map
+
+* Solution: ConcurrentHashMap
+
+.code locking.go /START OMIT/,/END OMIT/
+
+* Solution: ConcurrentHashMap (part 2)
+
+.play -edit locking2.go /START OMIT/,/END OMIT/
 
 
-* Type Assertion
+* Function as value
+	
+toString variable has a function value	
+	
+	func convert(i int) string {
+		return strconv.Itoa(i)
+	}
+	var toString = convert
+	
+Initialize a variable with a function	
+	
+	var toString = func(i int) string {
+		return strconv.Itoa(i)
+	}
+	
+Call it
 
-[[https://tour.golang.org/methods/15]]
+	toString(42)
+	
+* Use function as field in struct
 
-A type assertion provides access to an interface value's underlying concrete value.
+.play -edit func_value.go  /START OMIT/,/END OMIT/
 
-* Exercise:
+* Function Dependency Injection
+
+Technique to allow injection of (mock) versions of a (external) function
+
+.code time_noinject.go   /START OMIT/,/END OMIT/
+
+* Injectable time
+
+.play -edit time_inject.go   /START OMIT/,/END OMIT/
 
 
-* Solution:
+* Make a Function injectable
+
+	
+
+* Reading and writing files
+
+.play file_io.go  /START OMIT/,/END OMIT/
+
+
+* Exercise: Backwards
+
+Read all lines from a text file and write those lines in reverse order (first line is written last).
+
+Extra
+
+- reverse the runes per line too
+
+* Solution: Backwards
+
+.code file_io_backwards.go  /START OMIT/,/END OMIT/
+
+* Solution: Backwards (part 2)
+
+.code file_io_backwards2.go  /START OMIT/,/END OMIT/
+
+* Unit testing
+
+SDK has built-in testing framework
+
+- files must have suffix *"_test.go"*
+- function names must have prefix *"Test"*
+- function argument must be pointer to a *testing.T* type
+
+* Did i got want i want ?
+
+	func TestComputeIt(t *testing.T) {
+		amount := computeIt()
+		if amount != 42 {
+			t.Errorf("expected 42 but got %v",amount)
+		}
+	}
+
+More compact and popular pattern
+
+	func TestComputeIt(t *testing.T) {
+		if got,want := computeIt(), 42; got != want {
+			t.Errorf("got %v want %v",got,want)
+		}
+	}
+
+* Table driven tests
+
+.code table_driven.go
+
+* Exercise: Write a test
+
+	func concat(words ...string) string { ... }
+	
+* Solution: Concat
 T 
 
 * Practice Go

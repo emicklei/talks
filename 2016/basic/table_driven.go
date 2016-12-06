@@ -1,7 +1,8 @@
 import "testing"
 
 func TestTos(t *testing.T) {
-	for _, each := range []struct {
+
+	for i, each := range []struct {
 		input interface{}
 		want  string
 	}{
@@ -9,8 +10,8 @@ func TestTos(t *testing.T) {
 		{"s", "s"},
 		{42, "42"},
 	} {
-		if got := Tos(each.input); got != each.want {
-			t.Errorf("got %q want %q", got, each.want)
+		if got, want := Tos(each.input), each.want; got != want {
+			t.Errorf("[%d] got %v want %v", i, got, want)
 		}
 	}
 }

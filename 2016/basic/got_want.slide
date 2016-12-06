@@ -1,6 +1,14 @@
 T
 
-* Did i got want i want ?
+* Unit testing
+
+SDK has built-in testing framework
+
+- files must have suffix *"_test.go"*
+- function names must have prefix *"Test"*
+- function argument must be pointer to a *testing.T* type
+
+* Did I get want I want ?
 
 	func TestComputeIt(t *testing.T) {
 		amount := computeIt()

@@ -2,9 +2,16 @@ T
 
 * Function as value
 	
+toString variable has a function value	
+	
+	func convert(i int) string {
+		return strconv.Itoa(i)
+	}
+	var toString = convert
+	
 Initialize a variable with a function	
 	
-	var toString = func convert(i int) string {
+	var toString = func(i int) string {
 		return strconv.Itoa(i)
 	}
 	
@@ -12,5 +19,6 @@ Call it
 
 	toString(42)
 	
-	
-	
+* Use function as field in struct
+
+.play -edit func_value.go  /START OMIT/,/END OMIT/

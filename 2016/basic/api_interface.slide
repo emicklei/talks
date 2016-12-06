@@ -33,7 +33,3 @@ and use that as second argument in:
 		// do computations
 		m.Timing("calculate", time.Now() - now, 1.0)
 	}
-
-* Exercise: External API
-
-* Solution: External API

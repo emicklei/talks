@@ -1,6 +1,6 @@
 T
 
-* Theory: Struct
+* Struct
 
 Using the struct type you can define composite types.
 
@@ -10,7 +10,7 @@ A struct can embed other structs "borrowing" the state and behavior of the embed
 
 *Not* inheritance
 
-TODO example_embedding
+* Example: ?
 
 * Exercise: Graphic
 
@@ -18,4 +18,4 @@ Define types to model Rectangle,Circle and Point and use struct embedding.
 
 * Solution: Graphic
 
-.play embedding.go  /START OMIT/,/END OMIT/
+.play -edit embedding.go  /START OMIT/,/END OMIT/

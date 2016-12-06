@@ -2,10 +2,4 @@ T
 
 * Variable number or arguments
 
-	func accept(list ...string) {
-		handle(list...)
-	}
-	
-	func handle(list ...string) {
-		fmt.Println(list)
-	}
+.play -edit varargs.go

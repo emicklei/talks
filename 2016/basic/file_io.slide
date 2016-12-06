@@ -9,7 +9,9 @@ T
 
 Read all lines from a text file and write those lines in reverse order (first line is written last).
 
-Extra: reverse the runes per line too
+Extra
+
+- reverse the runes per line too
 
 * Solution: Backwards
 

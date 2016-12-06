@@ -4,13 +4,11 @@ T
 
 Technique to allow injection of (mock) versions of a (external) function
 
-* Dependency on time.Now
-
 .code time_noinject.go   /START OMIT/,/END OMIT/
 
 * Injectable time
 
-.play time_inject.go   /START OMIT/,/END OMIT/
+.play -edit time_inject.go   /START OMIT/,/END OMIT/
 
 
 * Make a Function injectable

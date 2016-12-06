@@ -1,8 +1,9 @@
 T
 
-* Theory: locking
+* Synchronization
 
-Protect against concurrent access
+- Locking to protect against concurrent access
+- "Fork & Join" pattern
 
 .link https://golang.org/pkg/sync/
 	
@@ -12,10 +13,15 @@ Protect against concurrent access
 
 * Example: Sequence
 
-.image img/locking.png _ 500
+.play -edit sequence.go 	 /START OMIT/,/END OMIT/
 
-	seq := new(Sequence)
-	fmt.Println(seq.Next())
+* Example: Sequence (struct embedding)
+
+.play -edit sequence2.go 	 /START OMIT/,/END OMIT/
+	
+* Example: WaitGroup
+
+.play -edit waitgroup.go 	 /START OMIT/,/END OMIT/
 	
 * Exercise: ConcurrentHashMap
 
@@ -32,5 +38,5 @@ Create a thread-safe implementation of a map
 
 * Solution: ConcurrentHashMap (part 2)
 
-.code locking2.go /START OMIT/,/END OMIT/
+.play -edit locking2.go /START OMIT/,/END OMIT/
 

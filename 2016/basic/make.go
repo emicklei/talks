@@ -10,6 +10,18 @@ import (
 
 var slides = `
 intro.slide
+
+varargs.slide 
+
+embedding.slide
+
+pointer_receiver.slide
+
+empty_interface.slide
+interface.slide
+
+link_slice_dice.slide
+
 locking.slide
 http_server.slide 
 
@@ -18,20 +30,16 @@ time_inject.slide
 
 file_io.slide
 
-varargs.slide 
+api_interface.slide
 
 got_want.slide
 table_driven.slide
 
-error.slide
-link_slice_dice.slide
-embedding.slide
-empty_interface.slide
-interface.slide
-pointer_receiver.slide
-type_assertion.slide
 closing_notes.slide
 `
+
+// error.slide
+// type_assertion.slide
 
 func main() {
 	writer, _ := os.Create("basic.slide")
