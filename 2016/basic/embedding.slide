@@ -16,10 +16,10 @@ A struct can embed other structs "borrowing" the state and behavior of the embed
 
 .play -edit embedding_sample.go
 
-* Exercise: Graphic
+* Exercise: Shape
 
 Define types to model Rectangle,Circle and Point and use struct embedding.
 
-* Solution: Graphic
+* Solution: Shape
 
 .play -edit embedding.go  /START OMIT/,/END OMIT/
