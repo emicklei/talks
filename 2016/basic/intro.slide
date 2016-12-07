@@ -8,9 +8,9 @@ Software Artist, bol.com
 - using Go since 2011
 - co-organizer Golang Meetup Amsterdam
 - author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*
-- bol.com: *Daxy* , *Kevlar*, *BoQs* , *Guardian*
+- bol.com: *Daxy* , *Kevlar*, *BoQS* , *Guardian*
 
-.image img/gopher_teacher.png
+.image img/gopher_teacher.png _ 300
 
 
 * Goal
@@ -18,6 +18,8 @@ Software Artist, bol.com
 - learn using the Go language
 - share experience
 - have fun
+
+.image img/woll.png _ 300
 
 * Preflight checks
 
@@ -36,3 +38,5 @@ Software Artist, bol.com
 - Example
 - Excercise
 - Solution
+
+.image img/cowboy-color.png _ 300

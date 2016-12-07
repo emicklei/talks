@@ -1,0 +1,52 @@
+T
+
+* Hello world
+
+Create a folder "hello" on your GOPATH/src and inside it, a file named *main.go* with
+
+.play -edit hello.go
+
+- go run main.go
+
+You should see a greeting
+
+- go build
+
+You should see an hello executable
+
+- go install
+
+You should be able to run hello from any shell location
+
+* Hello package
+
+Create a folder "convert" on your GOPATH/src and inside it, a file named *convert.go* with
+
+.code -edit convert.go
+
+
+* Unit testing
+
+SDK has built-in testing framework
+
+- files must have suffix *"_test.go"*
+- function names must have prefix *"Test"*
+- function argument must be pointer to a *testing.T* type
+
+* Test your package
+
+Create a file named *convert_test.go* with
+
+.code -edit convert_test.go
+
+- go test -v
+
+You should see test logging too. Now make the test fail
+
+* Use the convert package
+
+Go back to *hello/main.go* and import the *convert* package
+
+.code -edit hello_convert.go
+
+Run the new program

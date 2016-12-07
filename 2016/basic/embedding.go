@@ -9,17 +9,17 @@ import (
 type Point struct {
 	X, Y int
 }
-type Graphic struct {
+type Shape struct {
 	Center Point
 }
 type Circle struct {
-	Graphic
+	Shape
 	Radius int
 }
 
 func main() {
 	c := Circle{
-		Graphic: Graphic{
+		Shape: Shape{
 			Center: Point{1, 2},
 		}, Radius: 3}
 

@@ -21,7 +21,7 @@ This presentation is an introduction to Google Go, the language and its ecosyste
 A workshop to learn Go by programming SVG images of Spirographs in the Browser. This workshop is held on the Golang Amsterdam [Meetup](http://www.meetup.com/golang-amsterdam/events/147302682/) in November 2013.
 
 ## View online
-Thanks to Gary Burd and Francesc Campoy for []hosting](http://go-talks.appspot.com/) the slides.
+Thanks to Gary Burd and Francesc Campoy for [hosting](http://go-talks.appspot.com/) the slides.
 
 - http://go-talks.appspot.com/github.com/emicklei/talks/2013/devfest/devfest.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2013/spirograph/spiro.slide
@@ -34,8 +34,9 @@ Thanks to Gary Burd and Francesc Campoy for []hosting](http://go-talks.appspot.c
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/devfest/devfest.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/daxy/daxy.slide
-- http://bit.ly/1GQPRYK
 
+- http://go-talks.appspot.com/github.com/emicklei/talks/2015/onedaygo/onedaygo.slide
+- http://go-talks.appspot.com/github.com/emicklei/talks/2016/basic/basic.slide
 
 ## not Go related
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/critter/critter.slide

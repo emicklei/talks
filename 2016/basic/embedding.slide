@@ -8,9 +8,13 @@ A struct can have zero or more fields ; each field must be typed.
 
 A struct can embed other structs "borrowing" the state and behavior of the embedded type.
 
-*Not* inheritance
+*No* inheritance
 
-* Example: ?
+.image img/barbapappa.jpg _ 300
+
+* Example: Sound and Music
+
+.play -edit embedding_sample.go
 
 * Exercise: Graphic
 

@@ -3,9 +3,3 @@ T
 * Table driven tests
 
 .code table_driven.go
-
-* Exercise: Write a test
-
-	func concat(words ...string) string { ... }
-	
-* Solution: Concat

@@ -9,8 +9,4 @@ Technique to allow injection of (mock) versions of a (external) function
 * Injectable time
 
 .play -edit time_inject.go   /START OMIT/,/END OMIT/
-
-
-* Make a Function injectable
-
 	

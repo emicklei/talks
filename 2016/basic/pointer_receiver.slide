@@ -18,5 +18,5 @@ Functions
 
 * Counter
 
-.play pointer_receiver.go /START OMIT/,/END OMIT/
+.play -edit pointer_receiver.go /START OMIT/,/END OMIT/
 

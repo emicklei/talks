@@ -8,9 +8,9 @@ Software Artist, bol.com
 - using Go since 2011
 - co-organizer Golang Meetup Amsterdam
 - author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*
-- bol.com: *Daxy* , *Kevlar*, *BoQs* , *Guardian*
+- bol.com: *Daxy* , *Kevlar*, *BoQS* , *Guardian*
 
-.image img/gopher_teacher.png
+.image img/gopher_teacher.png _ 300
 
 
 * Goal
@@ -18,6 +18,8 @@ Software Artist, bol.com
 - learn using the Go language
 - share experience
 - have fun
+
+.image img/woll.png _ 300
 
 * Preflight checks
 
@@ -37,6 +39,63 @@ Software Artist, bol.com
 - Excercise
 - Solution
 
+.image img/cowboy-color.png _ 300
+
+* Hello world
+
+Create a folder "hello" on your GOPATH/src and inside it, a file named *main.go* with
+
+.play -edit hello.go
+
+- go run main.go
+
+You should see a greeting
+
+- go build
+
+You should see an hello executable
+
+- go install
+
+You should be able to run hello from any shell location
+
+* Hello package
+
+Create a folder "convert" on your GOPATH/src and inside it, a file named *convert.go* with
+
+.code -edit convert.go
+
+
+* Unit testing
+
+SDK has built-in testing framework
+
+- files must have suffix *"_test.go"*
+- function names must have prefix *"Test"*
+- function argument must be pointer to a *testing.T* type
+
+* Test your package
+
+Create a file named *convert_test.go* with
+
+.code -edit convert_test.go
+
+- go test -v
+
+You should see test logging too. Now make the test fail
+
+* Use the convert package
+
+Go back to *hello/main.go* and import the *convert* package
+
+.code -edit hello_convert.go
+
+Run the new program
+
+* Variable number or arguments
+
+.play -edit varargs.go
+
 * Struct
 
 Using the struct type you can define composite types.
@@ -45,9 +104,13 @@ A struct can have zero or more fields ; each field must be typed.
 
 A struct can embed other structs "borrowing" the state and behavior of the embedded type.
 
-*Not* inheritance
+*No* inheritance
 
-* Example: ?
+.image img/barbapappa.jpg _ 300
+
+* Example: Sound and Music
+
+.play -edit embedding_sample.go
 
 * Exercise: Graphic
 
@@ -75,19 +138,8 @@ Functions
 
 * Counter
 
-.play pointer_receiver.go /START OMIT/,/END OMIT/
+.play -edit pointer_receiver.go /START OMIT/,/END OMIT/
 
-
-* Type Assertion
-
-[[https://tour.golang.org/methods/15]]
-
-A type assertion provides access to an interface value's underlying concrete value.
-
-* Exercise:
-
-
-* Solution:
 
 * Empty Interface
 
@@ -142,11 +194,11 @@ Print the results.
 
 .code interface.go /START OMIT/,/END OMIT/
 
-* Error is an interface
-
 * Slice and dice
 
 .link http://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide#9" click me
+
+.image img/heavy_gun.jpg  _ 300
 
 * Synchronization
 
@@ -189,6 +241,12 @@ Create a thread-safe implementation of a map
 .play -edit locking2.go /START OMIT/,/END OMIT/
 
 
+* Simple HTTP server
+
+.link http://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide#3 2014 talk
+
+.image img/with_champagne.jpg _ 300
+
 * Function as value
 	
 toString variable has a function value	
@@ -221,16 +279,16 @@ Technique to allow injection of (mock) versions of a (external) function
 * Injectable time
 
 .play -edit time_inject.go   /START OMIT/,/END OMIT/
-
-
-* Make a Function injectable
-
 	
 
 * Reading and writing files
 
 .play file_io.go  /START OMIT/,/END OMIT/
 
+
+* Reading and writing files (with error handling)
+
+.play file_io_err.go  /START OMIT/,/END OMIT/
 
 * Exercise: Backwards
 
@@ -248,15 +306,41 @@ Extra
 
 .code file_io_backwards2.go  /START OMIT/,/END OMIT/
 
-* Unit testing
+* Interface external API
 
-SDK has built-in testing framework
+Problem
+- one of your external packages does not provide any interfaces
+- and you want to use mocking for testing it
 
-- files must have suffix *"_test.go"*
-- function names must have prefix *"Test"*
-- function argument must be pointer to a *testing.T* type
+Idea
+- create your own interface with only those methods you are using
+- make your application use that interface only
 
-* Did i got want i want ?
+* Example: External API
+
+	type Metrics interface {
+		Timing(stat string, delta int64, rate float32) error
+	}
+
+Package _github.com/cactus/go-statsd-client/statsd_
+	
+has multiple types that implement this
+
+	statsd.BufferingClient 	
+
+but now we can define our own type
+
+	MetricsMock
+
+and use that as second argument in:
+
+	func Calculate(o Offer, m Metrics) {
+		now := time.Now()
+		// do computations
+		m.Timing("calculate", time.Now() - now, 1.0)
+	}
+
+* Did I get want I want ?
 
 	func TestComputeIt(t *testing.T) {
 		amount := computeIt()
@@ -277,13 +361,6 @@ More compact and popular pattern
 
 .code table_driven.go
 
-* Exercise: Write a test
-
-	func concat(words ...string) string { ... }
-	
-* Solution: Concat
-T 
-
 * Practice Go
 
 - learn the Go idiomatic way
@@ -293,3 +370,9 @@ T
 - learn by doing
 
 - Old habits...	
+
+
+The Go gopher was designed by Renee French. (http://reneefrench.blogspot.com/)
+All images are copyrighted to their respective owners. 
+
+.image img/triplet.jpg _ 300

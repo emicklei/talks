@@ -11,6 +11,8 @@ import (
 var slides = `
 intro.slide
 
+hello.slide
+
 varargs.slide 
 
 embedding.slide
@@ -23,7 +25,7 @@ interface.slide
 link_slice_dice.slide
 
 locking.slide
-http_server.slide 
+link_http_server.slide 
 
 func_value.slide
 time_inject.slide
@@ -54,11 +56,14 @@ func main() {
 
 func include(w io.Writer, name string) {
 	fmt.Println("including", name)
-	file, _ := os.Open(name)
+	file, err := os.Open(strings.Trim(name, " "))
+	if err != nil {
+		panic(err.Error())
+	}
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		if line := scanner.Text(); line != "T" {
+		if line := scanner.Text(); strings.Trim(line, " ") != "T" {
 			io.WriteString(w, line)
 			io.WriteString(w, "\n")
 		}

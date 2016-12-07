@@ -5,6 +5,10 @@ T
 .play file_io.go  /START OMIT/,/END OMIT/
 
 
+* Reading and writing files (with error handling)
+
+.play file_io_err.go  /START OMIT/,/END OMIT/
+
 * Exercise: Backwards
 
 Read all lines from a text file and write those lines in reverse order (first line is written last).
