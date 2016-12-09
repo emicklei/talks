@@ -1,0 +1,42 @@
+T
+
+* All things string
+
+Multi-line strings
+
+	`i am 
+	Multi 
+	line`
+	
+Unicode
+
+	"φ2"
+
+string elements are called *runes* (alias for int32)
+	
+* Composition of string
+
+	"φ2" + "Δφ"
+	
+or using fmt package	
+
+	hostport := fmt.Sprintf("%s:%d", "localhost", 8080)
+	
+or using bytes package
+
+	b := new(bytes.Buffer)
+	b.WriteString("hi")
+	s := b.String()
+	
+* Enumerating string
+
+	for i, each := range "just a word" {
+		fmt.Println(i,each)
+	}
+
+* Testing string
+
+	strings.HasPrefix(url, "http")
+	strings.Contains(url,"#")
+
+Learn the strings package!

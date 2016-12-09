@@ -1,0 +1,42 @@
+Go - for System Engineers
+
+Ernest Micklei
+Software Artist, bol.com
+
+* Who am i
+
+- using Go since 2011
+- co-organizer Golang Meetup Amsterdam
+- author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*
+- bol.com: *Daxy* , *Kevlar*, *BoQS* , *Guardian*
+
+.image img/gopher_teacher.png _ 300
+
+
+* Goal
+
+- learn using the Go language
+- share experience
+- have fun
+
+.image img/woll.png _ 300
+
+* Preflight checks
+
+- Installed Go SDK 1.7
+
+	export GOPATH=/Users/emicklei/src
+	export PATH=$GOPATH/bin:$PATH
+
+- Finished the Tour of Go
+- Configure your favorite IDE (use goimports on save)
+	
+
+* Format per Topic
+
+- Theory
+- Example
+- Excercise
+- Solution
+
+.image img/cowboy-color.png _ 300

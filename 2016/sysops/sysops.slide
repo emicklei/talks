@@ -1,0 +1,148 @@
+Go - for System Engineers
+
+Ernest Micklei
+Software Artist, bol.com
+
+* Who am i
+
+- using Go since 2011
+- co-organizer Golang Meetup Amsterdam
+- author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*
+- bol.com: *Daxy* , *Kevlar*, *BoQS* , *Guardian*
+
+.image img/gopher_teacher.png _ 300
+
+
+* Goal
+
+- learn using the Go language
+- share experience
+- have fun
+
+.image img/woll.png _ 300
+
+* Preflight checks
+
+- Installed Go SDK 1.7
+
+	export GOPATH=/Users/emicklei/src
+	export PATH=$GOPATH/bin:$PATH
+
+- Finished the Tour of Go
+- Configure your favorite IDE (use goimports on save)
+	
+
+* Format per Topic
+
+- Theory
+- Example
+- Excercise
+- Solution
+
+.image img/cowboy-color.png _ 300
+
+* Hello world
+
+Create a folder "hello" on your GOPATH/src and inside it, a file named *main.go* with
+
+.play -edit hello.go
+
+- go run main.go
+
+You should see a greeting
+
+- go build
+
+You should see an hello executable
+
+- go install
+
+You should be able to run hello from any shell location
+
+* Hello package
+
+Create a folder "convert" on your GOPATH/src and inside it, a file named *convert.go* with
+
+.code -edit convert.go
+
+
+* Unit testing
+
+SDK has built-in testing framework
+
+- files must have suffix *"_test.go"*
+- function names must have prefix *"Test"*
+- function argument must be pointer to a *testing.T* type
+
+* Test your package
+
+Create a file named *convert_test.go* with
+
+.code -edit convert_test.go
+
+- go test -v
+
+You should see test logging too. Now make the test fail
+
+* Use the convert package
+
+Go back to *hello/main.go* and import the *convert* package
+
+.code -edit hello_convert.go
+
+Run the new program
+
+* All things string
+
+Multi-line strings
+
+	`i am 
+	Multi 
+	line`
+	
+Unicode
+
+	"φ2"
+
+string elements are called *runes* (alias for int32)
+	
+* Composition of string
+
+	"φ2" + "Δφ"
+	
+or using fmt package	
+
+	hostport := fmt.Sprintf("%s:%d", "localhost", 8080)
+	
+or using bytes package
+
+	b := new(bytes.Buffer)
+	b.WriteString("hi")
+	s := b.String()
+	
+* Enumerating string
+
+	for i, each := range "just a word" {
+		fmt.Println(i,each)
+	}
+
+* Testing string
+
+	strings.HasPrefix(url, "http")
+	strings.Contains(url,"#")
+
+* Practice Go
+
+- learn the Go idiomatic way
+
+- learn by reading well structured code 
+
+- learn by doing
+
+- Old habits...	
+
+
+The Go gopher was designed by Renee French. (http://reneefrench.blogspot.com/)
+All images are copyrighted to their respective owners. 
+
+.image img/triplet.jpg _ 300
