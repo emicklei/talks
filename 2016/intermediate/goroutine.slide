@@ -1,0 +1,34 @@
+* Goroutine
+
+A goroutine is a lightweight thread managed by the Go runtime.
+
+
+	go seeTheDoctor(now)
+
+- cannot stop explicitly (or check if running)
+- cannot schedule
+- no guarantee when to start
+- no ordering
+- does not block program exit
+- can be locked to thread (e.g. UI)
+
+
+* Argument evaluation
+
+.play -edit argument_evaluation.go
+
+* Communicating routines
+
+Channels exist to facilitate inter-goroutine communication
+
+.play wait_until_done1.go
+
+* Exercise
+
+Write a program that computes 10 factorial numbers, each number in a different goroutine
+
+
+* Solution
+
+.play concurrent_factorial.go   /START OMIT/,/END OMIT/ 
+

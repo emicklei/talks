@@ -11,39 +11,18 @@ import (
 var slides = `
 intro.slide
 
-hello.slide
+goroutine.slide
 
-varargs.slide 
-
-embedding.slide
-
-pointer_receiver.slide
-
-empty_interface.slide
-interface.slide
-
-link_slice_dice.slide
-
-locking.slide
-
-func_value.slide
-time_inject.slide
-
-file_io.slide
-
-api_interface.slide
-
-got_want.slide
-table_driven.slide
+link_http_server.slide
 
 closing_notes.slide
 `
 
-// error.slide
-// type_assertion.slide
+// https://github.com/cespare/reflex
+// reflex -r '\.slide$' go run make.go
 
 func main() {
-	writer, _ := os.Create("basic.slide")
+	writer, _ := os.Create("main.slide")
 	scanner := bufio.NewScanner(strings.NewReader(slides))
 	for scanner.Scan() {
 		if line := scanner.Text(); len(line) > 0 {

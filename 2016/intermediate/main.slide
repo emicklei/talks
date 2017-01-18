@@ -1,0 +1,88 @@
+Go - Intermediate Training
+
+Ernest Micklei
+Software Artist
+*golangmasters.com*
+
+* Who am i
+
+- using Go since 2011
+- co-organizer Golang Meetup Amsterdam
+- author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*
+- bol.com: *Daxy* , *Kevlar*, *BoQS* , *Guardian*
+
+.image img/gopher_teacher.png _ 300
+
+
+* Goal
+
+- goroutines and channels
+- working with http and JSON
+- error handling , logging
+- vendoring
+
+.image img/dubai.png _ 300
+
+	
+* Format per Topic
+
+- Theory or Example
+- Excercise
+- Solution
+
+.image img/triplet.jpg _ 300
+* Goroutine
+
+A goroutine is a lightweight thread managed by the Go runtime.
+
+
+	go seeTheDoctor(now)
+
+- cannot stop explicitly (or check if running)
+- cannot schedule
+- no guarantee when to start
+- no ordering
+- does not block program exit
+- can be locked to thread (e.g. UI)
+
+
+* Argument evaluation
+
+.play -edit argument_evaluation.go
+
+* Communicating routines
+
+Channels exist to facilitate inter-goroutine communication
+
+.play wait_until_done1.go
+
+* Exercise
+
+Write a program that computes 10 factorial numbers, each number in a different goroutine
+
+
+* Solution
+
+.play concurrent_factorial.go   /START OMIT/,/END OMIT/ 
+
+
+* Simple HTTP server
+
+.link http://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide#3 2014 talk
+
+.image img/with_champagne.jpg _ 300
+
+* Practice Go
+
+- learn the Go idiomatic way
+
+- learn by reading well structured code 
+
+- learn by doing
+
+
+.image img/triplet.jpg _ 300
+
+The Go gopher was designed by Renee French. (http://reneefrench.blogspot.com/)
+All images are copyrighted to their respective owners. 
+
