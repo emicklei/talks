@@ -1,0 +1,101 @@
+* Error handling
+
+
+* The interface
+
+The error built-in interface type is the conventional interface for representing an error condition, with the nil value representing no error.
+
+	type error interface {
+		Error() string
+	}
+
+Use "err" to name an error
+
+	if err := os.Open("future"); err != nil {
+		log.Fatal("cannot read the future",err)
+	}
+
+Put error return type at the end
+
+	func FetchOrderHistory(account Account) ([]Order, error ) {...}
+
+Always check the error
+
+* Custom error type
+
+	type AppError struct {
+		Code           int    `json:"code"`
+		Message        string `json:"message"`
+		httpStatusCode int
+	}
+	
+	func (r AppError) HttpStatusCode() int { return r.httpStatusCode }
+	
+	func (r AppError) Error() string {
+		return fmt.Sprintf("BoQS-%d:%s", r.Code, r.Message)
+	}
+	
+* Use AppError
+	
+	var ErrInvalidTopicName = NewAppError(
+				Code: 1003,
+				Message: "topic name is invalid (must be non-empty and max 50), got %v",
+				http.StatusBadRequest)
+	
+	func checkTopicName(name string) error {
+		if len(name) > 50 {
+			return ErrInvalidTopicName.WithArgs(name)
+		}
+		return nil // no error
+	}
+	
+* Custom handling 
+
+
+.code custom_error_handling.go /START OMIT/,/END OMIT/ 
+	
+	
+* TracingError
+
+	type TracingError struct {
+		cause     error
+		callTrace []tracePoint
+	}
+	
+Collects stack information and logging context.	
+
+
+	tre.New(err, "your message", "paramName", paramValue)
+	
+* Using TracingError
+
+.play -edit tracing_error.go  /START OMIT/,/END OMIT/ 
+
+package github.com/emicklei/tre
+
+
+* Problem
+
+Write a copy program that reads the contents of one file and writes it to another
+
+* Solution
+
+	func main() {
+		if len(os.Args) != 3 {
+			println("Usage copy <from> <to>")
+			return
+		}
+		if err := copyFile(os.Args[1], os.Args[2]); err != nil {
+			log.Println("problem copying file", err)
+		}
+	}
+
+* Solution (part 2)
+
+.code copy.go   /START OMIT/,/END OMIT/ 
+
+
+	
+
+	
+	

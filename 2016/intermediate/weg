@@ -1,0 +1,33 @@
+Go - Intermediate Training
+
+Ernest Micklei
+Software Artist
+*golangmasters.com*
+
+* Who am i
+
+- using Go since 2011
+- co-organizer Golang Meetup Amsterdam
+- author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*
+- bol.com: *Daxy* , *Kevlar*, *BoQS* , *Guardian*
+
+.image img/gopher_teacher.png _ 300
+
+
+* Goal
+
+- goroutines and channels
+- working with http and JSON
+- error handling , logging
+- vendoring
+
+.image img/dubai.png _ 300
+
+	
+* Format per Topic
+
+- Theory or Example
+- Excercise
+- Solution
+
+.image img/triplet.jpg _ 300

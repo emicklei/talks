@@ -1,7 +1,8 @@
-* Goroutine
+* Goroutines and Channels
+
+* Features 
 
 A goroutine is a lightweight thread managed by the Go runtime.
-
 
 	go seeTheDoctor(now)
 
@@ -23,7 +24,7 @@ Channels exist to facilitate inter-goroutine communication
 
 .play wait_until_done1.go
 
-* Exercise
+* Problem
 
 Write a program that computes 10 factorial numbers, each number in a different goroutine
 

@@ -1,0 +1,41 @@
+* JSON over HTTP
+
+
+* Problem
+
+Create a HTTP server on port 8080 that responds with "gopher says hi" for the request GET /hi
+
+- Use package http://golang.org/pkg/net/http/
+
+.image img/sayhi.jpg
+
+* Solution
+
+.code empty_service.go
+
+
+* Problem
+
+Adjust your HTTP server to accept a JSON representation of an Address value, log it and return it.
+
+	type Address struct {
+		Postalcode  string
+		HouseNumber int
+		Street      string
+		City        string
+		Country     string
+	}
+
+Make the operation available using this REST operation:
+
+
+	POST /v1/addresses
+
+To test your service
+
+	curl -v -H POST http://localhost:8080/v1/addresses -d "{\"country\":\"NL\", "house-number":42}"
+
+
+* Solution
+
+.play -edit address_json.go  /START OMIT/,/END OMIT/ 

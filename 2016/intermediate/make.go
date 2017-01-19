@@ -13,7 +13,9 @@ intro.slide
 
 goroutine.slide
 
-link_http_server.slide
+json_http.slide
+
+error_handling.slide
 
 closing_notes.slide
 `
