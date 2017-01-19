@@ -33,6 +33,8 @@ Software Artist
 .image img/triplet.jpg _ 300
 * Goroutines and Channels
 
+.image img/sayhi.jpg
+
 * Features 
 
 A goroutine is a lightweight thread managed by the Go runtime.
@@ -57,23 +59,61 @@ Channels exist to facilitate inter-goroutine communication
 
 .play wait_until_done1.go
 
+* Send and receive over a channel
+
+Buffer
+
+	buf := make(chan int, 2)
+
+Send v to channel myChan.
+
+	myChan <- v
+
+Receive from myChan, and assign value to v.
+
+	v := <- myChan
+
+* Channel close
+
+Closing a channel
+
+	close(myChan)
+
+Only the sender should close a channel, never the receiver. Sending on a closed channel will cause a panic.
+
+Receivers can test whether a channel has been closed
+
+	v, ok := <- myChan
+
+Receives values from the channel repeatedly until it is closed.
+
+ 	for each := range myChan
+
+* Select example
+
+.play -edit timeout.go  /START OMIT/,/END OMIT/ 
+
+
 * Problem
 
 Write a program that computes 10 factorial numbers, each number in a different goroutine
 
 * Solution
 
-.play concurrent_factorial.go   /START OMIT/,/END OMIT/ 
+.play -edit concurrent_factorial.go   /START OMIT/,/END OMIT/ 
+
+
+
+
 * JSON over HTTP
 
+.image img/with_champagne.jpg _ 400
 
 * Problem
 
 Create a HTTP server on port 8080 that responds with "gopher says hi" for the request GET /hi
 
 - Use package http://golang.org/pkg/net/http/
-
-.image img/sayhi.jpg
 
 * Solution
 
@@ -107,6 +147,7 @@ To test your service
 .play -edit address_json.go  /START OMIT/,/END OMIT/ 
 * Error handling
 
+.image img/barbapappa.jpg
 
 * The interface
 
@@ -221,6 +262,24 @@ Concurrency fetch all tags of all public github repositories of a given user (e.
 * Sequential version
 
 .code crawl_github.go  /START OMIT3/,/END OMIT3/ 
+* Reading material
+
+
+Concurrency
+.link http://talks.golang.org/2012/concurrency.slide#1
+.link http://vimeo.com/49718712
+
+Errors
+.link http://blog.golang.org/error-handling-and-go
+.link http://golang.org/doc/effective_go.html#errors
+
+HTTP
+.link https://blog.golang.org/http-tracing
+.link https://github.com/davecheney/httpstat
+
+JSON
+.link https://blog.golang.org/json-and-go
+.link https://gobyexample.com/json
 
 * Practice Go
 

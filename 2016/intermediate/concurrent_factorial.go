@@ -18,13 +18,14 @@ func compute(i int, c chan int) {
 }
 
 func main() {
-	result := make(chan int)
-	for i := 1; i <= 10; i++ {
+	result := make(chan int, 10)
+	for i := 1; i <= cap(result); i++ {
 		go compute(i, result)
 	}
-	for i := 1; i <= 10; i++ {
+	for i := 1; i <= cap(result); i++ {
 		fmt.Println(<-result)
 	}
+	close(result)
 }
 
 // END OMIT

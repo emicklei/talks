@@ -19,6 +19,8 @@ error_handling.slide
 
 crawl.slide
 
+reading.slide
+
 closing_notes.slide
 `
 

@@ -1,5 +1,7 @@
 * Goroutines and Channels
 
+.image img/sayhi.jpg
+
 * Features 
 
 A goroutine is a lightweight thread managed by the Go runtime.
@@ -24,10 +26,49 @@ Channels exist to facilitate inter-goroutine communication
 
 .play wait_until_done1.go
 
+* Send and receive over a channel
+
+Buffer
+
+	buf := make(chan int, 2)
+
+Send v to channel myChan.
+
+	myChan <- v
+
+Receive from myChan, and assign value to v.
+
+	v := <- myChan
+
+* Channel close
+
+Closing a channel
+
+	close(myChan)
+
+Only the sender should close a channel, never the receiver. Sending on a closed channel will cause a panic.
+
+Receivers can test whether a channel has been closed
+
+	v, ok := <- myChan
+
+Receives values from the channel repeatedly until it is closed.
+
+ 	for each := range myChan
+
+* Select example
+
+.play -edit timeout.go  /START OMIT/,/END OMIT/ 
+
+
 * Problem
 
 Write a program that computes 10 factorial numbers, each number in a different goroutine
 
 * Solution
 
-.play concurrent_factorial.go   /START OMIT/,/END OMIT/ 
+.play -edit concurrent_factorial.go   /START OMIT/,/END OMIT/ 
+
+
+
+

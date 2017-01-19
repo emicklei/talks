@@ -1,13 +1,12 @@
 * JSON over HTTP
 
+.image img/with_champagne.jpg _ 400
 
 * Problem
 
 Create a HTTP server on port 8080 that responds with "gopher says hi" for the request GET /hi
 
 - Use package http://golang.org/pkg/net/http/
-
-.image img/sayhi.jpg
 
 * Solution
 

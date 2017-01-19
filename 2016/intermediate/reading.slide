@@ -1,0 +1,18 @@
+* Reading material
+
+
+Concurrency
+.link http://talks.golang.org/2012/concurrency.slide#1
+.link http://vimeo.com/49718712
+
+Errors
+.link http://blog.golang.org/error-handling-and-go
+.link http://golang.org/doc/effective_go.html#errors
+
+HTTP
+.link https://blog.golang.org/http-tracing
+.link https://github.com/davecheney/httpstat
+
+JSON
+.link https://blog.golang.org/json-and-go
+.link https://gobyexample.com/json
