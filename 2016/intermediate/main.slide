@@ -19,7 +19,7 @@ Software Artist
 - goroutines and channels
 - working with http and JSON
 - error handling , logging
-- vendoring
+- vendoring (if time permitted)
 
 .image img/dubai.png _ 300
 
@@ -61,11 +61,9 @@ Channels exist to facilitate inter-goroutine communication
 
 Write a program that computes 10 factorial numbers, each number in a different goroutine
 
-
 * Solution
 
 .play concurrent_factorial.go   /START OMIT/,/END OMIT/ 
-
 * JSON over HTTP
 
 
@@ -208,6 +206,21 @@ Write a copy program that reads the contents of one file and writes it to anothe
 
 	
 	
+* Problem
+
+Concurrency fetch all tags of all public github repositories of a given user (e.g. bolcom)
+
+* Get repositories for user
+
+.code crawl_github.go  /START OMIT/,/END OMIT/ 
+
+* Get tags for repository
+
+.code crawl_github.go  /START OMIT2/,/END OMIT2/ 
+
+* Sequential version
+
+.code crawl_github.go  /START OMIT3/,/END OMIT3/ 
 
 * Practice Go
 

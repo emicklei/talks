@@ -28,8 +28,6 @@ Channels exist to facilitate inter-goroutine communication
 
 Write a program that computes 10 factorial numbers, each number in a different goroutine
 
-
 * Solution
 
 .play concurrent_factorial.go   /START OMIT/,/END OMIT/ 
-

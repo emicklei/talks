@@ -1,0 +1,15 @@
+* Problem
+
+Concurrency fetch all tags of all public github repositories of a given user (e.g. bolcom)
+
+* Get repositories for user
+
+.code crawl_github.go  /START OMIT/,/END OMIT/ 
+
+* Get tags for repository
+
+.code crawl_github.go  /START OMIT2/,/END OMIT2/ 
+
+* Sequential version
+
+.code crawl_github.go  /START OMIT3/,/END OMIT3/ 
