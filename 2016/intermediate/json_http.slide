@@ -32,7 +32,7 @@ Make the operation available using this REST operation:
 
 To test your service
 
-	curl -v -H POST http://localhost:8080/v1/addresses -d "{\"country\":\"NL\", "house-number":42}"
+	curl -v -H POST http://localhost:8080/v1/addresses -d "{\"country\":\"NL\", \"house-number\":42}"
 
 
 * Solution

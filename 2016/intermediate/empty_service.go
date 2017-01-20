@@ -2,12 +2,13 @@ package main
 
 import (
 	"io"
+	"log"
 	"net/http"
 )
 
 func main() {
 	http.HandleFunc("/hi", indexHandler)
-	http.ListenAndServe(":8080", nil)
+	log.Fatalln(http.ListenAndServe(":8080", nil))
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {

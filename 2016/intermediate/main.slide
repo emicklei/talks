@@ -57,7 +57,7 @@ A goroutine is a lightweight thread managed by the Go runtime.
 
 Channels exist to facilitate inter-goroutine communication
 
-.play wait_until_done1.go
+.play -edit wait_until_done1.go
 
 * Send and receive over a channel
 
@@ -87,12 +87,17 @@ Receivers can test whether a channel has been closed
 
 Receives values from the channel repeatedly until it is closed.
 
- 	for each := range myChan
+ 	for each := range myChan {
+		...
+	}
 
 * Select example
 
 .play -edit timeout.go  /START OMIT/,/END OMIT/ 
 
+* Sequence example
+
+.play -edit sequence.go
 
 * Problem
 
@@ -139,7 +144,7 @@ Make the operation available using this REST operation:
 
 To test your service
 
-	curl -v -H POST http://localhost:8080/v1/addresses -d "{\"country\":\"NL\", "house-number":42}"
+	curl -v -H POST http://localhost:8080/v1/addresses -d "{\"country\":\"NL\", \"house-number\":42}"
 
 
 * Solution

@@ -7,5 +7,8 @@ func main() {
 	go func(j int) {
 		squared <- j * j
 	}(256)
+	go func(j int) {
+		squared <- j * j
+	}(42)
 	fmt.Println(<-squared)
 }

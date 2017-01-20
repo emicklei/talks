@@ -21,7 +21,7 @@ type Address struct {
 }
 
 func addressHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "POST" {
+	if r.Method != http.MethodPost {
 		log.Println("POST expected, got %s", r.Method)
 		w.WriteHeader(http.StatusMethodNotAllowed)
 		return
