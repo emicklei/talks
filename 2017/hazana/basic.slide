@@ -1,0 +1,22 @@
+gRPC load testing with hazana
+
+Ernest Micklei
+Software Artist, kramphub.com
+
+* Who am i
+
+- using Go since 2011
+- co-organizer Golang Meetup Amsterdam
+- author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*, *proto*, ...
+
+
+.image img/emicklei_hackers_logo.png _ 300
+* gRPC.io
+
+- gRPC is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types
+
+- uses HTTP/2 for transport
+
+- uses ProtocolBuffers as the interface description language
+
+- cross-platform client and server bindings for many languages

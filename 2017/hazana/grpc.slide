@@ -1,0 +1,9 @@
+* gRPC.io
+
+- gRPC is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types
+
+- uses HTTP/2 for transport
+
+- uses ProtocolBuffers as the interface description language
+
+- cross-platform client and server bindings for many languages
