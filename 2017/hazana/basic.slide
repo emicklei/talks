@@ -11,6 +11,17 @@ Software Artist, kramphub.com
 
 
 .image img/emicklei_hackers_logo.png _ 300
+_intro.slide_ 1
+
+* Agenda
+
+- gRPC
+- using Hazana
+- demo
+- inside Hazana
+- deploy
+_agenda.slide_ 2
+
 * gRPC.io
 
 - gRPC is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types
@@ -20,11 +31,17 @@ Software Artist, kramphub.com
 - uses ProtocolBuffers as the interface description language
 
 - cross-platform client and server bindings for many languages
+_grpc.slide_ 3
+
 * Load profile
 
 - load is created by sending requests repeatedly
 
-- measure performance only after rampup period
+- measure performance to control rampup
+
+- measure performance to report attack
+_load_profile.slide_ 4
+
 * Rampup
 
 - service lazy initialization
@@ -32,41 +49,161 @@ Software Artist, kramphub.com
 - creating connection pools
 - TLS negociation
 - JVM class loading
+_rampup.slide_ 5
+
 * .proto file
 
 .code clock.proto
+_proto.slide_ 6
+
 * gRPC clock server
 
 Using the generated functions and types to implement a *ClockService*
 .code server.go /START OMIT/,/END OMIT/
+_server.slide_ 7
+
 * gRPC clock client
 
 Using the generated functions and types to call *GetTime*
 
 .code client.go
+_client.slide_ 8
+
 * ideal vs actual load profile
 
 .image img/hazana_pics_actual.png
-* hazana load profile
+_profile_ideal.slide_ 9
 
-.image img/hazana_pics_rampup.png
-* goroutines profile
-
-.image img/hazana_pics_goroutines.png
-* rampup strategy
-
-- linear
-- exp2
-* Attack interface
-
-// .code attack_interface.go
-.image img/attack_interface.png 350 _
 * Attack interface
 
 .code attack_interface.go
+_attack_interface.slide_ 10
+
 * performance tester program
 
 .code loadrun.go /START OMIT/,/END OMIT/
+_loadrun.slide_ 11
+
 * performance tester program
 
 .code loadrun_main.go
+_loadrun_main.slide_ 12
+
+* Demo
+_demo.slide_ 13
+
+* Hazana implementation
+_hazana.slide_ 14
+
+* Responsiblities
+
+- config
+- *rampup*
+- *attack*
+- report
+_runner.slide_ 15
+
+* Configuration
+
+- flags
+
+    go run *.go -v -rps 150 -attack 1800 -ramp -60 -max 20
+
+- JSON
+
+    hazana.ConfigFromFile("config.json")
+
+    {
+        "RPS": 150,
+        "AttackTimeSec": 1800,
+        "RampupTimeSec": 60,
+        "MaxAttackers": 20,
+        "Verbose": true,
+        "OutputFilename": "report.json",
+        "Metadata": {
+            "project_id": "my-google-project",
+            "log_name": "my-service-load-test-log",
+            "metric.type": "custom.googleapis.com/my-service/load/v1",
+            "grpc_endpoint": "x.y.z.i:443"
+        }
+    }
+_config.slide_ 16
+
+* attack loop
+
+.code attack.go
+_attack_inside.slide_ 17
+
+* hazana load profile
+
+.image img/hazana_pics_rampup.png
+_profile_rampup.slide_ 18
+
+* Rampup second
+
+.code rampup.go
+
+_rampup_inside.slide_ 19
+
+* goroutines profile
+
+.image img/hazana_pics_goroutines.png
+_profile_goroutines.slide_ 20
+
+* Rampup strategy
+
+- linear
+- exp2
+_rampup_strategy.slide_ 21
+
+* Rampup strategy linear
+
+.code linear.go
+_linear.slide_ 22
+
+* Rampup strategy exp2
+
+.code exp2.go
+_exp2.slide_ 23
+
+* Scheduling performance tests on Google Cloud Platform
+
+- leverage on demand CPU capacity
+- run inside Docker container 
+- schedule using Google Container Engine (Kubernetes)
+_deploy.slide_ 24
+
+* Docker
+
+- create general purpose image
+
+    FROM golang:1.9.0
+
+    COPY doit.sh /doit.sh
+
+    CMD ["/doit.sh"]
+
+- script to fetch and run load test sources
+
+    # fetch load test source code
+    cd /go/src
+    mkdir -p company.com
+    cd company.com
+    git clone https://${BB_USR}:${BB_PWD}@bitbucket.org/company/${BB_REPO}.git
+    cd ${BB_REPO}
+
+    # kick it
+    go run *.go
+_docker.slide_ 25
+
+* Run Docker
+
+    docker run -it \
+        -e BB_USR=my-user \
+        -e BB_PWD=my-pwd \
+        -e BB_REPO=my-load-test \
+        -e HAZANA_CONFIG=staging-external.json \
+        -e REPORT_FILE=report.json \
+        my-registry/hazana-load-runner:0.3
+_docker_run.slide_ 26
+

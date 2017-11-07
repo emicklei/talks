@@ -1,0 +1,5 @@
+* Scheduling performance tests on Google Cloud Platform
+
+- leverage on demand CPU capacity
+- run inside Docker container 
+- schedule using Google Container Engine (Kubernetes)

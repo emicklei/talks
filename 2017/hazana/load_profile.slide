@@ -2,4 +2,6 @@
 
 - load is created by sending requests repeatedly
 
-- measure performance only after rampup period
+- measure performance to control rampup
+
+- measure performance to report attack

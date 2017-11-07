@@ -1,0 +1,24 @@
+* Configuration
+
+- flags
+
+    go run *.go -v -rps 150 -attack 1800 -ramp -60 -max 20
+
+- JSON
+
+    hazana.ConfigFromFile("config.json")
+
+    {
+        "RPS": 150,
+        "AttackTimeSec": 1800,
+        "RampupTimeSec": 60,
+        "MaxAttackers": 20,
+        "Verbose": true,
+        "OutputFilename": "report.json",
+        "Metadata": {
+            "project_id": "my-google-project",
+            "log_name": "my-service-load-test-log",
+            "metric.type": "custom.googleapis.com/my-service/load/v1",
+            "grpc_endpoint": "x.y.z.i:443"
+        }
+    }

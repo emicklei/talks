@@ -10,10 +10,15 @@ import (
 	"os"
 	"log" 
 	"strings"
+	"flag"
 )
+
+var debug = flag.Bool("d",false,"if true then write debug info")
 
 var slides = `
 intro.slide
+agenda.slide
+
 grpc.slide
 load_profile.slide
 rampup.slide
@@ -23,32 +28,40 @@ server.slide
 client.slide
 
 profile_ideal.slide
-profile_rampup.slide
-profile_goroutines.slide
-rampup_strategy.slide
-
 attack_interface.slide
-attack_interface2.slide
 
 loadrun.slide
 loadrun_main.slide
+
+demo.slide
+
+hazana.slide
+runner.slide
+config.slide
+
+attack_inside.slide
+profile_rampup.slide
+rampup_inside.slide
+
+profile_goroutines.slide
+rampup_strategy.slide
+linear.slide
+exp2.slide
+
+deploy.slide
+docker.slide
+docker_run.slide
 `
 
-/**
-server
-client
-loadprofile
-attacker
-hazana reporting
-run in the clouds
-hazana docker
-**/
+var slideCount = 0
 
 func main() {
+	flag.Parse()
 	writer, _ := os.Create("basic.slide")
 	scanner := bufio.NewScanner(strings.NewReader(slides))
 	for scanner.Scan() {
 		if line := scanner.Text(); len(line) > 0 {
+			slideCount++
 			include(writer, line)
 		}
 	}
@@ -69,5 +82,8 @@ func include(w io.Writer, name string) {
 			io.WriteString(w, line)
 			io.WriteString(w, "\n")
 		}
+	}
+	if *debug {
+		io.WriteString(w, fmt.Sprintf("_%s_ %d\n\n",name,slideCount))
 	}
 }

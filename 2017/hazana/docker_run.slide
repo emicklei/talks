@@ -1,0 +1,9 @@
+* Run Docker
+
+    docker run -it \
+        -e BB_USR=my-user \
+        -e BB_PWD=my-pwd \
+        -e BB_REPO=my-load-test \
+        -e HAZANA_CONFIG=staging-external.json \
+        -e REPORT_FILE=report.json \
+        my-registry/hazana-load-runner:0.3

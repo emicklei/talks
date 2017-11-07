@@ -1,0 +1,21 @@
+* Docker
+
+- create general purpose image
+
+    FROM golang:1.9.0
+
+    COPY doit.sh /doit.sh
+
+    CMD ["/doit.sh"]
+
+- script to fetch and run load test sources
+
+    # fetch load test source code
+    cd /go/src
+    mkdir -p company.com
+    cd company.com
+    git clone https://${BB_USR}:${BB_PWD}@bitbucket.org/company/${BB_REPO}.git
+    cd ${BB_REPO}
+
+    # kick it
+    go run *.go
