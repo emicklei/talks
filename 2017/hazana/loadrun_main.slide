@@ -1,0 +1,3 @@
+* performance tester program
+
+.code loadrun_main.go

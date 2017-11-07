@@ -1,1 +1,5 @@
-* gRPC client
+* gRPC clock client
+
+Using the generated functions and types to call *GetTime*
+
+.code client.go

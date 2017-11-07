@@ -1,0 +1,3 @@
+* performance tester program
+
+.code loadrun.go /START OMIT/,/END OMIT/

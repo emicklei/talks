@@ -1,0 +1,5 @@
+* Load profile
+
+- load is created by sending requests repeatedly
+
+- measure performance only after rampup period

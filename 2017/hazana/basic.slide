@@ -1,4 +1,4 @@
-gRPC load testing with hazana
+Hazana, performance testing gRPC
 
 Ernest Micklei
 Software Artist, kramphub.com
@@ -20,3 +20,53 @@ Software Artist, kramphub.com
 - uses ProtocolBuffers as the interface description language
 
 - cross-platform client and server bindings for many languages
+* Load profile
+
+- load is created by sending requests repeatedly
+
+- measure performance only after rampup period
+* Rampup
+
+- service lazy initialization
+- DNS lookups
+- creating connection pools
+- TLS negociation
+- JVM class loading
+* .proto file
+
+.code clock.proto
+* gRPC clock server
+
+Using the generated functions and types to implement a *ClockService*
+.code server.go /START OMIT/,/END OMIT/
+* gRPC clock client
+
+Using the generated functions and types to call *GetTime*
+
+.code client.go
+* ideal vs actual load profile
+
+.image img/hazana_pics_actual.png
+* hazana load profile
+
+.image img/hazana_pics_rampup.png
+* goroutines profile
+
+.image img/hazana_pics_goroutines.png
+* rampup strategy
+
+- linear
+- exp2
+* Attack interface
+
+// .code attack_interface.go
+.image img/attack_interface.png 350 _
+* Attack interface
+
+.code attack_interface.go
+* performance tester program
+
+.code loadrun.go /START OMIT/,/END OMIT/
+* performance tester program
+
+.code loadrun_main.go

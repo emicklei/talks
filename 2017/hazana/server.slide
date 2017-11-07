@@ -1,1 +1,4 @@
-* gRPC server
+* gRPC clock server
+
+Using the generated functions and types to implement a *ClockService*
+.code server.go /START OMIT/,/END OMIT/

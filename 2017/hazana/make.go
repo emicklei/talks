@@ -1,16 +1,37 @@
 package main
 
+// https://github.com/radovskyb/watcher/tree/master/cmd/watcher
+// watcher -cmd="go run make.go"
+
 import (
 	"bufio"
 	"fmt"
 	"io"
 	"os"
+	"log" 
 	"strings"
 )
 
 var slides = `
 intro.slide
 grpc.slide
+load_profile.slide
+rampup.slide
+
+proto.slide
+server.slide
+client.slide
+
+profile_ideal.slide
+profile_rampup.slide
+profile_goroutines.slide
+rampup_strategy.slide
+
+attack_interface.slide
+attack_interface2.slide
+
+loadrun.slide
+loadrun_main.slide
 `
 
 /**
@@ -38,7 +59,8 @@ func include(w io.Writer, name string) {
 	fmt.Println("including", name)
 	file, err := os.Open(strings.Trim(name, " "))
 	if err != nil {
-		panic(err.Error())
+		log.Println(err.Error())
+		return
 	}
 	defer file.Close()
 	scanner := bufio.NewScanner(file)

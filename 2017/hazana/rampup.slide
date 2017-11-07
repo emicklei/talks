@@ -1,0 +1,7 @@
+* Rampup
+
+- service lazy initialization
+- DNS lookups
+- creating connection pools
+- TLS negociation
+- JVM class loading
