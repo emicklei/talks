@@ -1,6 +1,6 @@
 * Docker
 
-- create general purpose image
+- create general purpose load test image
 
     FROM golang:1.9.0
 

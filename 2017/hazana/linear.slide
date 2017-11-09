@@ -1,3 +1,5 @@
 * Rampup strategy linear
 
+Increase the goroutines linearly to the maximum number set.
+
 .code linear.go

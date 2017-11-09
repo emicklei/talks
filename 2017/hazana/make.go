@@ -38,6 +38,7 @@ demo.slide
 hazana.slide
 runner.slide
 config.slide
+token_flow.slide
 
 attack_inside.slide
 profile_rampup.slide

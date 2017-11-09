@@ -1,3 +1,5 @@
 * Rampup strategy exp2
 
+Increase the number of goroutines based on the ratio of the actual and measured rate.
+
 .code exp2.go

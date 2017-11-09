@@ -1,4 +1,6 @@
 * Rampup strategy
 
+How to set and change the number of goroutines to meet the increasing requests per second.
+
 - linear
 - exp2

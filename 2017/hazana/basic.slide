@@ -11,8 +11,6 @@ Software Artist, kramphub.com
 
 
 .image img/emicklei_hackers_logo.png _ 300
-_intro.slide_ 1
-
 * Agenda
 
 - gRPC
@@ -20,8 +18,6 @@ _intro.slide_ 1
 - demo
 - inside Hazana
 - deploy
-_agenda.slide_ 2
-
 * gRPC.io
 
 - gRPC is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types
@@ -31,8 +27,6 @@ _agenda.slide_ 2
 - uses ProtocolBuffers as the interface description language
 
 - cross-platform client and server bindings for many languages
-_grpc.slide_ 3
-
 * Load profile
 
 - load is created by sending requests repeatedly
@@ -40,8 +34,6 @@ _grpc.slide_ 3
 - measure performance to control rampup
 
 - measure performance to report attack
-_load_profile.slide_ 4
-
 * Rampup
 
 - service lazy initialization
@@ -49,60 +41,38 @@ _load_profile.slide_ 4
 - creating connection pools
 - TLS negociation
 - JVM class loading
-_rampup.slide_ 5
-
 * .proto file
 
 .code clock.proto
-_proto.slide_ 6
-
 * gRPC clock server
 
 Using the generated functions and types to implement a *ClockService*
 .code server.go /START OMIT/,/END OMIT/
-_server.slide_ 7
-
 * gRPC clock client
 
 Using the generated functions and types to call *GetTime*
 
 .code client.go
-_client.slide_ 8
-
 * ideal vs actual load profile
 
 .image img/hazana_pics_actual.png
-_profile_ideal.slide_ 9
-
 * Attack interface
 
 .code attack_interface.go
-_attack_interface.slide_ 10
-
 * performance tester program
 
 .code loadrun.go /START OMIT/,/END OMIT/
-_loadrun.slide_ 11
-
 * performance tester program
 
 .code loadrun_main.go
-_loadrun_main.slide_ 12
-
 * Demo
-_demo.slide_ 13
-
 * Hazana implementation
-_hazana.slide_ 14
-
 * Responsiblities
 
 - config
 - *rampup*
 - *attack*
 - report
-_runner.slide_ 15
-
 * Configuration
 
 - flags
@@ -127,55 +97,46 @@ _runner.slide_ 15
             "grpc_endpoint": "x.y.z.i:443"
         }
     }
-_config.slide_ 16
+* Driving the load to the service
 
+.image img/token_flow.png
 * attack loop
 
 .code attack.go
-_attack_inside.slide_ 17
-
 * hazana load profile
 
 .image img/hazana_pics_rampup.png
-_profile_rampup.slide_ 18
-
 * Rampup second
 
 .code rampup.go
 
-_rampup_inside.slide_ 19
-
 * goroutines profile
 
 .image img/hazana_pics_goroutines.png
-_profile_goroutines.slide_ 20
-
 * Rampup strategy
+
+How to set and change the number of goroutines to meet the increasing requests per second.
 
 - linear
 - exp2
-_rampup_strategy.slide_ 21
-
 * Rampup strategy linear
 
-.code linear.go
-_linear.slide_ 22
+Increase the goroutines linearly to the maximum number set.
 
+.code linear.go
 * Rampup strategy exp2
 
-.code exp2.go
-_exp2.slide_ 23
+Increase the number of goroutines based on the ratio of the actual and measured rate.
 
+.code exp2.go
 * Scheduling performance tests on Google Cloud Platform
 
 - leverage on demand CPU capacity
 - run inside Docker container 
 - schedule using Google Container Engine (Kubernetes)
-_deploy.slide_ 24
-
 * Docker
 
-- create general purpose image
+- create general purpose load test image
 
     FROM golang:1.9.0
 
@@ -194,8 +155,6 @@ _deploy.slide_ 24
 
     # kick it
     go run *.go
-_docker.slide_ 25
-
 * Run Docker
 
     docker run -it \
@@ -205,5 +164,3 @@ _docker.slide_ 25
         -e HAZANA_CONFIG=staging-external.json \
         -e REPORT_FILE=report.json \
         my-registry/hazana-load-runner:0.3
-_docker_run.slide_ 26
-
