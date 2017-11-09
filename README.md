@@ -38,6 +38,7 @@ Thanks to Gary Burd and Francesc Campoy for [hosting](http://go-talks.appspot.co
 - http://go-talks.appspot.com/github.com/emicklei/talks/2015/onedaygo/onedaygo.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2016/basic/basic.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2016/intermediate/main.slide
+- http://go-talks.appspot.com/github.com/emicklei/talks/2017/hazana/basic.slide
 
 ## not Go related
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/critter/critter.slide

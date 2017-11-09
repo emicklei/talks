@@ -20,7 +20,6 @@ Software Artist, kramphub.com
 - inside Hazana
 - deploy
 
-(28 slides)
 * gRPC.io
 
 - gRPC is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types
