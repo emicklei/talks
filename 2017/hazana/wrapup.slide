@@ -1,0 +1,12 @@
+* Wrap up
+
+- Go package for building performance test programs
+- Requires implementing the Attack interface
+- Can be used for gRPC, HTTP(s), TCP, ...
+- Configurable load and rampup profile
+
+TODO
+
+- collecting bytes transferred
+- realtime metrics to dashboard
+- other rampup strategies?

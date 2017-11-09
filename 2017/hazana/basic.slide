@@ -14,10 +14,13 @@ Software Artist, kramphub.com
 * Agenda
 
 - gRPC
-- using Hazana
+- load profile
+- using the Hazana package
 - demo
 - inside Hazana
 - deploy
+
+(28 slides)
 * gRPC.io
 
 - gRPC is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types
@@ -27,20 +30,8 @@ Software Artist, kramphub.com
 - uses ProtocolBuffers as the interface description language
 
 - cross-platform client and server bindings for many languages
-* Load profile
 
-- load is created by sending requests repeatedly
-
-- measure performance to control rampup
-
-- measure performance to report attack
-* Rampup
-
-- service lazy initialization
-- DNS lookups
-- creating connection pools
-- TLS negociation
-- JVM class loading
+.image img/grpc_io.png
 * .proto file
 
 .code clock.proto
@@ -56,6 +47,25 @@ Using the generated functions and types to call *GetTime*
 * ideal vs actual load profile
 
 .image img/hazana_pics_actual.png
+* Load profile
+
+- load is created by sending requests repeatedly
+
+- measure performance to control rampup
+
+- measure performance to report attack
+* Rampup
+
+- service lazy initialization
+- DNS lookups
+- creating connection pools
+- TLS negociation
+- JVM class loading
+* Go package
+
+( logo wanted... )
+
+.image img/hazana_logo.png 300 _
 * Attack interface
 
 .code attack_interface.go
@@ -66,8 +76,7 @@ Using the generated functions and types to call *GetTime*
 
 .code loadrun_main.go
 * Demo
-* Hazana implementation
-* Responsiblities
+* Hazana responsiblities
 
 - config
 - *rampup*
@@ -164,3 +173,29 @@ Increase the number of goroutines based on the ratio of the actual and measured 
         -e HAZANA_CONFIG=staging-external.json \
         -e REPORT_FILE=report.json \
         my-registry/hazana-load-runner:0.3
+
+or using Kubernetes CronJob to schedule the tests
+
+    apiVersion: batch/v2alpha1
+    kind: CronJob
+    metadata:
+    name: myservice-load-runner
+    spec:
+    # https://crontab.guru/#0_*_*_*_*
+    schedule: "0 * * * *"
+    jobTemplate:
+        spec:
+        template:
+        ....stuff deleted....
+* Wrap up
+
+- Go package for building performance test programs
+- Requires implementing the Attack interface
+- Can be used for gRPC, HTTP(s), TCP, ...
+- Configurable load and rampup profile
+
+TODO
+
+- collecting bytes transferred
+- realtime metrics to dashboard
+- other rampup strategies?

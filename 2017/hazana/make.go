@@ -20,14 +20,17 @@ intro.slide
 agenda.slide
 
 grpc.slide
-load_profile.slide
-rampup.slide
+
 
 proto.slide
 server.slide
 client.slide
 
 profile_ideal.slide
+load_profile.slide
+rampup.slide
+
+hazana.slide
 attack_interface.slide
 
 loadrun.slide
@@ -35,7 +38,6 @@ loadrun_main.slide
 
 demo.slide
 
-hazana.slide
 runner.slide
 config.slide
 token_flow.slide
@@ -52,6 +54,8 @@ exp2.slide
 deploy.slide
 docker.slide
 docker_run.slide
+
+wrapup.slide
 `
 
 var slideCount = 0

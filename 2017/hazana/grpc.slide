@@ -7,3 +7,5 @@
 - uses ProtocolBuffers as the interface description language
 
 - cross-platform client and server bindings for many languages
+
+.image img/grpc_io.png

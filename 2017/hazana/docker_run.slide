@@ -7,3 +7,17 @@
         -e HAZANA_CONFIG=staging-external.json \
         -e REPORT_FILE=report.json \
         my-registry/hazana-load-runner:0.3
+
+or using Kubernetes CronJob to schedule the tests
+
+    apiVersion: batch/v2alpha1
+    kind: CronJob
+    metadata:
+    name: myservice-load-runner
+    spec:
+    # https://crontab.guru/#0_*_*_*_*
+    schedule: "0 * * * *"
+    jobTemplate:
+        spec:
+        template:
+        ....stuff deleted....
