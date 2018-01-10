@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/davecgh/go-spew/spew"
+	//"github.com/davecgh/go-spew/spew"
 )
 
 // START OMIT
@@ -24,7 +24,7 @@ func main() {
 			}
 		},
 	}
-	spew.Dump(c)
+	//spew.Dump(c)
 	fmt.Println(c.StringToInteger("42"))
 }
 

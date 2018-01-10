@@ -1,6 +1,6 @@
 T
 
-* Did I get want I want ?
+* I got this but want that
 
 	func TestComputeIt(t *testing.T) {
 		amount := computeIt()
