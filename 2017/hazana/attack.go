@@ -10,7 +10,6 @@ func attack(attacker Attack, next, quit <-chan bool, results chan<- result, time
 				done <- attacker.Do(ctx)
 			}()
 			var dor DoResult
-			// either get the result from the attacker or from the timeout
 			select {
 			case <-ctx.Done():
 				dor = DoResult{Error: errAttackDoTimedOut}

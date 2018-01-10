@@ -11,6 +11,12 @@ Software Artist, kramphub.com
 
 
 .image img/emicklei_hackers_logo.png _ 300
+* 
+
+.image img/sprout.jpg _ 900
+* 
+
+.image img/kramp.png _ 900
 * Agenda
 
 - gRPC
@@ -19,7 +25,6 @@ Software Artist, kramphub.com
 - demo
 - inside Hazana
 - deploy
-
 * gRPC.io
 
 - gRPC is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types
@@ -60,11 +65,6 @@ Using the generated functions and types to call *GetTime*
 - creating connection pools
 - TLS negociation
 - JVM class loading
-* Go package
-
-( logo wanted... )
-
-.image img/hazana_logo.png 300 _
 * Attack interface
 
 .code attack_interface.go
@@ -198,3 +198,16 @@ TODO
 - collecting bytes transferred
 - realtime metrics to dashboard
 - other rampup strategies?
+* Where is it?
+
+Go package
+
+    github.com/emicklei/hazana
+
+Slides
+
+    github.com/emicklei/talks
+
+Jobs
+
+    kramphub.com

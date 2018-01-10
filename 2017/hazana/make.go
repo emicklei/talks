@@ -17,6 +17,9 @@ var debug = flag.Bool("d",false,"if true then write debug info")
 
 var slides = `
 intro.slide
+kramphub.slide
+kramp.slide 
+
 agenda.slide
 
 grpc.slide
@@ -30,7 +33,7 @@ profile_ideal.slide
 load_profile.slide
 rampup.slide
 
-hazana.slide
+
 attack_interface.slide
 
 loadrun.slide
@@ -56,8 +59,10 @@ docker.slide
 docker_run.slide
 
 wrapup.slide
-`
 
+sources.slide
+`
+// hazana.slide
 var slideCount = 0
 
 func main() {
