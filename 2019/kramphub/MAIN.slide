@@ -26,4 +26,6 @@ Curl
 * Google AppEngine for Go
 * Wrap up
 
-- Go is best for middleware services, data transformation, tooling
+- Go used to be best suited for middleware services, data transformation, tooling
+- Go is the prefered Cloud Language for many companies
+- Go is less usabable for complex business logic (due to lack of generic abstraction)

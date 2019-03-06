@@ -31,7 +31,7 @@ var slideCount = 0
 
 func main() {
 	flag.Parse()
-	writer, _ := os.Create("MAIN.slide")
+	writer, _ := os.Create("main.slide")
 	scanner := bufio.NewScanner(strings.NewReader(slides))
 	for scanner.Scan() {
 		if line := scanner.Text(); len(line) > 0 {
