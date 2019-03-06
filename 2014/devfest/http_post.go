@@ -9,7 +9,7 @@ import (
 func main() {
 
 	// START OMIT
-	url := "http://www.bol.com/nl/catalog/browse_and_search/plain_list_page.html&Ntt=devfest"
+	url := "https://www.bol.com/nl/p/harry-potter-boxset/9200000023479731"
 
 	resp, _ := http.Post(url, "text/plain", nil)
 	defer resp.Body.Close()

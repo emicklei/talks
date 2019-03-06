@@ -1,0 +1,29 @@
+Go Workshop March 2019
+
+Ernest Micklei
+Software Artist, kramphub.com
+
+* Who am i
+
+- using Go since 2011
+- co-organizer Golang Meetup Amsterdam
+- author of *go-restful*, *parzello*, *gmig*, *proto*, *forest*, *zazkia*, ...
+
+
+.image img/emicklei_hackers_logo.png _ 300
+* Go , the Basics
+
+Presenting slides from older presentations.
+
+HTTP , JSON
+
+.link https://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide#3
+
+Curl
+
+.link https://go-talks.appspot.com/github.com/emicklei/talks/2015/onedaygo/onedaygo.slide#5
+* Google Cloud Functions for Go
+* Google AppEngine for Go
+* Wrap up
+
+- Go is best for middleware services, data transformation, tooling
