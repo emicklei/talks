@@ -1,1 +1,90 @@
 * Google Cloud Functions for Go
+
+Using Cloud Functions, you can build serverless application backends, real-time data processing pipelines, chatbots, and video or image analysis tools.
+
+
+* Two types of Functions
+
+- HTTP Functions
+
+- Background Functions  (PubSub, Storage, Firebase,...)
+
+
+
+* HTTP Function
+
+    package myfunction
+
+    import "net/http"
+
+    func HandleHTTPRequest(w http.ResponseWriter, r *http.Request) {
+            w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+            w.Write([]byte(r.Header.Get("X-Forwarded-For")))
+    }
+
+* Background Function: Google Storage
+
+    package otherfunction
+
+    import (
+            "context"
+            "log"
+    )
+
+    // GCSEvent holds event data from a Google Cloud Storage Event.
+    type GCSEvent struct {
+            Bucket      string `json:"bucket"`
+            Name        string `json:"name"`
+    }
+
+    func HandleStorageEvent(ctx context.Context, e GCSEvent) error {
+            log.Printf("Processing file: %s", e.Name)
+            return nil
+    }
+
+* Background Function: Google Pub Pub 
+
+
+    package morefunctions
+
+    import (
+            "context"
+            "log"
+    )
+
+    // PubSubMessage is the payload of a Pub/Sub event. Please refer to the docs for
+    // additional information regarding Pub/Sub events.
+    type PubSubMessage struct {
+            Data []byte `json:"data"`
+    }
+
+    func HandlePubSub(ctx context.Context, m PubSubMessage) error {
+            log.Printf("Received, %s!", string(m.Data))
+            return nil
+    }
+
+* Deploying Cloud Function with Go
+
+    gcloud components update &&
+    gcloud components install beta
+
+HTTP function
+
+    gcloud functions deploy HandleHTTPRequest --runtime go111 --trigger-http
+
+
+* Problem
+
+Create and deploy a Cloud HTTP Function in Go that returns an HTML page with the value of the query parameter "text" in ASCII art.
+
+Use package 
+
+.link https://github.com/common-nighthawk/go-figure
+
+Use Google project "kramp-hub".
+
+Choose a Function name that is unique for the project! (e.g  TomASCII)
+
+Use the Google Quickstart Guide 
+
+.link https://cloud.google.com/functions/docs/quickstart
