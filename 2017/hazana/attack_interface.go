@@ -6,7 +6,7 @@ type Attack interface {
 	Setup(c Config) error
 
 	// Do performs one request and is executed in a separate goroutine.
-	Do() DoResult
+	Do(ctx context.Context) DoResult
 
 	// Teardown can be used to close the connection to the service
 	Teardown() error

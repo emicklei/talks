@@ -1,7 +1,7 @@
 Go - Basic Training
 
 Ernest Micklei
-Software Artist, bol.com
+Software Artist, kramphub.com
 
 * Who am i
 
@@ -9,6 +9,7 @@ Software Artist, bol.com
 - co-organizer Golang Meetup Amsterdam
 - author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*
 - bol.com: *Daxy* , *Kevlar*, *BoQS* , *Guardian*
+- kramphub.com: *Hazana*,*Kiya*,*Mokka*,*Protofmt*
 
 .image img/gopher_teacher.png _ 300
 
@@ -23,9 +24,9 @@ Software Artist, bol.com
 
 * Preflight checks
 
-- Installed Go SDK 1.7
+- Installed Go SDK 1.9
 
-	export GOPATH=/Users/emicklei/src
+	export GOPATH=$HOME/go
 	export PATH=$GOPATH/bin:$PATH
 
 - Finished the Tour of Go
@@ -112,11 +113,11 @@ A struct can embed other structs "borrowing" the state and behavior of the embed
 
 .play -edit embedding_sample.go
 
-* Exercise: Graphic
+* Exercise: Shape
 
 Define types to model Rectangle,Circle and Point and use struct embedding.
 
-* Solution: Graphic
+* Solution: Shape
 
 .play -edit embedding.go  /START OMIT/,/END OMIT/
 
@@ -241,12 +242,6 @@ Create a thread-safe implementation of a map
 .play -edit locking2.go /START OMIT/,/END OMIT/
 
 
-* Simple HTTP server
-
-.link http://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide#3 2014 talk
-
-.image img/with_champagne.jpg _ 300
-
 * Function as value
 	
 toString variable has a function value	
@@ -340,7 +335,7 @@ and use that as second argument in:
 		m.Timing("calculate", time.Now() - now, 1.0)
 	}
 
-* Did I get want I want ?
+* I got this but want that
 
 	func TestComputeIt(t *testing.T) {
 		amount := computeIt()
