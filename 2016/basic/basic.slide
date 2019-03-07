@@ -24,7 +24,7 @@ Software Artist, kramphub.com
 
 * Preflight checks
 
-- Installed Go SDK 1.9
+- Installed Go SDK 1.12
 
 	export GOPATH=$HOME/go
 	export PATH=$GOPATH/bin:$PATH

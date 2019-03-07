@@ -1,0 +1,47 @@
+* Using gRPC
+
+Let us call Ciske for an item using a simple Go program.
+
+Use the kramphub go-apis package for all the clients.
+
+Get a connection
+
+Use import "google.golang.org/grpc"
+
+	con, err := grpc.Dial(fmt.Sprintf("%s:%d", os.Getenv("CISKE_HOST"), 443), grpc.WithInsecure())
+	if err != nil {
+		log.Fatalln(err)
+	}
+	defer con.Close()
+
+* Using gRPC (2)
+
+Create the context
+
+Use import "google.golang.org/grpc/metadata"
+
+	ctx := context.Background()
+	md := metadata.MD{}
+	md.Set("x-api-key", os.Getenv("CISKE_API_KEY"))
+	md.Set("ctx-locale", "de_AT")
+	ctx = metadata.NewOutgoingContext(ctx, md)
+
+* Using gRPC (3)
+
+Create a request
+
+Use import "bitbucket.org/kramphub/go-apis/grpc/v1/ciske"
+
+	req := new(ciske.GetItemsRequest)
+	req.ItemIds = []string{"600123072KR"}
+
+* Using gRPC (4)
+
+	service := ciske.NewProductInformationServiceClient(con)
+	resp, err := service.GetItems(ctx, req)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	// only write the Item of the first Item Result
+	item := resp.GetItems()[id].GetItem()
+    fmt.Printf("%#v", item)

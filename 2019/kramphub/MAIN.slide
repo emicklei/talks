@@ -15,6 +15,10 @@ Software Artist, kramphub.com
 
 Presenting slides from older presentations.
 
+Introduction
+
+.link https://go-talks.appspot.com/github.com/emicklei/talks/2016/basic/basic.slide#1
+
 HTTP , JSON
 
 .link https://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide#3
@@ -22,14 +26,111 @@ HTTP , JSON
 Curl
 
 .link https://go-talks.appspot.com/github.com/emicklei/talks/2015/onedaygo/onedaygo.slide#5
+* Go Modules
 
-Spirograph
+In the beginning, there was no package management.
 
-.link https://go-talks.appspot.com/github.com/emicklei/talks/2013/spirograph/spiro.slide#1
+- GOPATH only
+
+- Vendor
+
+- Modules
+
+
+* Hello example
+
+In any directory, create a folder "hello" an initialize it with a Go module.
+
+    go mod init example.com/hello
+
+Create the file hello.go:
+
+    package main
+
+    import (
+        "fmt"
+        "rsc.io/quote"
+    )
+
+    func main() {
+        fmt.Println(quote.Hello())
+    }
+
+Run it:
+
+    go run hello.go
+
+* Inspect Hello example
+
+    go.mod
+    go.sum
+    $GOPATH/pkg
+
+View all dependencies
+
+    go list -m all
+
+Now vendor your dependencies
+
+    go mod vendor
+
+Run using the vendor
+
+    go run -mod=vendor .
+* Using gRPC
+
+Let us call Ciske for an item using a simple Go program.
+
+Use the kramphub go-apis package for all the clients.
+
+Get a connection
+
+Use import "google.golang.org/grpc"
+
+	con, err := grpc.Dial(fmt.Sprintf("%s:%d", os.Getenv("CISKE_HOST"), 443), grpc.WithInsecure())
+	if err != nil {
+		log.Fatalln(err)
+	}
+	defer con.Close()
+
+* Using gRPC (2)
+
+Create the context
+
+Use import "google.golang.org/grpc/metadata"
+
+	ctx := context.Background()
+	md := metadata.MD{}
+	md.Set("x-api-key", os.Getenv("CISKE_API_KEY"))
+	md.Set("ctx-locale", "de_AT")
+	ctx = metadata.NewOutgoingContext(ctx, md)
+
+* Using gRPC (3)
+
+Create a request
+
+Use import "bitbucket.org/kramphub/go-apis/grpc/v1/ciske"
+
+	req := new(ciske.GetItemsRequest)
+	req.ItemIds = []string{"600123072KR"}
+
+* Using gRPC (4)
+
+	service := ciske.NewProductInformationServiceClient(con)
+	resp, err := service.GetItems(ctx, req)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	// only write the Item of the first Item Result
+	item := resp.GetItems()[id].GetItem()
+    fmt.Printf("%#v", item)
 * Google Cloud Functions for Go
 
 Using Cloud Functions, you can build serverless application backends, real-time data processing pipelines, chatbots, and video or image analysis tools.
 
+- Simple deployment
+- Auto scaling , 0 .. maxInstances
+- One purpose
 
 * Two types of Functions
 
@@ -100,14 +201,27 @@ HTTP function
 
     gcloud functions deploy HandleHTTPRequest --runtime go111 --trigger-http
 
+* Problem (Basic Go)
 
-* Problem
+Create and deploy a Cloud HTTP Function in Go that returns an HTML page with "Hello Hubbers" in H1 style.
+
+Use Google project "kramp-hub".
+
+Choose a Function name that is unique for the project! (e.g  TomHello)
+
+Look at examples on 
+
+.link https://golang.org/pkg/net/http/
+
+* Problem (Intermediate Go)
 
 Create and deploy a Cloud HTTP Function in Go that returns an HTML page with the value of the query parameter "text" in ASCII art.
 
 Use package 
 
 .link https://github.com/common-nighthawk/go-figure
+
+Setup the Go module.
 
 Use Google project "kramp-hub".
 

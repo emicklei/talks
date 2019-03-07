@@ -49,3 +49,11 @@ A framework for writing load performance tests in Go
 ## not Go related
 
 - http://go-talks.appspot.com/github.com/emicklei/talks/2014/critter/critter.slide
+
+## running the slides locally
+
+    go get golang.org/x/tools/cmd/present
+
+Then enter a folder containing *.slide files and run
+
+    present

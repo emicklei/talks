@@ -2,6 +2,10 @@
 
 Presenting slides from older presentations.
 
+Introduction
+
+.link https://go-talks.appspot.com/github.com/emicklei/talks/2016/basic/basic.slide#1
+
 HTTP , JSON
 
 .link https://go-talks.appspot.com/github.com/emicklei/talks/2014/bolwork/case.slide#3
@@ -9,7 +13,3 @@ HTTP , JSON
 Curl
 
 .link https://go-talks.appspot.com/github.com/emicklei/talks/2015/onedaygo/onedaygo.slide#5
-
-Spirograph
-
-.link https://go-talks.appspot.com/github.com/emicklei/talks/2013/spirograph/spiro.slide#1

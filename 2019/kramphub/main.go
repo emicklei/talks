@@ -20,6 +20,10 @@ intro.slide
 
 basics.slide
 
+modules.slide
+
+grpc.slide
+
 functions.slide
 
 appengine.slide

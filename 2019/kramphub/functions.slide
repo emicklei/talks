@@ -2,6 +2,9 @@
 
 Using Cloud Functions, you can build serverless application backends, real-time data processing pipelines, chatbots, and video or image analysis tools.
 
+- Simple deployment
+- Auto scaling , 0 .. maxInstances
+- One purpose
 
 * Two types of Functions
 
@@ -72,14 +75,27 @@ HTTP function
 
     gcloud functions deploy HandleHTTPRequest --runtime go111 --trigger-http
 
+* Problem (Basic Go)
 
-* Problem
+Create and deploy a Cloud HTTP Function in Go that returns an HTML page with "Hello Hubbers" in H1 style.
+
+Use Google project "kramp-hub".
+
+Choose a Function name that is unique for the project! (e.g  TomHello)
+
+Look at examples on 
+
+.link https://golang.org/pkg/net/http/
+
+* Problem (Intermediate Go)
 
 Create and deploy a Cloud HTTP Function in Go that returns an HTML page with the value of the query parameter "text" in ASCII art.
 
 Use package 
 
 .link https://github.com/common-nighthawk/go-figure
+
+Setup the Go module.
 
 Use Google project "kramp-hub".
 

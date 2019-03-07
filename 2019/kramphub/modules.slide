@@ -1,0 +1,51 @@
+* Go Modules
+
+In the beginning, there was no package management.
+
+- GOPATH only
+
+- Vendor
+
+- Modules
+
+
+* Hello example
+
+In any directory, create a folder "hello" an initialize it with a Go module.
+
+    go mod init example.com/hello
+
+Create the file hello.go:
+
+    package main
+
+    import (
+        "fmt"
+        "rsc.io/quote"
+    )
+
+    func main() {
+        fmt.Println(quote.Hello())
+    }
+
+Run it:
+
+    go run hello.go
+
+* Inspect Hello example
+
+    go.mod
+    go.sum
+    $GOPATH/pkg
+
+View all dependencies
+
+    go list -m all
+
+Now vendor your dependencies
+
+    go mod vendor
+
+Run using the vendor
+
+    go run -mod=vendor .
