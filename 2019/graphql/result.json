@@ -1,0 +1,10 @@
+[{
+    "id"  : "43214-323-44321-43243",
+    "name": "Farmer Joe's John Deere",
+    "priceSummary": {
+        "currency": "EUR",
+        "net" : 12.24,
+        "gross" : 18.00,
+        "total" : 18.00            
+    }
+}]

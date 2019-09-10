@@ -1,0 +1,13 @@
+* Selecting an open-source package
+
+- Does it fit the development approach ?
+- How is it rated ? ( Github stars)
+- What do Stackoverflowers say ?
+- When was the last commit ?
+- How many forks do exist ?
+- Does it come with examples ?
+- How is the Godoc ?
+- Is there a continuous build button ?
+- Does it bring in lots of dependent packages ?
+- Is it trying to be all-inclusive solution ?
+- Semantic version please ?

@@ -1,0 +1,23 @@
+type Query {  
+  item(id: String!): Item
+  quotations: [Quotation!]!
+  //
+  // ... stuff deleted ...
+}
+
+type Quotation {  
+  id: ID!
+  name: String!  
+  priceSummary: PriceSummary!
+  quotationLines: [QuotationLine!]!
+  //
+  // ...
+}
+
+type QuotationLine {
+  id: ID!
+  item: Item!
+  quantity: Float!
+  //
+  // ...
+}

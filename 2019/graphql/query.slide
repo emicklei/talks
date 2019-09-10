@@ -1,0 +1,9 @@
+* GraphQL Query Request
+
+POST http://myserver/graphql
+
+.code query.txt
+
+which returns
+
+.code result.json

@@ -1,0 +1,10 @@
+* GraphQL
+
+From graphql.org
+
+- a query language for your API
+- provides a complete and understandable description of the data in your AP
+- gives clients the power to ask for exactly what they need 
+
+- Query (the Reads in CRUD)
+- Mutation

@@ -1,0 +1,65 @@
+About a GraphQL server in Go
+September 2019
+
+Ernest Micklei
+Software Artist, kramphub.com
+
+* Who am i
+
+- using Go since 2011
+- co-organizer Golang Meetup Amsterdam
+- author of *go-restful*, *parzello*, *gmig*, *proto*, *forest*, *zazkia*, ...
+- Google Developer Expert
+
+.image img/emicklei_hackers_logo.png _ 300
+* The bigger picture
+
+- insert architecture picture here
+* GraphQL
+
+From graphql.org
+
+- a query language for your API
+- provides a complete and understandable description of the data in your AP
+- gives clients the power to ask for exactly what they need 
+
+- Query (the Reads in CRUD)
+- Mutation
+* GraphQL Schema (extract)
+
+.code schema.graphql
+* GraphQL Query Request
+
+POST http://myserver/graphql
+
+.code query.txt
+
+which returns
+
+.code result.json
+* Server Development approach
+
+- Schema first design
+- Frontend teams write types,queries and mutations
+- Code generate all types
+- Handcode the resolvers
+- Open-source Go package(s) where possible
+
+Resolver is a function that returns the data for a for given GraphQL query or mutation operation or data field.
+
+* Selecting a Go package
+
+.image img/go-search.png 600 600
+* Selecting an open-source package
+
+- Does it fit the development approach ?
+- How is it rated ? ( Github stars)
+- What do Stackoverflowers say ?
+- When was the last commit ?
+- How many forks do exist ?
+- Does it come with examples ?
+- How is the Godoc ?
+- Is there a continuous build button ?
+- Does it bring in lots of dependent packages ?
+- Is it trying to be all-inclusive solution ?
+- Semantic version please ?
