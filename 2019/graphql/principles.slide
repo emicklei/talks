@@ -1,10 +1,10 @@
 * Server Development approach
 
 - Schema first design
-- Frontend teams write types,queries and mutations
-- Code generate all types
-- Handcode the resolvers
-- Open-source Go package(s) where possible
+- Frontend teams write queries, mutations and types
+- Generate from schema
+- Handcode the resolvers*
+- Use open-source Go package(s) where possible
 
-Resolver is a function that returns the data for a for given GraphQL query or mutation operation or data field.
+*Resolver* is a function that returns the data for a for given GraphQL operation or data field.
 

@@ -1,0 +1,12 @@
+* graphql-go example
+
+To implement this schema
+
+.code graphql-schema.txt
+
+One has to write
+
+.code graphql-go.txt
+
+
+

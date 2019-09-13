@@ -1,0 +1,8 @@
+* Generating code from schema (2)
+
+- Looking for a GraphQL compiler
+- Found 2 packages
+
+    https://github.com/99designs/gqlgen
+
+    https://github.com/gqlc

@@ -1,0 +1,9 @@
+type Quotation struct {
+	PriceSummary            *PriceSummary               `json:"priceSummary"`
+	ID                      string                      `json:"id"`
+	Name                    string                      `json:"name"`
+	Shared                  bool                        `json:"shared"`
+	Comment                 *string                     `json:"comment"`
+    // .. stuff deleted ...
+	QuotationLines          []QuotationLineUnion        `json:"quotationLines"`
+}

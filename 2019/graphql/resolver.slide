@@ -1,0 +1,22 @@
+* Resolving an operation
+
+
+
+
+- Operation is either part of a Query or Mutation
+
+    // register the resolver
+    //
+    schema.QueryType.Fields()["quotations"].Resolve = ResolveQuotations
+
+
+    // ResolveQuotations implements a GraphQL resolver function.
+    //
+    func ResolveQuotations(p graphql.ResolveParams) (interface{}, error) {
+        //
+        // .. call external services
+        //
+        return []Quotation{}, nil
+    }
+
+- Use the *ResolveParms* to access any input parameters

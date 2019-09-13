@@ -1,0 +1,10 @@
+* Generating code from schema
+
+- Schema first design
+- Generate code that uses *graphql-go* types to recreate schema in Go
+
+But
+
+- graphql-go promotes a Go *code* *first* approach
+
+.image img/compiler.png 200 800

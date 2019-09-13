@@ -22,15 +22,29 @@ architecture.slide
 
 graphql.slide
 
-schema.slide
-
 query.slide
+
+schema.slide
 
 principles.slide
 
 package.slide
 
 selection.slide
+
+codegen.slide
+graphql-go.slide
+codegen2.slide
+
+gqlgen.slide
+gqlc.slide
+codegen3.slide
+
+query.slide
+
+resolver.slide
+
+showmecode.slide
 `
 
 var slideCount = 0

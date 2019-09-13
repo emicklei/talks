@@ -1,0 +1,11 @@
+* Choosing the GraphQL compiler
+
+We use both! (for now)
+
+- Use *gqlc* for schema code generation
+- Use *gqlgen* for model code generation
+
+And
+
+- Github Issue with the request to add model generation to *gqcl*
+- Injecting Resolver funcs

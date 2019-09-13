@@ -1,0 +1,10 @@
+var QueryType = graphql.NewObject(graphql.ObjectConfig{
+	Name: "Query",
+	Fields: graphql.Fields{
+
+		"quotations": &graphql.Field{
+			Type:    graphql.NewNonNull(graphql.NewList(graphql.NewNonNull(QuotationType))),
+			Resolve: func(p graphql.ResolveParams) (interface{}, error) { return nil, nil },//TODO
+		},
+    }
+}

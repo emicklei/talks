@@ -1,0 +1,7 @@
+* 99designs/gqlgen
+
+- Generates Go code for the types (models_gen.go) *without* dependencies
+
+.code types.txt
+
+- Generates Go code for creating the schema that uses its *own* types  (schema.go)

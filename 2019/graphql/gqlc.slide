@@ -1,0 +1,8 @@
+* gqlc
+
+- Generates Go code that create the schema objects using *graphql-go* package
+
+.code schema.txt
+
+- Does *not* generate Go code for the defined types in the schema
+- Manually write and inject our Resolve function (TODO)

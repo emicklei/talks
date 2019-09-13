@@ -6,5 +6,7 @@ From graphql.org
 - provides a complete and understandable description of the data in your AP
 - gives clients the power to ask for exactly what they need 
 
-- Query (the Reads in CRUD)
+Special types
+
+- Query
 - Mutation

@@ -12,9 +12,9 @@ Software Artist, kramphub.com
 - Google Developer Expert
 
 .image img/emicklei_hackers_logo.png _ 300
-* The bigger picture
+* Simplified architecture
 
-- insert architecture picture here
+.image img/overview.png 500 700
 * GraphQL
 
 From graphql.org
@@ -23,11 +23,10 @@ From graphql.org
 - provides a complete and understandable description of the data in your AP
 - gives clients the power to ask for exactly what they need 
 
-- Query (the Reads in CRUD)
-- Mutation
-* GraphQL Schema (extract)
+Special types
 
-.code schema.graphql
+- Query
+- Mutation
 * GraphQL Query Request
 
 POST http://myserver/graphql
@@ -37,15 +36,18 @@ POST http://myserver/graphql
 which returns
 
 .code result.json
+* GraphQL Schema (extract)
+
+.code schema.graphql
 * Server Development approach
 
 - Schema first design
-- Frontend teams write types,queries and mutations
-- Code generate all types
-- Handcode the resolvers
-- Open-source Go package(s) where possible
+- Frontend teams write queries, mutations and types
+- Generate from schema
+- Handcode the resolvers*
+- Use open-source Go package(s) where possible
 
-Resolver is a function that returns the data for a for given GraphQL query or mutation operation or data field.
+*Resolver* is a function that returns the data for a for given GraphQL operation or data field.
 
 * Selecting a Go package
 
@@ -63,3 +65,94 @@ Resolver is a function that returns the data for a for given GraphQL query or mu
 - Does it bring in lots of dependent packages ?
 - Is it trying to be all-inclusive solution ?
 - Semantic version please ?
+- Open issues count ?
+* Generating code from schema
+
+- Schema first design
+- Generate code that uses *graphql-go* types to recreate schema in Go
+
+But
+
+- graphql-go promotes a Go *code* *first* approach
+
+.image img/compiler.png 200 800
+* graphql-go example
+
+To implement this schema
+
+.code graphql-schema.txt
+
+One has to write
+
+.code graphql-go.txt
+
+
+
+* Generating code from schema (2)
+
+- Looking for a GraphQL compiler
+- Found 2 packages
+
+    https://github.com/99designs/gqlgen
+
+    https://github.com/gqlc
+* 99designs/gqlgen
+
+- Generates Go code for the types (models_gen.go) *without* dependencies
+
+.code types.txt
+
+- Generates Go code for creating the schema that uses its *own* types  (schema.go)
+* gqlc
+
+- Generates Go code that create the schema objects using *graphql-go* package
+
+.code schema.txt
+
+- Does *not* generate Go code for the defined types in the schema
+- Manually write and inject our Resolve function (TODO)
+* Choosing the GraphQL compiler
+
+We use both! (for now)
+
+- Use *gqlc* for schema code generation
+- Use *gqlgen* for model code generation
+
+And
+
+- Github Issue with the request to add model generation to *gqcl*
+- Injecting Resolver funcs
+* GraphQL Query Request
+
+POST http://myserver/graphql
+
+.code query.txt
+
+which returns
+
+.code result.json
+* Resolving an operation
+
+
+
+
+- Operation is either part of a Query or Mutation
+
+    // register the resolver
+    //
+    schema.QueryType.Fields()["quotations"].Resolve = ResolveQuotations
+
+
+    // ResolveQuotations implements a GraphQL resolver function.
+    //
+    func ResolveQuotations(p graphql.ResolveParams) (interface{}, error) {
+        //
+        // .. call external services
+        //
+        return []Quotation{}, nil
+    }
+
+- Use the *ResolveParms* to access any input parameters
+* Show me the code
+
+Switching to the code repository....
