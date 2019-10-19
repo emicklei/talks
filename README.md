@@ -44,7 +44,7 @@ A framework for writing load performance tests in Go
 - http://go-talks.appspot.com/github.com/emicklei/talks/2015/onedaygo/onedaygo.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2016/basic/basic.slide
 - http://go-talks.appspot.com/github.com/emicklei/talks/2016/intermediate/main.slide
-- http://go-talks.appspot.com/github.com/emicklei/talks/2019/kramphub/main.slide
+- http://go-talks.appspot.com/github.com/emicklei/talks/2019/kramphub/MAIN.slide
 
 ## not Go related
 
