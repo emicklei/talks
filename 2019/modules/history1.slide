@@ -1,0 +1,8 @@
+
+* Bits of History
+
+Once upon a time, your programs always had to use the *latest* *greatest* dependent packages
+
+or whatever commit | branch | tag you had locally
+
+And there was GOPATH ...

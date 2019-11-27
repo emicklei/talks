@@ -1,0 +1,146 @@
+About Go Modules
+November 2019
+
+Ernest Micklei
+Software Artist, kramphub.com
+
+* Who am i
+
+- using Go since 2011
+- co-organizer Golang Meetup Amsterdam
+- *go-restful*, *proto*, *forest*, *zazkia*, *parzello*, *gmig*, *kiya*, ...
+- Google Developer Expert (Go & GCP)
+
+.image img/emicklei_hackers_logo.png _ 300
+
+* Bits of History
+
+* Bits of History
+
+Once upon a time, your programs always had to use the *latest* *greatest* dependent packages
+
+or whatever commit | branch | tag you had locally
+
+And there was GOPATH ...
+
+* GOPATH example
+
+.image img/gopath_pkg.png _ 700
+echo $GOPATH
+/Users/emicklei/go
+
+* GOPATH example: go-spew
+
+.image img/gopath_spew.png _ 700
+
+~/go/src/github.com/davecgh/go-spew
+
+* Bits of History
+
+And live was good ...
+
+Until it wasn't !
+
+* Bits of History
+
+Then with Go version 1.5 came *Vendoring*
+
+An idea which I saw first being applied in *Ruby* *on* *Rails*
+
+Now we can freeze all the code (and make local changes)
+
+ GO15VENDOREXPERIMENT=1
+
+default since 1.6
+
+* Vendor example
+
+.image img/kiya_vendor.png _ 500
+
+* Bits of History
+
+And live was good ...
+
+Until it wasn't !
+
+* Bits of History
+
+Then with Go 1.11 came *Go* *Modules*
+
+_Dependency_ _done_ _right_
+
+(for a while we had the vgo experiment)
+
+* Go Modules
+
+* Module
+
+is a way to group together a set of packages and give it a version number to mark it’s state at a specific point in time
+
+
+    Modules record precise dependency requirements and create reproducible builds.
+
+So modules need unqiue identifiers
+
+    Modules use Semantic Versioning
+
+* Semantic Versioning
+
+Given a version number MAJOR.MINOR.PATCH, increment the:
+
+- MAJOR version when you make incompatible API changes,
+- MINOR version when you add functionality in a backwards compatible manner, and
+- PATCH version when you make backwards compatible bug fixes.
+
+.link https://semver.org/
+
+* Minimal Version Selection (MVS)
+
+
+MVS ensure that the library versions I compile with today will be the same versions that my co-maintainer compiles with tomorrow
+
+    your go.mod says use v1.2
+
+    author just released v1.2.1
+
+    author later releases v1.3
+
+
+MVS does not automatically update minor version you will need to pay attention to bug and security point releases for your dependencies.
+
+* Semantic Import Versioning
+
+
+
+Semantic Import Versioning locks a dependency to a major version you will need to be aware of new major version releases and upgrade when you want the new functionality they offer.
+
+* Vendor your Modules
+
+    go mod vendor
+
+* Modulizing go-restful
+
+* go-restful
+
+package for building REST-style Web Services using Go.
+
+One of my last packages that do not have a *go.mod*.
+
+Latest git tag is *v2.11.1* and it follows semver strictly.
+
+* go-restful considerations
+
+Follow Go team recommendation to add */v3* folder with copy of sources ?
+
+Process *deprecated* warnings when moving to v3 ?
+
+How many projects are still on the GOPATH because of its age ?
+
+.link https://github.com/emicklei/go-restful/issues/374
+
+* Credits
+
+Information has been collected from
+
+.link https://ukiahsmith.com/blog/a-gentle-introduction-to-golang-modules/
+.link https://github.com/kramphub/kiya

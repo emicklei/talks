@@ -1,0 +1,10 @@
+
+* go-restful considerations
+
+Follow Go team recommendation to add */v3* folder with copy of sources ?
+
+Process *deprecated* warnings when moving to v3 ?
+
+How many projects are still on the GOPATH because of its age ?
+
+.link https://github.com/emicklei/go-restful/issues/374

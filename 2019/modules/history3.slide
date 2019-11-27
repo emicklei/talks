@@ -1,0 +1,12 @@
+
+* Bits of History
+
+Then with Go version 1.5 came *Vendoring*
+
+An idea which I saw first being applied in *Ruby* *on* *Rails*
+
+Now we can freeze all the code (and make local changes)
+
+ GO15VENDOREXPERIMENT=1
+
+default since 1.6

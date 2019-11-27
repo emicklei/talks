@@ -1,0 +1,14 @@
+
+* Minimal Version Selection (MVS)
+
+
+MVS ensure that the library versions I compile with today will be the same versions that my co-maintainer compiles with tomorrow
+
+    your go.mod says use v1.2
+
+    author just released v1.2.1
+
+    author later releases v1.3
+
+
+MVS does not automatically update minor version you will need to pay attention to bug and security point releases for your dependencies.

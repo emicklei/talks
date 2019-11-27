@@ -1,0 +1,6 @@
+
+* GOPATH example
+
+.image img/gopath_pkg.png _ 700
+echo $GOPATH
+/Users/emicklei/go

@@ -1,0 +1,8 @@
+
+* go-restful
+
+package for building REST-style Web Services using Go.
+
+One of my last packages that do not have a *go.mod*.
+
+Latest git tag is *v2.11.1* and it follows semver strictly.

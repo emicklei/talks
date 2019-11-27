@@ -1,0 +1,11 @@
+
+* Module
+
+is a way to group together a set of packages and give it a version number to mark it’s state at a specific point in time
+
+
+    Modules record precise dependency requirements and create reproducible builds.
+
+So modules need unqiue identifiers
+
+    Modules use Semantic Versioning
