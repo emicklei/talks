@@ -17,6 +17,7 @@ var debug = flag.Bool("d", false, "if true then write debug info")
 
 var slides = `
 intro.slide
+thanks.slide
 
 chapter_history.slide
 history1.slide
