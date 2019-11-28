@@ -2,7 +2,7 @@ Slides about or using Google Go
 ======================
 by Ernest Micklei
 
-Thanks to Gary Burd and Francesc Campoy for [hosting](http://go-talks.appspot.com/) the slides.
+Thanks to Gary Burd and Dmitri Shuralyov for [hosting](http://go-talks.appspot.com/) the slides.
 
 
 ## Go modules
