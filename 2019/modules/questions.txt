@@ -1,0 +1,8 @@
+how to upgrade a dependency?
+
+go list -u -m all
+
+go mod tidy
+
+
+go get -u=patch

@@ -39,6 +39,9 @@ vendormodules.slide
 chapter_gorestful.slide
 go-restful.slide
 restful-consider.slide
+go-restful-init.slide
+go-restful-options.slide
+go-restful-prepare.slide
 
 credits.slide
 `

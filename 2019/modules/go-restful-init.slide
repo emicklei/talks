@@ -1,0 +1,16 @@
+
+* go-restful
+
+    If the module is version v2 or higher
+    then major version of the module must be included as a /vN 
+    at the end of the module paths used in go.mod files
+
+In the sources folder
+
+    go mod init github.com/emicklei/go-restful/v3 
+
+Creates a go.mod    
+
+    module github.com/emicklei/go-restful/v3
+
+    go 1.13

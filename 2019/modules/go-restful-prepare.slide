@@ -1,0 +1,14 @@
+
+* go-restful
+
+Before release v3
+
+- create a branch v3 to merge into master 
+- add go.mod
+- update CHANGES.md
+- do NOT include breaking changes (despite it is a major version upgrade)
+- update README.md to describe how consumers can migrate
+
+After release v3
+
+- update my own consumers

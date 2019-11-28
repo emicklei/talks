@@ -1,0 +1,12 @@
+
+* go-restful
+
+    module github.com/emicklei/go-restful/v3
+
+    go 1.13
+
+Options
+
+- Major Branch v3
+- Major Subdirectory /v3
+- Release v3 on master branch    

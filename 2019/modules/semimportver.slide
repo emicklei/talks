@@ -1,6 +1,14 @@
 
 * Semantic Import Versioning
 
-
-
 Semantic Import Versioning locks a dependency to a major version you will need to be aware of new major version releases and upgrade when you want the new functionality they offer.
+
+    import "github.com/me/foobar/v3"
+
+Then the Go tooling will look for:
+
+    v3.*.* tags in repository github.com/me/foobar
+
+or 
+    
+    /v3 subdirectory of repository github.com/me/foobar

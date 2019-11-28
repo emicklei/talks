@@ -71,12 +71,13 @@ _Dependency_ _done_ _right_
 
 (for a while we had the vgo experiment)
 
+    GO111MODULE=auto
+
 * Go Modules
 
 * Module
 
 is a way to group together a set of packages and give it a version number to mark it’s state at a specific point in time
-
 
     Modules record precise dependency requirements and create reproducible builds.
 
@@ -110,13 +111,23 @@ MVS does not automatically update minor version you will need to pay attention t
 
 * Semantic Import Versioning
 
-
-
 Semantic Import Versioning locks a dependency to a major version you will need to be aware of new major version releases and upgrade when you want the new functionality they offer.
+
+    import "github.com/me/foobar/v3"
+
+Then the Go tooling will look for:
+
+    v3.*.* tags in repository github.com/me/foobar
+
+or 
+    
+    /v3 subdirectory of repository github.com/me/foobar
 
 * Vendor your Modules
 
     go mod vendor
+
+Copies sources of the versions according to go.mod into /vendor folder (without git metadata)
 
 * Modulizing go-restful
 
@@ -126,7 +137,11 @@ package for building REST-style Web Services using Go.
 
 One of my last packages that do not have a *go.mod*.
 
-Latest git tag is *v2.11.1* and it follows semver strictly.
+Latest git tag is *v2.11.1* and is not adapted to Go Modules.
+
+Recommendation:
+
+    Start with next major version for Module support
 
 * go-restful considerations
 
@@ -138,9 +153,53 @@ How many projects are still on the GOPATH because of its age ?
 
 .link https://github.com/emicklei/go-restful/issues/374
 
+* go-restful
+
+    If the module is version v2 or higher
+    then major version of the module must be included as a /vN 
+    at the end of the module paths used in go.mod files
+
+In the sources folder
+
+    go mod init github.com/emicklei/go-restful/v3 
+
+Creates a go.mod    
+
+    module github.com/emicklei/go-restful/v3
+
+    go 1.13
+
+* go-restful
+
+    module github.com/emicklei/go-restful/v3
+
+    go 1.13
+
+Options
+
+- Major Branch v3
+- Major Subdirectory /v3
+- Release v3 on master branch    
+
+* go-restful
+
+Before release v3
+
+- create a branch v3 to merge into master 
+- add go.mod
+- update CHANGES.md
+- do NOT include breaking changes (despite it is a major version upgrade)
+- update README.md to describe how consumers can migrate
+
+After release v3
+
+- update my own consumers
+
 * Credits
 
 Information has been collected from
 
+.link https://github.com/golang/go/wiki/Modules#quick-start
 .link https://ukiahsmith.com/blog/a-gentle-introduction-to-golang-modules/
 .link https://github.com/kramphub/kiya
+.link https://github.com/emicklei/go-restful
