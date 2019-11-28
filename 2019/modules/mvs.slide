@@ -11,4 +11,4 @@ MVS ensure that the library versions I compile with today will be the same versi
     author later releases v1.3
 
 
-MVS does not automatically update minor version you will need to pay attention to bug and security point releases for your dependencies.
+MVS does *not* *automatically* *update* minor version you will need to pay attention to bug and security point releases for your dependencies.

@@ -3,4 +3,4 @@
 
     go mod vendor
 
-Copies sources of the versions according to go.mod into /vendor folder (without git metadata)
+Copies sources of the versions according to go.mod into /vendor folder

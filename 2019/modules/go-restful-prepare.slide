@@ -12,3 +12,7 @@ Before release v3
 After release v3
 
 - update my own consumers
+
+    import (
+        "github.com/emicklei/go-restful/v3" // imports as package "restful"
+    )

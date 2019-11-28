@@ -13,10 +13,6 @@ Software Artist, kramphub.com
 
 .image img/emicklei_hackers_logo.png _ 300
 
-* 10 years Go ! Thanks
-
-.image img/gopher10th-small.jpg _ 700
-
 * Bits of History
 
 * Bits of History
@@ -93,9 +89,9 @@ So modules need unqiue identifiers
 
 Given a version number MAJOR.MINOR.PATCH, increment the:
 
-- MAJOR version when you make incompatible API changes,
-- MINOR version when you add functionality in a backwards compatible manner, and
-- PATCH version when you make backwards compatible bug fixes.
+- MAJOR version when you make incompatible API changes
+- MINOR version when you add functionality in a backwards compatible manner
+- PATCH version when you make backwards compatible bug fixes
 
 .link https://semver.org/
 
@@ -111,11 +107,11 @@ MVS ensure that the library versions I compile with today will be the same versi
     author later releases v1.3
 
 
-MVS does not automatically update minor version you will need to pay attention to bug and security point releases for your dependencies.
+MVS does *not* *automatically* *update* minor version you will need to pay attention to bug and security point releases for your dependencies.
 
 * Semantic Import Versioning
 
-Semantic Import Versioning locks a dependency to a major version you will need to be aware of new major version releases and upgrade when you want the new functionality they offer.
+Semantic Import Versioning locks a dependency to a major version
 
     import "github.com/me/foobar/v3"
 
@@ -124,14 +120,16 @@ Then the Go tooling will look for:
     v3.*.* tags in repository github.com/me/foobar
 
 or 
-    
+
     /v3 subdirectory of repository github.com/me/foobar
 
 * Vendor your Modules
 
     go mod vendor
 
-Copies sources of the versions according to go.mod into /vendor folder (without git metadata)
+Copies sources of the versions according to go.mod into /vendor folder
+
+* Demo Kiya
 
 * Modulizing go-restful
 
@@ -199,6 +197,10 @@ After release v3
 
 - update my own consumers
 
+    import (
+        "github.com/emicklei/go-restful/v3" // imports as package "restful"
+    )
+
 * Credits
 
 Information has been collected from
@@ -207,3 +209,11 @@ Information has been collected from
 .link https://ukiahsmith.com/blog/a-gentle-introduction-to-golang-modules/
 .link https://github.com/kramphub/kiya
 .link https://github.com/emicklei/go-restful
+
+Celebrating 10 years!
+
+.link https://twitter.com/search?q=%23GoTurns10
+
+* 10 years Go ! Thanks
+
+.image img/gopher10th-small.jpg _ 700

@@ -17,7 +17,6 @@ var debug = flag.Bool("d", false, "if true then write debug info")
 
 var slides = `
 intro.slide
-thanks.slide
 
 chapter_history.slide
 history1.slide
@@ -36,15 +35,17 @@ semver.slide
 mvs.slide
 semimportver.slide
 vendormodules.slide
+demo.slide
 
 chapter_gorestful.slide
 go-restful.slide
 restful-consider.slide
 go-restful-init.slide
 go-restful-options.slide
-go-restful-prepare.slide
+go-restful-prepare.slide 
 
 credits.slide
+thanks.slide
 `
 
 var slideCount = 0

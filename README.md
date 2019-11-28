@@ -5,6 +5,14 @@ by Ernest Micklei
 Thanks to Gary Burd and Francesc Campoy for [hosting](http://go-talks.appspot.com/) the slides.
 
 
+## Go modules
+
+- http://go-talks.appspot.com/github.com/emicklei/talks/2019/modules/main.slide
+
+## graphql
+
+- http://go-talks.appspot.com/github.com/emicklei/talks/2019/graphql/main.slide
+
 ## hopwatch
 Hopwatch is a simple tool in HTML5 that can help debug Go programs. 
 Presented on the first Golang Amsterdam [Meetup](http://www.meetup.com/golang-amsterdam/events/109112552/) in April 2013.
