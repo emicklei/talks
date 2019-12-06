@@ -37,7 +37,7 @@ echo $GOPATH
 
 * Bits of History
 
-And live was good ...
+And life was good ...
 
 Until it wasn't !
 
@@ -59,7 +59,7 @@ default since 1.6
 
 * Bits of History
 
-And live was good ...
+And life was good ...
 
 Until it wasn't !
 
@@ -81,7 +81,7 @@ is a way to group together a set of packages and give it a version number to mar
 
     Modules record precise dependency requirements and create reproducible builds.
 
-So modules need unqiue identifiers
+So modules need unique identifiers
 
     Modules use Semantic Versioning
 
