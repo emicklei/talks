@@ -60,8 +60,8 @@ A framework for writing load performance tests in Go
 
 ## running the slides locally
 
-    go get golang.org/x/tools/cmd/present
+    go install golang.org/x/tools/cmd/present@latest
 
 Then enter a folder containing *.slide files and run
 
-    present
+    present -base /Users/emicklei/go/pkg/mod/golang.org/x/tools@v0.1.7/cmd/present

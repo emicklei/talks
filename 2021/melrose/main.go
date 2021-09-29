@@ -1,7 +1,7 @@
 package main
 
 // go install github.com/radovskyb/watcher/cmd/watcher@latest
-// watcher -cmd="go run make.go"
+// watcher -cmd="go run main.go"
 
 import (
 	"bufio"
@@ -17,58 +17,14 @@ var debug = flag.Bool("d", false, "if true then write debug info")
 
 var slides = `
 intro.slide
-kramphub.slide
-kramp.slide 
-
-agenda.slide
-
-grpc.slide
-
-
-proto.slide
-server.slide
-client.slide
-
-profile_ideal.slide
-load_profile.slide
-rampup.slide
-
-
-attack_interface.slide
-
-loadrun.slide
-loadrun_main.slide
-
-demo.slide
-
-runner.slide
-config.slide
-token_flow.slide
-
-attack_inside.slide
-profile_rampup.slide
-rampup_inside.slide
-
-profile_goroutines.slide
-rampup_strategy.slide
-linear.slide
-exp2.slide
-
-deploy.slide
-docker.slide
-docker_run.slide
-
-wrapup.slide
-
-sources.slide
+note.slide
 `
 
-// hazana.slide
 var slideCount = 0
 
 func main() {
 	flag.Parse()
-	writer, _ := os.Create("basic.slide")
+	writer, _ := os.Create("main.slide")
 	scanner := bufio.NewScanner(strings.NewReader(slides))
 	for scanner.Scan() {
 		if line := scanner.Text(); len(line) > 0 {
