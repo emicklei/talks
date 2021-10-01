@@ -16,26 +16,28 @@ import (
 var debug = flag.Bool("d", false, "if true then write debug info")
 
 var slides = `
-intro.slide
-note.slide
+head.md
+intro.md
+note.md
 `
 
 var slideCount = 0
 
 func main() {
 	flag.Parse()
-	writer, _ := os.Create("main.slide")
+	writer, _ := os.Create("main.md")
 	scanner := bufio.NewScanner(strings.NewReader(slides))
 	for scanner.Scan() {
 		if line := scanner.Text(); len(line) > 0 {
 			slideCount++
-			include(writer, line)
+			include(writer, "./slides/"+line)
 		}
 	}
 	writer.Close()
 }
 
 func include(w io.Writer, name string) {
+	io.WriteString(w, "---\n")
 	fmt.Println("including", name)
 	file, err := os.Open(strings.Trim(name, " "))
 	if err != nil {
