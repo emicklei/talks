@@ -13,11 +13,31 @@ paginate: true
 - Google Developer Expert (Go & GCP)
 ---
 # Language Bits
+---
+# Note
 
-test
+      note('c') 
+      note('c5') // octave 5
+      note('8c') // duration 1/8
+      note('e#') // sharp
+      note('b_') // flat
 
-      note('c4') 
+      note('.1a#3++')
 
-help
+Raw
+
+      midi(2,37,72) // 1/2 duration, MIDI nr 37, velocity 72
 
 <script src="slides/play.js"></script>   
+---
+# Sequence
+
+    sequence('c e g = (c5 e5 g5)')
+
+- note, rest `=` or group `(...)`
+---
+# Play bits
+---
+# Go bits
+---
+# Demo

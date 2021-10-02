@@ -14,23 +14,31 @@ import (
 )
 
 var debug = flag.Bool("d", false, "if true then write debug info")
+var output = flag.String("o", "main.md", "merged Markdown file location")
 
 var slides = `
 head.md
 intro.md
+
+language_bits.md
 note.md
+sequence.md
+
+play_bits.md
+go_bits.md
+demo.md
 `
 
 var slideCount = 0
 
 func main() {
 	flag.Parse()
-	writer, _ := os.Create("main.md")
+	writer, _ := os.Create(*output)
 	scanner := bufio.NewScanner(strings.NewReader(slides))
 	for scanner.Scan() {
 		if line := scanner.Text(); len(line) > 0 {
 			slideCount++
-			include(writer, "./slides/"+line)
+			include(writer, line)
 		}
 	}
 	writer.Close()
