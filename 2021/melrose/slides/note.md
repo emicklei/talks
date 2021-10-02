@@ -10,6 +10,4 @@
 
 Raw
 
-      midi(2,37,72) // 1/2 duration, MIDI nr 37, velocity 72
-
-<script src="slides/play.js"></script>   
+      midi(2,37,72) // 1/2 duration, MIDI nr 37, velocity 72   

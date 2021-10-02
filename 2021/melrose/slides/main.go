@@ -18,11 +18,13 @@ var output = flag.String("o", "main.md", "merged Markdown file location")
 
 var slides = `
 head.md
+title.md
 intro.md
 
 language_bits.md
 note.md
 sequence.md
+sequence_examples.md
 
 play_bits.md
 go_bits.md

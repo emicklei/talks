@@ -2,6 +2,12 @@
 marp: true
 theme: default
 paginate: true
+color: "#EEE"
+backgroundColor: "#222"
+footer: <h3>melrōse.org</h3>
+header: <h4>Golang Meetup Amsterdam, October 2021</h4>
+---
+# Melrōse, program and play music
 ---
 # Who is Ernest Micklei
 
@@ -11,6 +17,15 @@ paginate: true
 - co-organizer Golang Meetup Amsterdam
 - 100+ Github repos: *go-restful*, *proto*, *dot*, *forest*, *zazkia*, *pgtalk*, ...
 - Google Developer Expert (Go & GCP)
+
+
+<style>
+pre,code {
+  background: #eee;
+  color: black;
+}
+</style>
+<script src="slides/play.js"></script>
 ---
 # Language Bits
 ---
@@ -26,15 +41,19 @@ paginate: true
 
 Raw
 
-      midi(2,37,72) // 1/2 duration, MIDI nr 37, velocity 72
-
-<script src="slides/play.js"></script>   
+      midi(2,37,72) // 1/2 duration, MIDI nr 37, velocity 72   
 ---
 # Sequence
 
     sequence('c e g = (c5 e5 g5)')
 
-- note, rest `=` or group `(...)`
+- note
+- rest `=`
+- group `(...)`
+---
+# Examples: sequence
+
+    f1 = sequence('c e g c')
 ---
 # Play bits
 ---
