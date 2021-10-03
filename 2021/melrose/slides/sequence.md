@@ -1,7 +1,3 @@
 # Sequence
 
-    sequence('c e g = (c5 e5 g5)')
-
-- note
-- rest `=`
-- group `(...)`
+![seq_spec](img/sequence.png)

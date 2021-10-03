@@ -16,15 +16,22 @@ import (
 var debug = flag.Bool("d", false, "if true then write debug info")
 var output = flag.String("o", "main.md", "merged Markdown file location")
 
+// names starting with ! will be skipped
 var slides = `
 head.md
 title.md
 intro.md
+whatisit.md
 
 language_bits.md
 note.md
+note_examples.md
 sequence.md
 sequence_examples.md
+other_creates.md
+composition.md
+composition_examples.md
+more_composition.md
 
 play_bits.md
 go_bits.md
@@ -38,7 +45,7 @@ func main() {
 	writer, _ := os.Create(*output)
 	scanner := bufio.NewScanner(strings.NewReader(slides))
 	for scanner.Scan() {
-		if line := scanner.Text(); len(line) > 0 {
+		if line := scanner.Text(); len(line) > 0 && !strings.HasPrefix(line, "!") {
 			slideCount++
 			include(writer, line)
 		}
@@ -52,6 +59,7 @@ func include(w io.Writer, name string) {
 	file, err := os.Open(strings.Trim(name, " "))
 	if err != nil {
 		log.Println(err.Error())
+		io.WriteString(w, err.Error())
 		return
 	}
 	defer file.Close()
@@ -62,6 +70,7 @@ func include(w io.Writer, name string) {
 			io.WriteString(w, "\n")
 		}
 	}
+	io.WriteString(w, "\n")
 	if *debug {
 		io.WriteString(w, fmt.Sprintf("_%s_ %d\n\n", name, slideCount))
 	}

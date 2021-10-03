@@ -1,17 +1,7 @@
-# Who is Ernest Micklei
+# Motivation
 
-![width:100px](img/emicklei_hackers_logo.png)
+- Explore patterns in music expressed by programming constructs
 
-- using Go since 2011
-- co-organizer Golang Meetup Amsterdam
-- 100+ Github repos: *go-restful*, *proto*, *dot*, *forest*, *zazkia*, *pgtalk*, ...
-- Google Developer Expert (Go & GCP)
+- Challenge to find the right abstraction and functions
 
-
-<style>
-pre,code {
-  background: #eee;
-  color: black;
-}
-</style>
-<script src="slides/play.js"></script>
+- Offer quick audio feedback
