@@ -4,8 +4,8 @@
 
 <style>
 pre,code {
-  background: #eee;
-  color: black;
+  background: #00527A;
+  color: yellow;
 }
 </style>
 <script src="slides/play.js"></script>
