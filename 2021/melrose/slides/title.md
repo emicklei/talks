@@ -7,5 +7,8 @@ pre,code {
   background: #00527A;
   color: yellow;
 }
+a {
+  color: cyan;
+}
 </style>
 <script src="slides/play.js"></script>

@@ -17,6 +17,9 @@ pre,code {
   background: #00527A;
   color: yellow;
 }
+a {
+  color: cyan;
+}
 </style>
 <script src="slides/play.js"></script>
 
@@ -214,4 +217,12 @@ The tool sends `MIDI`.
 
 ---
 # Sound bits
+
+- Open source, MIT licensed
+
+- github.com/emicklei/melrose
+
+- https://melrōse.org
+
+- (music) contributions are welcome
 
