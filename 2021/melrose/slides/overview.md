@@ -1,1 +1,1 @@
-![](img/overview.png)
+![center](img/overview.png)

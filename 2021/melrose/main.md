@@ -46,7 +46,7 @@ img[alt~="center"] {
 ![domeka](img/domeka.png)
 
 ---
-![](img/overview.png)
+![center](img/overview.png)
 
 ---
 # Language Bits
@@ -56,7 +56,7 @@ img[alt~="center"] {
 ---
 # Note
  
-![note_spec](img/note.png)
+![note_spec center](img/note.png)
 
 ---
 # Examples: note
@@ -76,7 +76,7 @@ Raw
 ---
 # Sequence
 
-![seq_spec](img/sequence.png)
+![seq_spec center](img/sequence.png)
 
 ---
 # Examples: sequence

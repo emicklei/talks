@@ -1,3 +1,3 @@
 # Sequence
 
-![seq_spec](img/sequence.png)
+![seq_spec center](img/sequence.png)

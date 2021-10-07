@@ -1,3 +1,3 @@
 # Note
  
-![note_spec](img/note.png)
+![note_spec center](img/note.png)
