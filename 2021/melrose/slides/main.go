@@ -46,6 +46,9 @@ playing.md
 
 go_bits.md
 note_sched.md
+timeline_design.md
+timeline_event.md
+midi_event.md
 timeline.md
 timeline_play.md
 assembly.md

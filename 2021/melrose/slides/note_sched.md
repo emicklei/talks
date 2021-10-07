@@ -1,3 +1,3 @@
-# Timeline
+# Program to sound
 
-![height:400px](img/go_flow.png)
+![height:500px center](img/go_flow.png)

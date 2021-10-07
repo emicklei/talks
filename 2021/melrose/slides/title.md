@@ -10,5 +10,9 @@ pre,code {
 a {
   color: cyan;
 }
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
 </style>
 <script src="slides/play.js"></script>

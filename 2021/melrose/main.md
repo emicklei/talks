@@ -20,6 +20,10 @@ pre,code {
 a {
   color: cyan;
 }
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
 </style>
 <script src="slides/play.js"></script>
 
@@ -175,7 +179,7 @@ The tool sends `MIDI`.
 ---
 # MIDI communication
 
-![height:300px](img/melrose-port-daw.png)
+![height:300px center](img/melrose-port-daw.png)
 
 ---
 # Playing
@@ -196,15 +200,24 @@ The tool sends `MIDI`.
 # Go bits
 
 ---
-# Timeline
+# Program to sound
 
-![height:400px](img/go_flow.png)
+![height:500px center](img/go_flow.png)
+
+---
+![height:500px center](img/timeline_design.png)
+
+---
+![](img/timeline_event.png)
+
+---
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![height:600px](img/midi_event.png)
 
 ---
 ![](img/timeline.png)
 
 ---
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](img/timeline_play.png)
+![height:600px center](img/timeline_loop.png)
 
 ---
 # WebAssembly

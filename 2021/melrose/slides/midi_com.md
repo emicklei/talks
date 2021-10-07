@@ -1,3 +1,3 @@
 # MIDI communication
 
-![height:300px](img/melrose-port-daw.png)
+![height:300px center](img/melrose-port-daw.png)
