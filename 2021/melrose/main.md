@@ -54,8 +54,6 @@ img[alt~="center"] {
  
 
 ---
-# Note
- 
 ![note_spec center](img/note.png)
 
 ---
@@ -74,8 +72,6 @@ Raw
       midi(2,37,72) // 1/2 duration, MIDI nr 37, velocity 72  
 
 ---
-# Sequence
-
 ![seq_spec center](img/sequence.png)
 
 ---
@@ -99,7 +95,7 @@ Raw
 ---
 # Composition
 
-![comp](img/composition.png)
+![height:400px center](img/composition.png)
 
 ---
 # Example: composition
@@ -179,7 +175,7 @@ The tool sends `MIDI`.
 ---
 # MIDI communication
 
-![height:300px center](img/melrose-port-daw.png)
+![height:400px center ](img/melrose-port-daw.png)
 
 ---
 # Playing

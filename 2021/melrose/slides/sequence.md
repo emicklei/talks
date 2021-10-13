@@ -1,3 +1,1 @@
-# Sequence
-
 ![seq_spec center](img/sequence.png)
