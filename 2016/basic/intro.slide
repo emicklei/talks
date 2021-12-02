@@ -1,7 +1,7 @@
 Go - Basic Training
 
 Ernest Micklei
-Software Artist, kramphub.com
+Software Artist, ag5.com
 
 * Who am i
 
@@ -9,7 +9,7 @@ Software Artist, kramphub.com
 - co-organizer Golang Meetup Amsterdam
 - author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*
 - bol.com: *Daxy* , *Kevlar*, *BoQS* , *Guardian*
-- kramphub.com: *Hazana*,*Kiya*,*Mokka*,*Protofmt*
+- kramphub.com: *Hazana*,*Kiya*,*Alexis*,*Protofmt*
 
 .image img/gopher_teacher.png _ 300
 
@@ -24,13 +24,9 @@ Software Artist, kramphub.com
 
 * Preflight checks
 
-- Installed Go SDK 1.9
-
-	export GOPATH=$HOME/go
-	export PATH=$GOPATH/bin:$PATH
-
+- Installed Go SDK 1.17
 - Finished the Tour of Go
-- Configure your favorite IDE (use goimports on save)
+- Configure your favorite IDE (hint: VSC)
 	
 
 * Format per Topic

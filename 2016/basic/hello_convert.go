@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
-import "convert"
+import (
+	"fmt"
+
+	"github.com/ag5/convert"
+)
 
 func main() {
 	fmt.Println("hello", "world", convert.DegreesToRadians(45))

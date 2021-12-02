@@ -1,7 +1,7 @@
 Go - Basic Training
 
 Ernest Micklei
-Software Artist, kramphub.com
+Software Artist, ag5.com
 
 * Who am i
 
@@ -9,7 +9,7 @@ Software Artist, kramphub.com
 - co-organizer Golang Meetup Amsterdam
 - author of *go-restful*, *hopwatch*, *forest*, *zazkia*, *assert*, *artreyu*
 - bol.com: *Daxy* , *Kevlar*, *BoQS* , *Guardian*
-- kramphub.com: *Hazana*,*Kiya*,*Mokka*,*Protofmt*
+- kramphub.com: *Hazana*,*Kiya*,*Alexis*,*Protofmt*
 
 .image img/gopher_teacher.png _ 300
 
@@ -24,13 +24,9 @@ Software Artist, kramphub.com
 
 * Preflight checks
 
-- Installed Go SDK 1.12
-
-	export GOPATH=$HOME/go
-	export PATH=$GOPATH/bin:$PATH
-
+- Installed Go SDK 1.17
 - Finished the Tour of Go
-- Configure your favorite IDE (use goimports on save)
+- Configure your favorite IDE (hint: VSC)
 	
 
 * Format per Topic
@@ -44,13 +40,20 @@ Software Artist, kramphub.com
 
 * Hello world
 
-Create a folder "hello" on your GOPATH/src and inside it, a file named *main.go* with
+Create a folder "hello" and inside it, a file named *main.go* with
 
 .play -edit hello.go
 
 - go run main.go
 
 You should see a greeting
+
+
+* Hello world (2)
+
+Setup module for dependencies
+
+    go mod init hello
 
 - go build
 
@@ -62,10 +65,13 @@ You should be able to run hello from any shell location
 
 * Hello package
 
-Create a folder "convert" on your GOPATH/src and inside it, a file named *convert.go* with
+Create a folder "convert" and inside it, a file named *convert.go* with
 
 .code -edit convert.go
 
+Setup module dependencies
+
+    go mod init github.com/ag5/convert
 
 * Unit testing
 
@@ -90,6 +96,21 @@ You should see test logging too. Now make the test fail
 Go back to *hello/main.go* and import the *convert* package
 
 .code -edit hello_convert.go
+
+* Test your package (2)
+
+Update the Go modules definition file
+
+    module hello
+
+    go 1.17
+
+    require (
+        github.com/ag5/convert v1.0.0
+    )
+
+    replace github.com/ag5/convert v1.0.0 => ../convert
+
 
 Run the new program
 
