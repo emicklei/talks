@@ -25,10 +25,12 @@ whatisit.md
 
 !overview.md 
 note.md
-!note_examples.md
+note_examples.md
 sequence.md 
+sequence_examples.md
 other_creates.md
-composition.md 
+composition.md
+more_composition.md
 drum.md
 drum_merge.md 
 
@@ -38,6 +40,44 @@ midi_com.md
 demo.md
 source_bits.md
 `
+
+var old = `
+head.md
+title.md
+intro.md
+whatisit.md
+
+overview.md
+language_bits.md
+note.md
+note_examples.md
+sequence.md
+sequence_examples.md
+other_creates.md
+composition.md
+composition_examples.md
+drum.md
+drum_merge.md
+more_composition.md
+
+play_bits.md
+nosound.md
+midi.md
+cli_http.md
+midi_com.md
+playing.md
+
+
+go_bits.md
+note_sched.md
+timeline_design.md
+timeline_event.md
+midi_event.md
+timeline.md
+timeline_play.md
+assembly.md
+
+demo.md`
 
 var slideCount = 0
 

@@ -2,4 +2,4 @@
 
 Melrōse does not produce any sound directly.
 
-The tool sends `MIDI`.
+The tool sends `MIDI`

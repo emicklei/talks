@@ -5,3 +5,5 @@
     kick = note('16c2')
 
     channel(10, notemap('!...!...!...!...', kick))
+
+    bpm(120)

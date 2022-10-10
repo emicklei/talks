@@ -1,4 +1,4 @@
-# Source bits
+# Thank you for listening !
 
 - Open source, MIT licensed
 

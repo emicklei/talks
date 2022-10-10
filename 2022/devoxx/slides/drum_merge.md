@@ -1,13 +1,12 @@
 # Merge
 
     kick = note('c2')
-    snare = note('e2')
-    closehi = midi(4,42,72)
+    snare = note('b2')
+    closehi = midi(4,53,72)
 
-    drum14 = merge(
+    drums = merge(
         notemap('!.!....!.!!!...!',kick),
         notemap('....!.......!...',snare),
         notemap('!.!.!.!.!.!.!.!.',closehi))
 
-    bpm(120)
-    channel(10,repeat(4,fraction(16,drum14)))
+    channel(10,repeat(4,fraction(16,drums)))

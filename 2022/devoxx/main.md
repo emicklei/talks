@@ -49,7 +49,37 @@ img[alt~="center"] {
 ![note_spec center](img/note.png)
 
 ---
+# Examples: note
+
+      note('c') 
+      note('c5') // octave 5
+      note('8c') // duration 1/8
+      note('e#') // sharp
+      note('b_') // flat
+
+      note('.1a#3++')
+
+Raw
+
+      midi(2,37,72) // 1/2 duration, MIDI nr 37, velocity 72  
+
+---
 ![seq_spec center](img/sequence.png)
+
+---
+# Examples: sequence
+
+    sequence('c d e f g a b 1c5 8c5 8a 8b 8g 8e 8f 8g (1c 1e 1g)')
+
+    sequence('= 8a3 8b3 2c-  = 8c 8d 2e-  = 8d 8e 2f-   = 8c 8b3 2a3-')
+
+
+Merge sequences
+
+    s = sequence(' e  g#  c#5  e5      f#  a  c#5 f#5     g#  b  d#5 g#5   a5 g#5 f#5 e5')
+    t = sequence('2e2    2c#2         2f#2   2c#3        2g#2   2d#3')
+
+    repeat(4,fraction(8,merge(s,t)))
 
 ---
 # Other music primitives
@@ -68,6 +98,11 @@ img[alt~="center"] {
 ![height:400px center](img/composition.png)
 
 ---
+# More composition functions
+
+- at, duration, dynamic, dynamicmap, export, `fraction`, fractionmap, group, if, import, index, interval, iterator, join, joinmap, listen, `merge`, midi_send, next, notemap, octave, octavemap, onbar, pitch, pitchmap, print, random, `repeat`, replace, resequence, `reverse`, stretch, track, `transpose` (pitch), transposemap (pitchmap), undynamic, ungroup, value, velocitymap
+
+---
 # Drum patterns
 
 `notemap` can create a sequence using `dots and bangs`.
@@ -76,27 +111,28 @@ img[alt~="center"] {
 
     channel(10, notemap('!...!...!...!...', kick))
 
+    bpm(120)
+
 ---
 # Merge
 
     kick = note('c2')
-    snare = note('e2')
-    closehi = midi(4,42,72)
+    snare = note('b2')
+    closehi = midi(4,53,72)
 
-    drum14 = merge(
+    drums = merge(
         notemap('!.!....!.!!!...!',kick),
         notemap('....!.......!...',snare),
         notemap('!.!.!.!.!.!.!.!.',closehi))
 
-    bpm(120)
-    channel(10,repeat(4,fraction(16,drum14)))
+    channel(10,repeat(4,fraction(16,drums)))
 
 ---
 # No sound
 
 Melrōse does not produce any sound directly.
 
-The tool sends `MIDI`.
+The tool sends `MIDI`
 
 ---
 # MIDI communication
@@ -107,7 +143,7 @@ The tool sends `MIDI`.
 # Show me and let's hear it!
 
 ---
-# Source bits
+# Thank you for listening !
 
 - Open source, MIT licensed
 
