@@ -1,7 +1,7 @@
 # What is Melrōse ?
 
-- Language to create music, as programs
+- Expression language to create music, like programs
 
-- Runtime environment to play programs
+- Runtime to play programs
 
 ![domeka](img/domeka.png)

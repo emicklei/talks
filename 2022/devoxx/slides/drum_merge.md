@@ -1,4 +1,4 @@
-# Merge
+# Merge patterns of notes
 
     kick = note('c2')
     snare = note('b2')

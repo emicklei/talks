@@ -28,40 +28,16 @@ img[alt~="center"] {
 <script src="slides/play.js"></script>
 
 ---
-# Motivation
-
-- Explore patterns in music expressed by programming constructs
-
-- Create a simple but expressive language
-
-- Offer quick audio feedback
-
----
 # What is Melrōse ?
 
-- Language to create music, as programs
+- Expression language to create music, like programs
 
-- Runtime environment to play programs
+- Runtime to play programs
 
 ![domeka](img/domeka.png)
 
 ---
 ![note_spec center](img/note.png)
-
----
-# Examples: note
-
-      note('c') 
-      note('c5') // octave 5
-      note('8c') // duration 1/8
-      note('e#') // sharp
-      note('b_') // flat
-
-      note('.1a#3++')
-
-Raw
-
-      midi(2,37,72) // 1/2 duration, MIDI nr 37, velocity 72  
 
 ---
 ![seq_spec center](img/sequence.png)
@@ -71,15 +47,14 @@ Raw
 
     sequence('c d e f g a b 1c5 8c5 8a 8b 8g 8e 8f 8g (1c 1e 1g)')
 
-    sequence('= 8a3 8b3 2c-  = 8c 8d 2e-  = 8d 8e 2f-   = 8c 8b3 2a3-')
-
+&nbsp;
 
 Merge sequences
 
     s = sequence(' e  g#  c#5  e5      f#  a  c#5 f#5     g#  b  d#5 g#5   a5 g#5 f#5 e5')
     t = sequence('2e2    2c#2         2f#2   2c#3        2g#2   2d#3')
 
-    repeat(4,fraction(8,merge(s,t)))
+    repeat(3,fraction(8,merge(s,t)))
 
 ---
 # Other music primitives
@@ -98,23 +73,18 @@ Merge sequences
 ![height:400px center](img/composition.png)
 
 ---
-# More composition functions
-
-- at, duration, dynamic, dynamicmap, export, `fraction`, fractionmap, group, if, import, index, interval, iterator, join, joinmap, listen, `merge`, midi_send, next, notemap, octave, octavemap, onbar, pitch, pitchmap, print, random, `repeat`, replace, resequence, `reverse`, stretch, track, `transpose` (pitch), transposemap (pitchmap), undynamic, ungroup, value, velocitymap
-
----
 # Drum patterns
 
 `notemap` can create a sequence using `dots and bangs`.
-    
+
+&nbsp;
+
     kick = note('16c2')
 
-    channel(10, notemap('!...!...!...!...', kick))
-
-    bpm(120)
+    channel(10, notemap('!...!!..!!!...!', kick))
 
 ---
-# Merge
+# Merge patterns of notes
 
     kick = note('c2')
     snare = note('b2')
