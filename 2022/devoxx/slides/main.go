@@ -30,9 +30,10 @@ sequence.md
 sequence_examples.md
 other_creates.md
 composition.md
-!more_composition.md
+sequence_examples2.md
+more_composition.md
 drum.md
-drum_merge.md 
+!drum_merge.md 
 
 nosound.md
 midi_com.md 
