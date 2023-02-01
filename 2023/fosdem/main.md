@@ -10,7 +10,7 @@ header: <h4>FOSDEM Brussels, February 2023, Melrōse - music programming</h4>
 ---
 # Melrōse, program and play music
 
-#### Ernest Micklei, Februrary 2023
+#### Ernest Micklei, February 2023
 
 ![height:100px center](/img/emicklei_hackers_logo.png)
 
