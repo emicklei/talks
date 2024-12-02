@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>NU - Algemeen</title>
+        <link>http://www.nu.nl/algemeen</link>
+        <description>Het laatste nieuws het eerst op NU.nl</description>
+        <atom:link href="http://www.nu.nl/rss/Algemeen" rel="self"></atom:link>
+        <language>nl-nl</language>
+        <copyright>Copyright (c) 2015, NU</copyright>
+        <lastBuildDate>Thu, 07 May 2015 14:48:11 +0200</lastBuildDate>
+        <ttl>60</ttl>
+        <atom:logo>http://www.nu.nl/algemeenstatic/img/atoms/images/logos/rss-logo-250x40.png</atom:logo>
+        <item>
+            <title>Burgemeester Aboutaleb verbiedt Feyenoord-Vitesse</title>
+            <link>http://www.nu.nl/binnenland/4045054/burgemeester-aboutaleb-verbiedt-feyenoord-vitesse.html</link>
+            <description>Burgemeester Ahmed Aboutaleb van Rotterdam laat de eredivisiewedstrijd Feyenoord-Vitesse zondag niet doorgaan vanwege werkonderbrekingen van de politie.</description>
+            <pubDate>Thu, 07 May 2015 14:48:11 +0200</pubDate>
+            <guid isPermaLink="false">4045054</guid>
+            <enclosure url="http://media.nu.nl/m/tc6xh7sa88hd_sqr256.jpg/burgemeester-aboutaleb-verbiedt-feyenoord-vitesse.jpg" length="0" type="image/jpeg"></enclosure>
+            <category>Algemeen</category>
+            <category>Sport</category>
+            <category>Binnenland</category>
+            <category>Voetbal</category>
+            <category>Rotterdam</category>
+            <dc:creator>ANP/NU.nl</dc:creator>
+            <dc:rights>copyright photo: ANP</dc:rights>
+        </item>
+        <item>
+            <title>Hoorn keurt geweld Ben Saunders tegen verkeersregelaar af</title>
+            <link>http://www.nu.nl/achterklap/4044814/hoorn-keurt-geweld-ben-saunders-verkeersregelaar-af.html</link>
+            <description>De gemeenteraad van Hoorn heeft zich donderdag unaniem uitgesproken tegen de mishandeling van een verkeersregelaar op Bevrijdingsdag.&amp;nbsp;</description>
+            <pubDate>Thu, 07 May 2015 14:38:56 +0200</pubDate>
+            <guid isPermaLink="false">4044814</guid>
+            <enclosure url="http://media.nu.nl/m/5y0xzqxaft3t_sqr256.jpg/hoorn-keurt-geweld-ben-saunders-verkeersregelaar-af.jpg" length="0" type="image/jpeg"></enclosure>
+            <category>Algemeen</category>
+            <category>Achterklap</category>
+            <category>Entertainment</category>
+            <dc:creator>NU.nl</dc:creator>
+            <dc:rights>copyright photo: ANP</dc:rights>
+            <atom:link href="http://nu.nl/achterklap/4044344/ben-saunders-vrijgelaten-vechtpartij.html" type="text/html" rel="related" title="Ben Saunders vrijgelaten na vechtpartij"></atom:link>
+            <atom:link href="http://nu.nl/achterklap/3875278/dean-saunders-vrijgelaten.html" type="text/html" rel="related" title="Dean Saunders vrijgelaten"></atom:link>
+            <atom:link href="http://nu.nl/achterklap/3818893/hof-schrapt-celstraf-jamie-saunders.html" type="text/html" rel="related" title="Hof schrapt celstraf voor Jamie Saunders"></atom:link>
+            <atom:link href="http://nu.nl/achterklap/2746384/saunders-broers-ruzien-met-stadstoezicht.html" type="text/html" rel="related" title="Saunders-broers ruziën met Stadstoezicht"></atom:link>
+            <atom:link href="http://nu.nl/achterklap/2607979/aanklachten-jamie-saunders.html" type="text/html" rel="related" title="Aanklachten tegen Jamie Saunders"></atom:link>
+        </item>
+        <item>
+            <title>Verdachte witte heroïne-dealer weer vast</title>
+            <link>http://www.nu.nl/binnenland/4045059/verdachte-witte-heroine-dealer-weer-vast.html</link>
+            <description>De 42-jarige man die ervan wordt verdacht witte heroïne als cocaïne te hebben verkocht aan toeristen, is donderdag weer opgepakt.&amp;nbsp;</description>
+            <pubDate>Thu, 07 May 2015 14:35:32 +0200</pubDate>
+            <guid isPermaLink="false">4045059</guid>
+            <enclosure url="http://media.nu.nl/m/m1oxne4axbe4_sqr256.jpg/verdachte-witte-heroine-dealer-weer-vast.jpg" length="0" type="image/jpeg"></enclosure>
+            <category>Algemeen</category>
+            <category>Binnenland</category>
+            <category>Amsterdam</category>
+            <dc:creator>ANP</dc:creator>
+            <dc:rights>copyright photo: ANP</dc:rights>
+            <atom:link href="http://nu.nl/binnenland/4034555/verdachte-verkoper-witte-heroine-vrije-voeten-gesteld.html" type="text/html" rel="related" title="Verdachte verkoper witte heroïne op vrije voeten gesteld"></atom:link>
+            <atom:link href="http://nu.nl/binnenland/4026962/gemeente-amsterdam-stopt-met-campagne-witte-heroine.html" type="text/html" rel="related" title="Gemeente Amsterdam stopt met campagne witte heroïne"></atom:link>
+            <atom:link href="http://nu.nl/binnenland/4025761/mogelijke-verkoper-witte-heroine-amsterdam-opgepakt.html" type="text/html" rel="related" title="Mogelijke verkoper witte heroïne Amsterdam opgepakt"></atom:link>
+            <atom:link href="http://nu.nl/binnenland/4013330/vier-tips-dealer-witte-heroine-uitzending-opsporing-verzocht.html" type="text/html" rel="related" title="Vier tips over dealer witte heroïne na uitzending Opsporing Verzocht"></atom:link>
+            <atom:link href="http://nu.nl/binnenland/4012506/dealer-witte-heroine-in-opsporing-verzocht.html" type="text/html" rel="related" title="Dealer witte heroïne in Opsporing Verzocht"></atom:link>
+        </item>
+        <item>
+            <title>Saudi-Arabië kondigt wapenstilstand in Jemen aan</title>
+            <link>http://www.nu.nl/buitenland/4045045/saudi-arabie-kondigt-wapenstilstand-in-jemen.html</link>
+            <description>Saudi-Arabië heeft donderdag aangekondigd een wapenstilstand in acht te nemen in Jemen zodat hulporganisaties de bevolking kunnen helpen.&amp;nbsp;</description>
+            <pubDate>Thu, 07 May 2015 14:46:17 +0200</pubDate>
+            <guid isPermaLink="false">4045045</guid>
+            <enclosure url="http://media.nu.nl/m/m1oxrbcafvjb_sqr256.jpg/saudi-arabie-kondigt-wapenstilstand-in-jemen.jpg" length="0" type="image/jpeg"></enclosure>
+            <category>Algemeen</category>
+            <category>Buitenland</category>
+            <dc:creator>NU.nl</dc:creator>
+            <dc:rights>copyright photo: AFP</dc:rights>
+            <atom:link href="http://nu.nl/buitenland/4044640/jemen-vraagt-ingrijpen-met-grondtroepen.html" type="text/html" rel="related" title="Jemen vraagt om ingrijpen met grondtroepen"></atom:link>
+            <atom:link href="http://nu.nl/buitenland/4044355/houthis-schieten-boot-met-jemenieten-kapot.html" type="text/html" rel="related" title="Houthi's schieten boot met Jemenieten kapot"></atom:link>
+            <atom:link href="http://nu.nl/buitenland/4043405/vn-dringt-stoppen-bombardementen-vliegveld-sanaa.html" type="text/html" rel="related" title="VN dringt aan op stoppen bombardementen vliegveld Sanaa"></atom:link>
+        </item>
+        <item>
+            <title>Vrachtwagenchauffeur krijgt 240 uur taakstraf voor 'socialmedia-ongeval'</title>
+            <link>http://www.nu.nl/binnenland/4044897/vrachtwagenchauffeur-krijgt-240-uur-taakstraf-socialmedia-ongeval.html</link>
+            <description>De rechtbank in Middelburg heeft de&amp;nbsp;vrachtwagenchauffeur die in 2013 een dodelijk ongeval veroorzaakte donderdag veroordeeld tot 240 uur taakstraf en drie jaar ontzegging van zijn rijbevoegdheid, waarvan één jaar voorwaardelijk.&amp;nbsp;</description>
+            <pubDate>Thu, 07 May 2015 14:31:38 +0200</pubDate>
+            <guid isPermaLink="false">4044897</guid>
+            <enclosure url="http://media.nu.nl/m/m1mxsl5a4qfn_sqr256.jpg/vrachtwagenchauffeur-krijgt-240-uur-taakstraf-socialmedia-ongeval.jpg" length="0" type="image/jpeg"></enclosure>
+            <category>Algemeen</category>
+            <category>Binnenland</category>
+            <dc:creator>NU.nl</dc:creator>
+            <dc:rights>copyright photo: 123RF</dc:rights>
+        </item>
+        <item>
+            <title>OM vindt spreekkoor FC Groningen-supporters niet strafbaar</title>
+            <link>http://www.nu.nl/binnenland/4044982/vindt-spreekkoor-fc-groningen-supporters-niet-strafbaar.html</link>
+            <description>Het Openbaar Ministerie (OM) heeft het spreekkoor van de FC-Groningen-supporters woensdagavond tijdens de huldiging van de bekerwinnaar, niet strafbaar bevonden.&amp;nbsp;</description>
+            <pubDate>Thu, 07 May 2015 14:44:11 +0200</pubDate>
+            <guid isPermaLink="false">4044982</guid>
+            <enclosure url="http://media.nu.nl/m/m1oxrsqategz_sqr256.jpg/vindt-spreekkoor-fc-groningen-supporters-niet-strafbaar.jpg" length="0" type="image/jpeg"></enclosure>
+            <category>Algemeen</category>
+            <category>Binnenland</category>
+            <category>Groningen</category>
+            <category>Voetbal</category>
+            <dc:creator>NU.nl/Lindsay Mossink</dc:creator>
+            <dc:rights>copyright photo: ANP</dc:rights>
+            <atom:link href="http://nu.nl/binnenland/4044654/om-onderzoekt-spreekkoor-van-fc-groningen-supporters-tijdens-huldiging.html" type="text/html" rel="related" title="'OM onderzoekt spreekkoor van FC Groningen-supporters tijdens huldiging'"></atom:link>
+        </item>
+        <item>
+            <title>Mount Everest door aardbeving Nepal 2,5 centimeter gekrompen</title>
+            <link>http://www.nu.nl/aardbeving-nepal/4044847/mount-everest-aardbeving-nepal-25-centimeter-gekrompen.html</link>
+            <description>De hoogste berg ter wereld, de Mount Everest, is door de aardbeving in Nepal iets minder majestueus dan hij was.&amp;nbsp;</description>
+            <pubDate>Thu, 07 May 2015 11:52:31 +0200</pubDate>
+            <guid isPermaLink="false">4044847</guid>
+            <enclosure url="http://media.nu.nl/m/xcmx497achd8_sqr256.jpg/mount-everest-aardbeving-nepal-25-centimeter-gekrompen.jpg" length="0" type="image/jpeg"></enclosure>
+            <category>Algemeen</category>
+            <category>Wetenschap</category>
+            <category>Nepal</category>
+            <dc:creator>ANP/NU.nl</dc:creator>
+            <dc:rights>copyright photo: ANP</dc:rights>
+            <atom:link href="http://nu.nl/aardbeving-nepal/4041304/dodental-nepal-gestegen-boven-6100.html" type="text/html" rel="related" title="Dodental Nepal gestegen tot boven de 6100"></atom:link>
+            <atom:link href="http://nu.nl/aardbeving-nepal/4041173/kathmandu-meter-verschoven-aardbeving.html" type="text/html" rel="related" title="Kathmandu een meter verschoven door aardbeving"></atom:link>
+            <atom:link href="http://nu.nl/buitenland/4041002/tientallen-naschokken-in-nepal.html" type="text/html" rel="related" title="Tientallen naschokken in Nepal"></atom:link>
+            <atom:link href="http://nu.nl/buitenland/4038229/aardbeving-treft-culturele-hart-van-nepal.html" type="text/html" rel="related" title="Aardbeving treft ook culturele hart van Nepal"></atom:link>
+        </item>
+        <item>
+            <title>Dood 5-jarig jongetje Duitse Herongen geen misdrijf</title>
+            <link>http://www.nu.nl/buitenland/4044965/dood-5-jarig-jongetje-duitse-herongen-geen-misdrijf.html</link>
+            <description>Het vijfjarige jongetje dat woensdag dood werd gevonden in een waterbekken van een zuiveringsinstallatie in het Duitse Herongen vlakbij Venlo, is niet door een misdrijf om het leven gekomen.&amp;nbsp;</description>
+            <pubDate>Thu, 07 May 2015 14:22:22 +0200</pubDate>
+            <guid isPermaLink="false">4044965</guid>
+            <enclosure url="http://media.nu.nl/m/ex7x9kva19h1_sqr256.jpg/dood-5-jarig-jongetje-duitse-herongen-geen-misdrijf.jpg" length="0" type="image/jpeg"></enclosure>
+            <category>Algemeen</category>
+            <category>Buitenland</category>
+            <dc:creator>ANP</dc:creator>
+            <dc:rights>copyright photo: ANP</dc:rights>
+            <atom:link href="http://nu.nl/buitenland/4044277/vermist-5-jarig-jongetje-dood-gevonden-in-duitsland.html" type="text/html" rel="related" title="Vermist 5-jarig jongetje dood gevonden in Duitsland"></atom:link>
+            <atom:link href="http://nu.nl/binnenland/4044121/politie-zoekt-5-jarige-jongen-bij-duitse-grens.html" type="text/html" rel="related" title="Politie zoekt naar 5-jarige jongen bij Duitse grens"></atom:link>
+        </item>
+        <item>
+            <title>Dinsdag zomerse temperaturen verwacht</title>
+            <link>http://www.nu.nl/binnenland/4044772/dinsdag-zomerse-temperaturen-verwacht.html</link>
+            <description>De temperatuur gaat vanaf zondag een stuk omhoog. Volgende week dinsdag wordt zelfs een zomerse dag verwacht met middagtemperaturen van 25 tot 28 graden.</description>
+            <pubDate>Thu, 07 May 2015 12:57:28 +0200</pubDate>
+            <guid isPermaLink="false">4044772</guid>
+            <enclosure url="http://media.nu.nl/m/m1oxchnaetnd_sqr256.jpg/dinsdag-zomerse-temperaturen-verwacht.jpg" length="0" type="image/jpeg"></enclosure>
+            <category>Algemeen</category>
+            <category>Binnenland</category>
+            <dc:creator>NU.nl</dc:creator>
+            <dc:rights>copyright photo: Hollandse Hoogte</dc:rights>
+            <atom:link href="http://nu.nl/binnenland/4044579/zware-windstoten-langs-westkust-hinderen-verkeer.html" type="text/html" rel="related" title="Zware windstoten langs westkust hinderen verkeer"></atom:link>
+            <atom:link href="http://nu.nl/binnenland/4042886/kans-onweersbuien-windstoten-en-hagel-tijdens-bevrijdingsdag.html" type="text/html" rel="related" title="Kans op onweersbuien, windstoten en hagel tijdens Bevrijdingsdag"></atom:link>
+            <atom:link href="http://nu.nl/binnenland/4040915/vanaf-zaterdag-wordt-warmer.html" type="text/html" rel="related" title="'Vanaf zaterdag wordt het warmer'"></atom:link>
+        </item>
+        <item>
+            <title>Acties politie treffen dit weekeinde uitgaansgebieden </title>
+            <link>http://www.nu.nl/binnenland/4045001/acties-politie-treffen-weekeinde-uitgaansgebieden-.html</link>
+            <description>Politieagenten in Groningen, Almere, Arnhem en Eindhoven leggen tussen vrijdag 22.30 uur en zaterdag 00.30 uur het werk neer.&amp;nbsp;</description>
+            <pubDate>Thu, 07 May 2015 13:24:59 +0200</pubDate>
+            <guid isPermaLink="false">4045001</guid>
+            <enclosure url="http://media.nu.nl/m/m1oxqtqa19oo_sqr256.jpg/acties-politie-treffen-weekeinde-uitgaansgebieden-.jpg" length="0" type="image/jpeg"></enclosure>
+            <category>Algemeen</category>
+            <category>Binnenland</category>
+            <dc:creator>ANP</dc:creator>
+            <dc:rights>copyright photo: ANP</dc:rights>
+        </item>
+    </channel>
+</rss>
