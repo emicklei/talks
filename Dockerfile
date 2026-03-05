@@ -1,10 +1,7 @@
 FROM golang
 
-RUN go get golang.org/x/tools/cmd/present
-COPY present-run /run/
-
-EXPOSE 3999
+RUN go install golang.org/x/tools/cmd/present@latest
 
 WORKDIR /app
 
-CMD ["/run/present-run"]
+CMD ["/go/bin/present", "-http", "0.0.0.0:3999", "-play", "-notes"]

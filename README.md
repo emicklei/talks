@@ -57,6 +57,14 @@ A framework for writing load performance tests in Go at the Go Meetup in Antwerp
 
 ## running the slides locally
 
-    sh run.sh
+    make build
+    
+then 
+
+    make run
+    
+then
+
+    open http://localhost:3999
 
 All material is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
