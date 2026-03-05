@@ -1,8 +1,5 @@
 package main
 
-// go install github.com/radovskyb/watcher/cmd/watcher@latest
-// watcher -cmd="go run main.go"
-
 import (
 	"bufio"
 	"flag"
@@ -10,76 +7,48 @@ import (
 	"io"
 	"log"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
 var debug = flag.Bool("d", false, "if true then write debug info")
-var output = flag.String("o", "main.md", "merged Markdown file location")
 
 // names starting with ! will be skipped
-var slides = `
-head.md
-title.md
-intro.md
-whatisit.md
+var input = flag.String("i", "slides.txt", "file with list of Markdown files to merge")
+var output = flag.String("o", "main.md", "merged Markdown file location")
 
-overview.md
-language_bits.md
-note.md
-note_examples.md
-sequence.md
-sequence_examples.md
-other_creates.md
-composition.md
-composition_examples.md
-drum.md
-drum_merge.md
-more_composition.md
-
-play_bits.md
-nosound.md
-midi.md
-cli_http.md
-midi_com.md
-playing.md
-
-
-go_bits.md
-note_sched.md
-timeline_design.md
-
-assembly.md
-
-sound_bits.md
-
-demo.md
-`
-
-/*
-*
-timeline_event.md
-midi_event.md
-timeline.md
-timeline_play.md
-*
-*/
 var slideCount = 0
 
 func main() {
 	flag.Parse()
-	writer, _ := os.Create(*output)
-	scanner := bufio.NewScanner(strings.NewReader(slides))
+	reader, err := os.Open(*input)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer reader.Close()
+	writer, err := os.Create(*output)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer writer.Close()
+
+	dir := filepath.Dir(*input)
+
+	scanner := bufio.NewScanner(reader)
 	for scanner.Scan() {
 		if line := scanner.Text(); len(line) > 0 && !strings.HasPrefix(line, "!") {
 			slideCount++
-			include(writer, line)
+			include(writer, filepath.Join(dir, line))
+		} else {
+			fmt.Println("skipping", line)
 		}
 	}
-	writer.Close()
 }
 
 func include(w io.Writer, name string) {
-	io.WriteString(w, "---\n")
+	if slideCount > 1 {
+		io.WriteString(w, "---\n")
+	}
 	fmt.Println("including", name)
 	file, err := os.Open(strings.Trim(name, " "))
 	if err != nil {
