@@ -1,9 +1,35 @@
+---
+marp: true
+theme: default
+paginate: true 
+color: "#EEE"
+backgroundColor: "#222"
+footer: <h3>github.com/emicklei/gi</h3>
+header: <h4>Golang Meetup, March 2026, Gi - building a Go interpreter</h4>
+
+---
 # Gi - building a Go interpreter
 March 2026, Golang Meetup Amsterdam
 
 ### Ernest Micklei
 
 Software Artist, cloudfork.com
+
+<style>
+pre,code {
+  background: #00527A;
+  color: yellow;
+}
+a {
+  color: cyan;
+}
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+}
+</style>
+<script src="slides/play.js"></script>
 
 ---
 # Who am i
@@ -18,4 +44,81 @@ Software Artist, cloudfork.com
     - **proto** - ProtocolBuffers parser
     - **dot** - Graphviz DOT writer
     - **pgtalk** - Postgres access code generator
+
+---
+# mission - basics
+
+- interpret Go programs using latest SDK
+- support Go modules
+- provide DAP (Debug Adapter Protocol) for debugging
+
+---
+# mission - advanced
+
+- code modification during debug session
+  - change function
+  - change struct type
+  - add package variable | const
+  - drop stack frame + resume
+
+---
+# iota
+
+```
+  package main
+  
+  const (
+      a = iota
+      b
+      c
+  )
+  
+  func main() {
+      println(a, b, c)
+  }
+```
+
+---
+# range
+
+- slice, map
+- number
+- strings
+- chan
+
+---
+```
+package main
+
+func main() {
+    for i, v := range []string{"a", "b", "c"} {
+        println(i, v)
+    }
+
+    for k, v := range map[string]int{"a": 1, "b": 2} {
+        println(k, v)
+    }
+
+    for i := range 3 {
+        println(i)
+    }
+
+    for i, c := range "gi" {
+        println(i, c)
+    }
+
+    ch := make(chan int, 3)
+    ch <- 1
+    ch <- 2
+    ch <- 3
+    close(ch)
+
+    for v := range ch {
+        println(v)
+    }
+}
+```
+
+---
+# status
 

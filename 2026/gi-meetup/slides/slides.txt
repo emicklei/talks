@@ -1,2 +1,8 @@
+head.md
 title.md
 whoami.md
+mission.md
+iota.md
+range.md
+range_demo.md
+status.md
