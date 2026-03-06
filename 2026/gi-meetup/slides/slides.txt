@@ -6,3 +6,5 @@ iota.md
 range.md
 range_demo.md
 status.md
+testMain.md
+debug.md

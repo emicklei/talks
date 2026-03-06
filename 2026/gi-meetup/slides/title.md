@@ -18,5 +18,28 @@ img[alt~="center"] {
   margin: 0 auto;
   background-color: transparent;
 }
+strong {
+  color: cyan;    
+}
+button {
+  background: orange;
+  color: blue;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.demo {
+}
+.output {
+  background: #003A5B;
+  color: lightgreen;
+  padding: 10px;  
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 16px;
+  vertical-align: top;
+}
 </style>
 <script src="slides/play.js"></script>

@@ -28,18 +28,41 @@ img[alt~="center"] {
   margin: 0 auto;
   background-color: transparent;
 }
+strong {
+  color: cyan;    
+}
+button {
+  background: orange;
+  color: blue;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.demo {
+}
+.output {
+  background: #003A5B;
+  color: lightgreen;
+  padding: 10px;  
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 16px;
+  vertical-align: top;
+}
 </style>
 <script src="slides/play.js"></script>
 
 ---
 # Who am i
 
-![height:100px center](/img/emicklei_hackers_logo.png)
+![height:80px center](/img/emicklei_hackers_logo.png)
 
 - using Go since 2011
 - platform engineer (day) 
 - open-source developer (night)
-    -  **go-restful** - REST-ful framework
+    -  **go-restful** - REST-ful framework (part of k8s)
     - **melrōse** - Music programming
     - **proto** - ProtocolBuffers parser
     - **dot** - Graphviz DOT writer
@@ -49,13 +72,14 @@ img[alt~="center"] {
 # mission - basics
 
 - interpret Go programs using latest SDK
+- embedded use (plugins)
 - support Go modules
-- provide DAP (Debug Adapter Protocol) for debugging
+- provide **DAP** (Debug Adapter Protocol) for debugging
 
 ---
 # mission - advanced
 
-- code modification during debug session
+- code modification **during debug session**
   - change function
   - change struct type
   - add package variable | const
@@ -63,6 +87,9 @@ img[alt~="center"] {
 
 ---
 # iota
+
+
+<table class="demo"><tr><td>
 
 ```
   package main
@@ -76,7 +103,13 @@ img[alt~="center"] {
   func main() {
       println(a, b, c)
   }
-```
+``` 
+
+</td><td class="output" width="30%">
+1 2 3
+</td></tr></table>
+
+<div align="right"><button onClick="runGi()">run with gi</button></div>
 
 ---
 # range
@@ -121,4 +154,63 @@ func main() {
 
 ---
 # status
+
+---
+create a test abstraction that does the heavy lifting of the test
+
+---
+![height:600px center](/img/testMain.png)
+
+---
+
+![height:400px center](/img/test_by_program.png)
+
+---
+debugging an interpreter that works in the "Reflection space"
+
+---
+
+```
+package main
+
+func plus(a int, b int) int {
+	return a + b
+}
+func main() {
+	result := plus(2, 3)
+	print(result)
+}
+```
+
+---
+![height:400px center](/img/debug_trace_TestFunc.png)
+
+---
+method 0:  using delve
+
+![height:500px center](/img/debug_operand_reflect.png)
+
+---
+method 1:  tracing statements
+
+![height:500px center](/img/debug_with_trace.png)
+
+---
+method 2:  visualize call graph
+
+![height:500px center](/img/TestFunc.dot.svg)
+
+---
+method 3:  use structexplorer
+
+![height:500px center](/img/explore_TestFunc.png)
+
+---
+method 4:  step through the code with a gi debugger
+
+![height:500px center](/img/gi_step_TestFunc.png)
+
+
+---
+demo `gi step`
 
