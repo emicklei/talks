@@ -18,3 +18,6 @@ func main() {
 	print(a,b,c,d)
 }
 ```
+<div align="right">
+<button data-header-id="const">run with gi</button>
+</div>

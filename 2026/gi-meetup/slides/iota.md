@@ -1,8 +1,5 @@
 # iota
 
-
-<table class="demo"><tr><td>
-
 ```
 package main
 
@@ -17,14 +14,10 @@ const (
 	f = 1
 	g
 )
-
 func main() {
 	print(a, b, c, d, e, f, g)
 }
-``` 
-
-</td><td class="output" width="30%">
-1 2 3
-</td></tr></table>
-
-<div align="right"><button onClick="runGi()">run with gi</button></div>
+```
+<div align="right">
+<button data-header-id="iota">run with gi</button>
+</div>

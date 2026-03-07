@@ -127,6 +127,8 @@ Building the call graph from the AST
 
 ---
 
+# BinaryExpr
+
 ```
 package main
 
@@ -134,8 +136,9 @@ func main() {
 	print(40 + 2)
 }
 ```
-
-<div align="right"><button onClick="runGi()">run with gi</button></div>
+<div align="right">
+<button data-header-id="binaryexpr">run with gi</button>
+</div>
 
 ---
 # Go language feature challenges
@@ -166,12 +169,12 @@ func main() {
 	print(a,b,c,d)
 }
 ```
+<div align="right">
+<button data-header-id="const">run with gi</button>
+</div>
 
 ---
 # iota
-
-
-<table class="demo"><tr><td>
 
 ```
 package main
@@ -187,17 +190,13 @@ const (
 	f = 1
 	g
 )
-
 func main() {
 	print(a, b, c, d, e, f, g)
 }
-``` 
-
-</td><td class="output" width="30%">
-1 2 3
-</td></tr></table>
-
-<div align="right"><button onClick="runGi()">run with gi</button></div>
+```
+<div align="right">
+<button data-header-id="iota">run with gi</button>
+</div>
 
 ---
 # range
@@ -214,6 +213,8 @@ Translate to a simple `for` loop and re-use `ForStmt` ast node type
 [call graph range string](/img/TestRangeOfString.dot.svg)
 
 ---
+# range slice
+
 ```
 package main
 
@@ -221,30 +222,44 @@ func main() {
     for i, v := range []string{"a", "b", "c"} {
         println(i, v)
     }
+}
+```
+<div align="right">
+<button data-header-id="range-slice">run with gi</button>
+</div>
 
+---
+# range map
+
+```
+package main
+
+func main() {
     for k, v := range map[string]int{"a": 1, "b": 2} {
         println(k, v)
     }
+}
+```
+<div align="right">
+<button data-header-id="range-map">run with gi</button>
+</div>
 
-    for i := range 3 {
-        println(i)
-    }
+---
+# range string
 
+```
+package main
+
+func main() { 
     for i, c := range "gi" {
         println(i, c)
     }
-
-    ch := make(chan int, 3)
-    ch <- 1
-    ch <- 2
-    ch <- 3
-    close(ch)
-
-    for v := range ch {
-        println(v)
-    }
 }
 ```
+<div align="right">
+<button data-header-id="range-string">run with gi</button>
+</div>
+
 
 ---
 unit testing by composing AST

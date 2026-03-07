@@ -28,6 +28,8 @@ Building the call graph from the AST
 
 ---
 
+# BinaryExpr
+
 ```
 package main
 
@@ -35,5 +37,6 @@ func main() {
 	print(40 + 2)
 }
 ```
-
-<div align="right"><button onClick="runGi()">run with gi</button></div>
+<div align="right">
+<button data-header-id="binaryexpr">run with gi</button>
+</div>
