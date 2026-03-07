@@ -1,6 +1,12 @@
 # range
 
-- slice, map
+- slice, array
+- map
 - number
-- strings
+- string
 - chan
+- iterator
+
+Translate to a simple `for` loop and re-use `ForStmt` ast node type
+
+[call graph range string](/img/TestRangeOfString.dot.svg)

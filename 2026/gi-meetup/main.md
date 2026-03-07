@@ -33,12 +33,13 @@ strong {
 }
 button {
   background: orange;
-  color: blue;
+  color: black;
   border: 1px solid white;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
   font-size: 18px;
+  font-weight: bold;
 }
 .demo {
 }
@@ -96,7 +97,75 @@ Executing the call graphs
 ![height:400px center](/img/callgraph-vm-exec.png)
 
 ---
-open ast_ast_callgraph.md: no such file or directory
+from Go AST to a "mirror" AST
+
+```
+package main
+
+func main() {
+	print(40 + 2)
+}
+```
+
+Let us look at both **AST**s of this program:
+
+---
+
+![height:600px center](/img/go_ast_42.png)
+
+---
+
+![height:600px center](/img/gi_ast_42.png)
+
+---
+
+Building the call graph from the AST
+
+<br>
+
+![height:200px center](/img/callgraph_42.png)
+
+---
+
+```
+package main
+
+func main() {
+	print(40 + 2)
+}
+```
+
+<div align="right"><button onClick="runGi()">run with gi</button></div>
+
+---
+# Go language feature challenges
+
+- const
+- iota
+- range
+- break
+
+---
+# const
+
+```
+package main
+
+var (
+	a = c + b  // == 9
+	b = f()    // == 4
+	c = f()    // == 5
+	d = 3      // == 5 after initialization has finished
+)
+
+func f() int {
+	d++
+	return d
+}
+func main() {
+	print(a,b,c,d)
+}
+```
 
 ---
 # iota
@@ -105,17 +174,23 @@ open ast_ast_callgraph.md: no such file or directory
 <table class="demo"><tr><td>
 
 ```
-  package main
-  
-  const (
-      a = iota
-      b
-      c
-  )
-  
-  func main() {
-      println(a, b, c)
-  }
+package main
+
+type state int
+
+const (
+	a = iota
+	b
+	c       = 5
+	d state = iota
+	e
+	f = 1
+	g
+)
+
+func main() {
+	print(a, b, c, d, e, f, g)
+}
 ``` 
 
 </td><td class="output" width="30%">
@@ -127,10 +202,16 @@ open ast_ast_callgraph.md: no such file or directory
 ---
 # range
 
-- slice, map
+- slice, array
+- map
 - number
-- strings
+- string
 - chan
+- iterator
+
+Translate to a simple `for` loop and re-use `ForStmt` ast node type
+
+[call graph range string](/img/TestRangeOfString.dot.svg)
 
 ---
 ```

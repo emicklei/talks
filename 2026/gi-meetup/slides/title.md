@@ -23,12 +23,13 @@ strong {
 }
 button {
   background: orange;
-  color: blue;
+  color: black;
   border: 1px solid white;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
   font-size: 18px;
+  font-weight: bold;
 }
 .demo {
 }

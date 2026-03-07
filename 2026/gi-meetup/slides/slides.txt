@@ -7,6 +7,9 @@ interpret_source.md
 
 ast_ast_callgraph.md
 
+language_features.md
+
+const.md
 iota.md
 range.md
 range_demo.md
