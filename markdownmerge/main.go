@@ -54,6 +54,7 @@ func include(w io.Writer, name string) {
 	if err != nil {
 		log.Println(err.Error())
 		io.WriteString(w, err.Error())
+		io.WriteString(w, "\n\n")
 		return
 	}
 	defer file.Close()

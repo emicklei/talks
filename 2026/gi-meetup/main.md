@@ -86,6 +86,19 @@ button {
   - drop stack frame + resume
 
 ---
+Source -> executable datastructure, the call graph
+
+![height:400px center](/img/source-to-callgraphs.png)
+
+---
+Executing the call graphs
+
+![height:400px center](/img/callgraph-vm-exec.png)
+
+---
+open ast_ast_callgraph.md: no such file or directory
+
+---
 # iota
 
 
@@ -151,6 +164,11 @@ func main() {
     }
 }
 ```
+
+---
+unit testing by composing AST
+
+![height:400px center](/img/test_by_ast.png)
 
 ---
 create a test abstraction that does the heavy lifting of the test
