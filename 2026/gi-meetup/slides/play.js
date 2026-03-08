@@ -25,6 +25,7 @@ function runGi(btn) {
   //console.log("codeEl:", codeEl);
   //console.log("source:", codeEl.textContent);
   btn.parentNode.align = "left";
+  btn.parentNode.classList.add("output");
   runCode(codeEl.textContent, btn.parentNode);
 }
 function runCode(code, outputEl) {

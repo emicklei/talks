@@ -41,15 +41,15 @@ button {
   font-size: 18px;
   font-weight: bold;
 }
-.demo {
-}
 .output {
-  background: #003A5B;
-  color: lightgreen;
+  background: gray;
+  color: white;
   padding: 10px;  
+  border: 2px solid orange;
   border-radius: 5px;
   font-family: monospace;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 22px;
   vertical-align: top;
 }
 </style>
@@ -63,7 +63,7 @@ button {
 - using Go since 2011
 - platform engineer (day) 
 - open-source developer (night)
-    -  **go-restful** - REST-ful framework (part of k8s)
+    - **go-restful** - REST-ful framework (part of k8s)
     - **melrōse** - Music programming
     - **proto** - ProtocolBuffers parser
     - **dot** - Graphviz DOT writer
@@ -72,7 +72,9 @@ button {
 ---
 # mission - basics
 
-- interpret Go programs using latest SDK
+![height:100px](/img/gi-logo.png)
+
+- interpret Go programs using latest SDK (1.26+)
 - embedded use (plugins)
 - support Go modules
 - provide **DAP** (Debug Adapter Protocol) for debugging
@@ -147,6 +149,13 @@ func main() {
 - iota
 - range
 - break
+
+Interpreted types and interfaces
+
+- struct
+- method
+- as argument in reflection call
+- callback from reflection func
 
 ---
 # const
@@ -260,88 +269,106 @@ func main() {
 <button data-header-id="range-string">run with gi</button>
 </div>
 
-
 ---
-unit testing by composing AST
-
-![height:400px center](/img/test_by_ast.png)
-
----
-create a test abstraction that does the heavy lifting of the test
-
----
-![height:600px center](/img/testMain.png)
-
----
-
-![height:400px center](/img/test_by_program.png)
-
----
-debugging an interpreter that works in the "Reflection space"
-
----
+# Interpreted types
 
 ```
 package main
 
-func plus(a int, b int) int {
-	return a + b
+type Aircraft struct {
+	Model string
 }
 func main() {
-	result := plus(2, 3)
-	print(result)
+	heli := Aircraft{Model:"helicopter"}
+	print(heli.Model)
+}
+```
+<div align="right">
+<button data-header-id="interpreted-types">run with gi</button>
+</div>
+
+---
+
+# Underlying literal type
+
+```
+package main
+
+type Count int
+
+func main() {
+	one := Count(1)
+	print(one)
+}
+```
+<div align="right">
+<button data-header-id="underlying-literal-type">run with gi</button>
+</div>
+
+---
+
+# Alias literal type
+
+```
+package main
+
+type Count = int
+
+func main() {
+	one := Count(1)
+	print(one)
+}
+```
+<div align="right">
+<button data-header-id="alias-literal-type">run with gi</button>
+</div>
+
+---
+
+# Struct types
+
+> type Aircraft struct
+
+```
+type StructType struct {
+	name      string
+	fields    *FieldList // for instantiation
+	methods   map[string]*FuncDecl
+	embeds    []StructType
+}
+```
+
+and instances thereof
+
+```
+type StructValue struct {
+	structType StructType
+	fields     map[string]reflect.Value
+}
+```
+
+--- 
+
+# Extension types 
+
+> type Count int
+
+```
+type ExtendedType struct {
+	name    Ident
+	methods map[string]*FuncDecl
+}
+```
+and instances thereof
+```
+type ExtendedValue struct {
+	typ ExtendedType  // The typ is used for method resolution.
+	val reflect.Value // The val field holds the actual reflect.Value.
 }
 ```
 
 ---
-![height:400px center](/img/debug_trace_TestFunc.png)
-
----
-method 0:  using delve
-
-![height:500px center](/img/debug_operand_reflect.png)
-
----
-method 1:  tracing statements
-
-![height:500px center](/img/debug_with_trace.png)
-
----
-method 2:  visualize call graph
-
-![height:500px center](/img/TestFunc.dot.svg)
-
----
-method 3:  use structexplorer
-
-![height:500px center](/img/explore_TestFunc.png)
-
----
-method 4:  step through the code with a gi debugger
-
-![height:500px center](/img/gi_step_TestFunc.png)
-
-
----
-demo `gi step`
-
----
-# todo
-
-## basics
-
-- recover
-- Go modules
-- Call SDK functions with **interpreted type instances**
-- **Callback** from SDK function to methods of interpreted type instances
-- Interpreted interfaces
-
-## advanced
- 
- - all of it
-
- ---
- Call SDK function with interpreted type instance
+ # Call SDK function with interpreted type instance
  
  ```
  type Aircraft struct {
@@ -353,10 +380,9 @@ demo `gi step`
      fmt.Printf("%v", a)
  }
  ```
-  
  ---
  
- Callback from SDK function to interpreted type instance
+ # Callback from SDK function to interpreted type instance
  
  ```
  type bookReader struct {}
@@ -372,4 +398,105 @@ demo `gi step`
       
   }
   ```
+
+---
+# Unit testing by composing AST
+
+![height:500px center](/img/test_by_ast.png)
+
+---
+# Test abstraction
+
+- not affected by changes in design or implementation
+- easy to create new test variations
+- easy to compare output of `gi` with `go`
+
+![height:300px center](/img/test_by_program.png)
+
+---
+![height:600px center](/img/testMain.png)
+
+---
+## plus
+
+Debugging an interpreter that works in the "Reflection space"
+
+```
+package main
+
+func plus(a int, b int) int {
+	return a + b
+}
+func main() {
+	result := plus(2, 3)
+	print(result)
+}
+```
+<div align="right">
+<button data-header-id="plus">run with gi</button>
+</div>
+
+---
+
+Breakpoint on calling the binary expression.
+
+![height:400px center](/img/debug_trace_TestFunc.png)
+
+---
+method 0:  using `delve` in Zed
+
+![height:500px center](/img/debug_operand_reflect.png)
+
+---
+method 1:  trace = true
+
+![height:500px center](/img/debug_with_trace.png)
+
+---
+method 2:  visualize call graph
+
+![height:500px center](/img/TestFunc.dot.svg)
+
+---
+method 3:  use `structexplorer`
+
+![height:500px center](/img/explore_TestFunc.png)
+
+---
+method 4:  step through the code with `gi step`
+
+# demo
+
+---
+method 4:  step through the code with `gi step`
+
+![height:500px center](/img/gi_step_TestFunc.png)
+
+---
+# todo
+
+## basics
+
+- recover
+- Go modules
+- Call SDK functions with **interpreted type instances**
+- **Callback** from SDK function to methods of interpreted type instances
+- Complete interpreted types and interfaces
+
+## advanced
+ 
+ - all of it
+
+---
+# thank you
+
+![height:100px](/img/gi-logo.png)
+
+Open-source project (MIT)
+
+**github.com/emicklei/gi**
+
+Slide deck (Creative Commons)
+
+**github.com/emicklei/talks**
 

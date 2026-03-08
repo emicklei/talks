@@ -14,8 +14,12 @@ iota.md
 range.md
 range_demo.md
 
+interpreted_types.md
+
 testing.md
 testMain.md
 debug.md
 
 status.md
+
+end.md

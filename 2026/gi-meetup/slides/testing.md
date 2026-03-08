@@ -1,3 +1,3 @@
-unit testing by composing AST
+# Unit testing by composing AST
 
-![height:400px center](/img/test_by_ast.png)
+![height:500px center](/img/test_by_ast.png)

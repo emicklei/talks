@@ -31,15 +31,15 @@ button {
   font-size: 18px;
   font-weight: bold;
 }
-.demo {
-}
 .output {
-  background: #003A5B;
-  color: lightgreen;
+  background: gray;
+  color: white;
   padding: 10px;  
+  border: 2px solid orange;
   border-radius: 5px;
   font-family: monospace;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 22px;
   vertical-align: top;
 }
 </style>

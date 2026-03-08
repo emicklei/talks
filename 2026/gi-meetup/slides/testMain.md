@@ -1,8 +1,10 @@
-create a test abstraction that does the heavy lifting of the test
+# Test abstraction
+
+- not affected by changes in design or implementation
+- easy to create new test variations
+- easy to compare output of `gi` with `go`
+
+![height:300px center](/img/test_by_program.png)
 
 ---
 ![height:600px center](/img/testMain.png)
-
----
-
-![height:400px center](/img/test_by_program.png)
