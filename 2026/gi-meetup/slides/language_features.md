@@ -1,11 +1,14 @@
-# Go language feature challenges
+# Go language features
+
+---
+# Challenges
 
 - const
 - iota
 - range
-- break
+- break, goto, continue
 
-Interpreted types and interfaces
+Interpreted types
 
 - struct
 - method

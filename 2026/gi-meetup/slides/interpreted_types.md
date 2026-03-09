@@ -1,5 +1,8 @@
 # Interpreted types
 
+---
+# Struct
+
 ```
 package main
 
@@ -53,7 +56,7 @@ func main() {
 
 ---
 
-# Struct types
+# Struct types in `gi`
 
 > type Aircraft struct
 

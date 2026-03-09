@@ -1,4 +1,4 @@
-# Test abstraction
+# abstraction
 
 - not affected by changes in design or implementation
 - easy to create new test variations

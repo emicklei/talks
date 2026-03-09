@@ -13,6 +13,7 @@ const.md
 iota.md
 range.md
 range_demo.md
+range_chan.md
 
 interpreted_types.md
 

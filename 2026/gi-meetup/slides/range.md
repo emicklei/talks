@@ -7,6 +7,20 @@
 - chan
 - iterator
 
+---
+
 Translate to a simple `for` loop and re-use `ForStmt` ast node type
 
-[call graph range string](/img/TestRangeOfString.dot.svg)
+```
+for v := range ch {
+    print(v)
+}
+```
+introduce condition and assignment:
+
+```
+for len(ch) > 0 {
+    v := <-ch
+    print(v)
+}
+```

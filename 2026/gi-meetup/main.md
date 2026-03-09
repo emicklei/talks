@@ -143,14 +143,17 @@ func main() {
 </div>
 
 ---
-# Go language feature challenges
+# Go language features
+
+---
+# Challenges
 
 - const
 - iota
 - range
-- break
+- break, goto, continue
 
-Interpreted types and interfaces
+Interpreted types
 
 - struct
 - method
@@ -217,9 +220,23 @@ func main() {
 - chan
 - iterator
 
+---
+
 Translate to a simple `for` loop and re-use `ForStmt` ast node type
 
-[call graph range string](/img/TestRangeOfString.dot.svg)
+```
+for v := range ch {
+    print(v)
+}
+```
+introduce condition and assignment:
+
+```
+for len(ch) > 0 {
+    v := <-ch
+    print(v)
+}
+```
 
 ---
 # range slice
@@ -269,8 +286,36 @@ func main() {
 <button data-header-id="range-string">run with gi</button>
 </div>
 
+[call graph range string](/img/TestRangeOfString.dot.svg)
+
+---
+# range chan
+
+```
+package main
+
+func main() {
+    ch := make(chan int, 3)
+    ch <- 1
+    ch <- 2
+    ch <- 3
+    close(ch)
+    for v := range ch {
+        print(v)
+    }
+}
+```
+<div align="right">
+<button data-header-id="range-chan">run with gi</button>
+</div>
+
+[call graph range chan](/img/TestChannelRange.dot.svg)
+
 ---
 # Interpreted types
+
+---
+# Struct
 
 ```
 package main
@@ -325,7 +370,7 @@ func main() {
 
 ---
 
-# Struct types
+# Struct types in `gi`
 
 > type Aircraft struct
 
@@ -400,12 +445,17 @@ type ExtendedValue struct {
   ```
 
 ---
-# Unit testing by composing AST
+# Testing
+
+.. from unit to integration
+
+---
+# composing Go AST
 
 ![height:500px center](/img/test_by_ast.png)
 
 ---
-# Test abstraction
+# abstraction
 
 - not affected by changes in design or implementation
 - easy to create new test variations
@@ -417,9 +467,12 @@ type ExtendedValue struct {
 ![height:600px center](/img/testMain.png)
 
 ---
-## plus
+# Debugging 
 
-Debugging an interpreter that works in the "Reflection space"
+.. an interpreter that works in the "Reflection space"
+
+---
+# plus
 
 ```
 package main

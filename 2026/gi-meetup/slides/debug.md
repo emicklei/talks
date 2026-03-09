@@ -1,6 +1,9 @@
-## plus
+# Debugging 
 
-Debugging an interpreter that works in the "Reflection space"
+.. an interpreter that works in the "Reflection space"
+
+---
+# plus
 
 ```
 package main
