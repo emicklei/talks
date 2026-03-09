@@ -356,7 +356,7 @@ func main() {
 }
 ```
 <div align="right">
-<button data-header-id="interpreted-types">run with gi</button>
+<button data-header-id="struct">run with gi</button>
 </div>
 
 ---
