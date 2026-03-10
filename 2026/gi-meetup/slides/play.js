@@ -4,9 +4,19 @@ document.addEventListener("DOMContentLoaded", function () {
     var headerId = btn.dataset.headerId;
     var container = document.getElementById(headerId) && document.getElementById(headerId).parentNode;
     var codeEl = container && container.querySelector("code");
+    var outputDiv = btn.parentNode;
+    var btnClone = btn.cloneNode(true);
     if (codeEl) {
       codeEl.contentEditable = "true";
       codeEl.spellcheck = false;
+      codeEl.addEventListener("input", function () {
+        if (outputDiv.classList.contains("output")) {
+          outputDiv.textContent = "";
+          outputDiv.appendChild(btnClone.cloneNode(true));
+          outputDiv.classList.remove("output");
+          outputDiv.removeAttribute("align");
+        }
+      });
     }
   });
 });
