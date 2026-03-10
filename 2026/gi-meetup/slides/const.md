@@ -1,4 +1,4 @@
-# const
+# var
 
 ```
 package main
@@ -19,5 +19,5 @@ func main() {
 }
 ```
 <div align="right">
-<button data-header-id="const">run with gi</button>
+<button data-header-id="var">run with gi</button>
 </div>

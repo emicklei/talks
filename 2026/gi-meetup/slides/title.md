@@ -3,7 +3,7 @@ March 2026, Golang Meetup Amsterdam
 
 ### Ernest Micklei
 
-Software Artist, cloudfork.com
+Software Artist, Engineer, Architect
 
 <style>
 pre,code {

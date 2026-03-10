@@ -1,4 +1,4 @@
-Source -> executable datastructure, the call graph
+Building call graphs
 
 ![height:400px center](/img/source-to-callgraphs.png)
 

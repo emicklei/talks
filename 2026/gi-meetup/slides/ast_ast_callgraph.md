@@ -28,6 +28,10 @@ Building the call graph from the AST
 
 ---
 
+![height:600px center](/img/flow_42.png)
+
+---
+
 # BinaryExpr
 
 ```

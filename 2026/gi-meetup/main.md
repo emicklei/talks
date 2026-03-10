@@ -13,7 +13,7 @@ March 2026, Golang Meetup Amsterdam
 
 ### Ernest Micklei
 
-Software Artist, cloudfork.com
+Software Artist, Engineer, Architect
 
 <style>
 pre,code {
@@ -70,7 +70,7 @@ button {
     - **pgtalk** - Postgres access code generator
 
 ---
-# mission - basics
+# foundation
 
 ![height:100px](/img/gi-logo.png)
 
@@ -80,16 +80,20 @@ button {
 - provide **DAP** (Debug Adapter Protocol) for debugging
 
 ---
-# mission - advanced
+# mission
 
 - code modification **during debug session**
-  - change function
+  - change function body
   - change struct type
   - add package variable | const
   - drop stack frame + resume
 
 ---
-Source -> executable datastructure, the call graph
+
+# Source → executable datastructure, the call graph
+
+---
+Building call graphs
 
 ![height:400px center](/img/source-to-callgraphs.png)
 
@@ -129,6 +133,10 @@ Building the call graph from the AST
 
 ---
 
+![height:600px center](/img/flow_42.png)
+
+---
+
 # BinaryExpr
 
 ```
@@ -148,7 +156,7 @@ func main() {
 ---
 # Challenges
 
-- const
+- var
 - iota
 - range
 - break, goto, continue
@@ -161,7 +169,7 @@ Interpreted types
 - callback from reflection func
 
 ---
-# const
+# var
 
 ```
 package main
@@ -182,7 +190,7 @@ func main() {
 }
 ```
 <div align="right">
-<button data-header-id="const">run with gi</button>
+<button data-header-id="var">run with gi</button>
 </div>
 
 ---
