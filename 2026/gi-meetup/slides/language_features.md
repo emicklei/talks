@@ -3,7 +3,7 @@
 ---
 # Challenges
 
-- const
+- var
 - iota
 - range
 - break, goto, continue
