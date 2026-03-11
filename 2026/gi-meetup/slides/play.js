@@ -1,4 +1,25 @@
 console.log("loading play.js ...");
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("button[data-header-id]").forEach(function (btn) {
+    var headerId = btn.dataset.headerId;
+    var container = document.getElementById(headerId) && document.getElementById(headerId).parentNode;
+    var codeEl = container && container.querySelector("code");
+    var outputDiv = btn.parentNode;
+    var btnClone = btn.cloneNode(true);
+    if (codeEl) {
+      codeEl.contentEditable = "true";
+      codeEl.spellcheck = false;
+      codeEl.addEventListener("input", function () {
+        if (outputDiv.classList.contains("output")) {
+          outputDiv.textContent = "";
+          outputDiv.appendChild(btnClone.cloneNode(true));
+          outputDiv.classList.remove("output");
+          outputDiv.removeAttribute("align");
+        }
+      });
+    }
+  });
+});
 document.addEventListener("click", function (event) {
   //console.log("click target:", event.target.tagName, event.target.outerHTML);
   var btn = event.target.closest("button");
@@ -42,4 +63,4 @@ function runCode(code, outputEl) {
       }
     })
     .catch((err) => console.log("fetch error", err));
-} 
+}
