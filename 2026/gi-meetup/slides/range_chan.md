@@ -18,4 +18,4 @@ func main() {
 <button data-header-id="range-chan">run with gi</button>
 </div>
 
-[call graph range chan](/img/TestChannelRange.dot.svg)
+[call graph range chan](./img/TestChannelRange.dot.svg)

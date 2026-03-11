@@ -12,11 +12,11 @@ Let us look at both **AST**s of this program:
 
 ---
 
-![height:600px center](/img/go_ast_42.png)
+![height:600px center](./img/go_ast_42.png)
 
 ---
 
-![height:600px center](/img/gi_ast_42.png)
+![height:600px center](./img/gi_ast_42.png)
 
 ---
 
@@ -24,11 +24,11 @@ Building the call graph from the AST
 
 <br>
 
-![height:200px center](/img/callgraph_42.png)
+![height:200px center](./img/callgraph_42.png)
 
 ---
 
-![height:600px center](/img/flow_42.png)
+![height:600px center](./img/flow_42.png)
 
 ---
 

@@ -5,4 +5,4 @@
 ---
 # composing Go AST
 
-![height:500px center](/img/test_by_ast.png)
+![height:500px center](./img/test_by_ast.png)

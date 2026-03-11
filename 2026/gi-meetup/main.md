@@ -58,7 +58,7 @@ button {
 ---
 # Who am i
 
-![height:80px center](/img/emicklei_hackers_logo.png)
+![height:80px center](./img/emicklei_hackers_logo.png)
 
 - using Go since 2011
 - platform engineer (day) 
@@ -72,7 +72,7 @@ button {
 ---
 # foundation
 
-![height:100px](/img/gi-logo.png)
+![height:100px](./img/gi-logo.png)
 
 - interpret Go programs using latest SDK (1.26+)
 - embedded use (plugins)
@@ -95,12 +95,12 @@ button {
 ---
 Building call graphs
 
-![height:400px center](/img/source-to-callgraphs.png)
+![height:400px center](./img/source-to-callgraphs.png)
 
 ---
 Executing the call graphs
 
-![height:400px center](/img/callgraph-vm-exec.png)
+![height:400px center](./img/callgraph-vm-exec.png)
 
 ---
 from Go AST to a "mirror" AST
@@ -117,11 +117,11 @@ Let us look at both **AST**s of this program:
 
 ---
 
-![height:600px center](/img/go_ast_42.png)
+![height:600px center](./img/go_ast_42.png)
 
 ---
 
-![height:600px center](/img/gi_ast_42.png)
+![height:600px center](./img/gi_ast_42.png)
 
 ---
 
@@ -129,11 +129,11 @@ Building the call graph from the AST
 
 <br>
 
-![height:200px center](/img/callgraph_42.png)
+![height:200px center](./img/callgraph_42.png)
 
 ---
 
-![height:600px center](/img/flow_42.png)
+![height:600px center](./img/flow_42.png)
 
 ---
 
@@ -321,7 +321,7 @@ func main() {
 <button data-header-id="range-string">run with gi</button>
 </div>
 
-[call graph range string](/img/TestRangeOfString.dot.svg)
+[call graph range string](./img/TestRangeOfString.dot.svg)
 
 ---
 # range chan
@@ -344,7 +344,7 @@ func main() {
 <button data-header-id="range-chan">run with gi</button>
 </div>
 
-[call graph range chan](/img/TestChannelRange.dot.svg)
+[call graph range chan](./img/TestChannelRange.dot.svg)
 
 ---
 # Interpreted types
@@ -487,7 +487,7 @@ type ExtendedValue struct {
 ---
 # composing Go AST
 
-![height:500px center](/img/test_by_ast.png)
+![height:500px center](./img/test_by_ast.png)
 
 ---
 # abstraction
@@ -496,10 +496,10 @@ type ExtendedValue struct {
 - easy to create new test variations
 - easy to compare output of `gi` with `go`
 
-![height:300px center](/img/test_by_program.png)
+![height:300px center](./img/test_by_program.png)
 
 ---
-![height:600px center](/img/testMain.png)
+![height:600px center](./img/testMain.png)
 
 ---
 # Debugging 
@@ -528,27 +528,27 @@ func main() {
 
 Breakpoint on calling the binary expression.
 
-![height:400px center](/img/debug_trace_TestFunc.png)
+![height:400px center](./img/debug_trace_TestFunc.png)
 
 ---
 using `delve` in Zed
 
-![height:500px center](/img/debug_operand_reflect.png)
+![height:500px center](./img/debug_operand_reflect.png)
 
 ---
 trace = true
 
-![height:500px center](/img/debug_with_trace.png)
+![height:500px center](./img/debug_with_trace.png)
 
 ---
 visualize call graph
 
-![height:500px center](/img/TestFunc.dot.svg)
+![height:500px center](./img/TestFunc.dot.svg)
 
 ---
 use `structexplorer`
 
-![height:500px center](/img/explore_TestFunc.png)
+![height:500px center](./img/explore_TestFunc.png)
 
 ---
 step through the code with `gi step`
@@ -558,7 +558,7 @@ step through the code with `gi step`
 ---
 step through the code with `gi step`
 
-![height:500px center](/img/gi_step_TestFunc.png)
+![height:500px center](./img/gi_step_TestFunc.png)
 
 ---
 # todo
@@ -578,7 +578,7 @@ step through the code with `gi step`
 ---
 # thank you
 
-![height:100px](/img/gi-logo.png)
+![height:100px](./img/gi-logo.png)
 
 Open-source project (MIT)
 

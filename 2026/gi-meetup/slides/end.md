@@ -1,6 +1,6 @@
 # thank you
 
-![height:100px](/img/gi-logo.png)
+![height:100px](./img/gi-logo.png)
 
 Open-source project (MIT)
 

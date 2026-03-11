@@ -4,7 +4,7 @@
 - easy to create new test variations
 - easy to compare output of `gi` with `go`
 
-![height:300px center](/img/test_by_program.png)
+![height:300px center](./img/test_by_program.png)
 
 ---
-![height:600px center](/img/testMain.png)
+![height:600px center](./img/testMain.png)

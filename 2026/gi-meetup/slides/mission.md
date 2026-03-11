@@ -1,6 +1,6 @@
 # foundation
 
-![height:100px](/img/gi-logo.png)
+![height:100px](./img/gi-logo.png)
 
 - interpret Go programs using latest SDK (1.26+)
 - embedded use (plugins)

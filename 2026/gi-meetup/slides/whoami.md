@@ -1,6 +1,6 @@
 # Who am i
 
-![height:80px center](/img/emicklei_hackers_logo.png)
+![height:80px center](./img/emicklei_hackers_logo.png)
 
 - using Go since 2011
 - platform engineer (day) 

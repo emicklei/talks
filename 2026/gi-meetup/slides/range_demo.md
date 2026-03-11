@@ -45,4 +45,4 @@ func main() {
 <button data-header-id="range-string">run with gi</button>
 </div>
 
-[call graph range string](/img/TestRangeOfString.dot.svg)
+[call graph range string](./img/TestRangeOfString.dot.svg)

@@ -24,27 +24,27 @@ func main() {
 
 Breakpoint on calling the binary expression.
 
-![height:400px center](/img/debug_trace_TestFunc.png)
+![height:400px center](./img/debug_trace_TestFunc.png)
 
 ---
 using `delve` in Zed
 
-![height:500px center](/img/debug_operand_reflect.png)
+![height:500px center](./img/debug_operand_reflect.png)
 
 ---
 trace = true
 
-![height:500px center](/img/debug_with_trace.png)
+![height:500px center](./img/debug_with_trace.png)
 
 ---
 visualize call graph
 
-![height:500px center](/img/TestFunc.dot.svg)
+![height:500px center](./img/TestFunc.dot.svg)
 
 ---
 use `structexplorer`
 
-![height:500px center](/img/explore_TestFunc.png)
+![height:500px center](./img/explore_TestFunc.png)
 
 ---
 step through the code with `gi step`
@@ -54,4 +54,4 @@ step through the code with `gi step`
 ---
 step through the code with `gi step`
 
-![height:500px center](/img/gi_step_TestFunc.png)
+![height:500px center](./img/gi_step_TestFunc.png)
