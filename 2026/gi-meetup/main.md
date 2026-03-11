@@ -41,6 +41,10 @@ button {
   font-size: 18px;
   font-weight: bold;
 }
+code[contenteditable]:focus {
+  outline: 2px solid orange;
+  cursor: text;
+}
 .output {
   background: gray;
   color: white;
